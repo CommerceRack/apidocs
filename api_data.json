@@ -60,6 +60,217 @@
   },
   {
     "type": "POST",
+    "url": "adminPasswordUpdate",
+    "title": "adminPasswordUpdate",
+    "name": "adminPasswordUpdate",
+    "description": "<p>changes a users password</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "oldold",
+            "optional": false,
+            "description": "<p>password</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "newnew",
+            "optional": false,
+            "description": "<p>passowrd</p>"
+          }
+        ]
+      }
+    },
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpSMTP",
+    "title": "appMashUpSMTP",
+    "name": "appMashUpSMTP",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "permission.mashups/smtp-sample.json",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "sender",
+            "optional": false,
+            "description": "<p>&quot; optional=&quot;1</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "recipient",
+            "optional": false,
+            "description": "<p>&quot; optional=&quot;1</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "subject",
+            "optional": false,
+            "description": "<p>&quot; optional=&quot;1</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "body",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": ".mashups/smtp-sample.json",
+        "content": ".mashups/smtp-sample.json\n{\n\"call\":\"appMashUpSMTP\",\t\t\t/* required */\n\"call-limit-daily\":\"10\",\t\t/* recommended: max of 10 calls per day */\n\"call-limit-hourly\":\"2\",\t\t/* recommended: max of 2 calls per hour */\n\"min-version\":201338,\t\t\t/* recommended: minimum api version */\n\"max-version\":201346,\t\t\t/* recommended: maximum api version */\n\"@whitelist\":[\n\t/* the line below will force the sender to you@domain.com */\n\t{ \"id\":\"sender\",    \"verb\":\"set\", \"value\":\"you@domain.com\" },\n\t/* the line above will use the recipient provided in the app call */\n\t{ \"id\":\"recipient\", \"verb\":\"get\" },\n\t/* this is an optional parameter, provided by the app, defaulting to \"unknown\" */\n\t{ \"id\":\"eyecolor\",  \"verb\":\"get\", \"default\":\"unknown\" },\n\t/* the default behavior is \"verb\":\"get\" .. so this is basically whitelisting subject */\n\t{ \"id\":\"subject\"    },\n\t/* the body message, which will substitute %eyecolor% */\n\t{ \"id\":\"body\", \t  \"verb\":\"sub\", \"value\":\"Your eye color is: %eyecolor%\" }\n\t]\n}\n",
+        "type": "json"
+      }
+    ],
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpSQS",
+    "title": "appMashUpSQS",
+    "name": "appMashUpSQS",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "authAdminLogin",
+    "title": "authAdminLogin",
+    "name": "authAdminLogin",
+    "description": "<p>Create a login session</p>",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "authAdminLogout",
+    "title": "authAdminLogout",
+    "name": "authAdminLogout",
+    "description": "<p>destroy/invalidate an admin session.</p><p>Does not need any parameters, destroys the current session (if any), always returns a success.</p>",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "authPasswordRecover",
+    "title": "authPasswordRecover",
+    "name": "authPasswordRecover",
+    "description": "<p>employs the password recovery mechanism for the account (currently only email).a temporary password is created and emailed, up to 10 times in a 3 hour period.</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "emailemail",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpHTTPS",
+    "title": "appMashUpHTTPS",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appInteractInternalMemCache",
+    "title": "appInteractInternalMemCache",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpSFTP",
+    "title": " appMashUpSFTP",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpSQL",
+    "title": "appMashUpSQL",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpFTP",
+    "title": "appMashUpFTP",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpHTTP",
+    "title": "appMashUpHTTP",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appInteractInternalRedis",
+    "title": "appInteractInternalRedis",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpMemCache",
+    "title": "appMashUpMemCache",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpRedis",
+    "title": "appMashUpRedis",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
     "url": "/adminControlPanelAction",
     "title": "adminControlPanelAction",
     "group": "admin",
