@@ -56,7 +56,7 @@ define({ api: [
     "url": "/domainLookup",
     "title": "",
     "group": "admin",
-    "name": "domainLookup",
+    "name": "domainLookup_domainLookup",
     "description": "<p>Not available <strong> EXPERIMENTAL </strong></p>",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
