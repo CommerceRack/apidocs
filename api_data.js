@@ -114,6 +114,46 @@ define({ api: [
   },
   {
     "type": "POST",
+    "url": "/helpAPI",
+    "title": "helpAPI",
+    "group": "admin",
+    "name": "helpAPI",
+    "description": "<p>used to do in-app (user wiki) documentation lookups/searches.</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "keywords",
+            "description": "<p>search string</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Array",
+            "optional": false,
+            "field": "@RESULTS",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Request",
+        "content": "\n{\n'@RESULTS':[\n\t[ 'docid':'doc1', 'score':'52.533', 'title':'title of document 1', 'summary':'plain text summary' ]\n\t[ 'docid':'doc2', 'score':'42.232', 'title':'title of document 2', 'summary':'plain text summary' ]\n\t]\n}",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "/providerExec",
     "title": "providerExec",
     "group": "admin",
