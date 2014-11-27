@@ -7589,596 +7589,6 @@
   },
   {
     "type": "POST",
-    "url": "buyerAddressAddUpdate",
-    "title": "buyerAddressAddUpdate",
-    "name": "buyerAddressAddUpdate",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": "<notes>&lt;![CDATA[shortcut:tag for this address ex: &#39;HOME&#39; (must be unique within bill or ship)type:bill    bill/countrycode:US    bill/email:user@domain    bill/firstname:    bill/lastname:    bill/fullname:    bill/phone:    bill/state:    bill/zip: type:ship<br>    ship/address1:    ship/address2:    ship/city:    ship/countrycode:US    ship/fullname:    ship/firstname:    ship/lastname:    ship/phone:    ship/region:    ship/postal:NOTE: (fullname) or (firstname lastname)NOTE: (country) or (countrycode) ]]&gt;</notes>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerAddressDelete",
-    "title": "buyerAddressDelete",
-    "name": "buyerAddressDelete",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": "<p>Returns:</p><CODE>type:SHIP|BILLshortcut:DEFAULT</CODE>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerDetail",
-    "title": "buyerDetail",
-    "name": "buyerDetail",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerLogout",
-    "title": "buyerLogout",
-    "name": "buyerLogout",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerNotificationAdd",
-    "title": "buyerNotificationAdd",
-    "name": "buyerNotificationAdd",
-    "group": "admin",
-    "description": "<p>Used to register a buyer for a notification when a inventory is back in stock.TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "typeinventory",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "=",
-            "optional": false,
-            "description": "<p>&quot;type:inventory&quot; id=&quot;emailuser@somedomain.com</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerOrderGet",
-    "title": "buyerOrderGet",
-    "name": "buyerOrderGet",
-    "group": "admin",
-    "description": "<p>Grabs a raw order object (buyer perspective) so that status information can be displayed. TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": "<hint>In order to access an order status the user must either be an authenticated buyer, OR use softauth=order withcartid + either orderid or erefid</hint>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "softauthorder",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "erefid",
-            "optional": false,
-            "description": "<p>(conditionally-required for softauth=order) external reference identifier (ex: ebay sale #) or amazon order #</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "orderid",
-            "optional": false,
-            "description": "<p>(conditionally-required for softauth=order) internal zoovy order #</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "cartid",
-            "optional": false,
-            "description": "<p>(conditionally-required for softauth=order) internal cartid #</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerOrderPaymentAdd",
-    "title": "buyerOrderPaymentAdd",
-    "name": "buyerOrderPaymentAdd",
-    "group": "admin",
-    "description": "<p>Adds and processes a new payment transaction on an order.TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "orderid2012-01-1234",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "tenderCREDIT",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "amt",
-            "optional": false,
-            "description": "<p>(optional - will default to order balance_due) transaction amount</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "uuid",
-            "optional": false,
-            "description": "<p>(optional - will be autogenerated if not supplied) unique identifier for this transaction</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "payment.cc",
-            "optional": false,
-            "description": "<p>(required on tender=CREDIT) Credit card #</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "payment.yy",
-            "optional": false,
-            "description": "<p>(required on tender=CREDIT) Credit card Expiration Year</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "payment.mm",
-            "optional": false,
-            "description": "<p>(required on tender=CREDIT) Credit card Expiration Month</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "payment.cv",
-            "optional": false,
-            "description": "<p>(required on tender=CREDIT) Credit card CVV/CID #</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerPasswordUpdate",
-    "title": "buyerPasswordUpdate",
-    "name": "buyerPasswordUpdate",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": "<p>password:newpassword</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerProductListAppendTo",
-    "title": "buyerProductListAppendTo",
-    "name": "buyerProductListAppendTo",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": "<p>listid=sku=OPTIONAL:    qty=(will default to zero)    priority=# (will defualt to zero)    note=    (optional string up to 255 characters)    replace=1    (will delete any existing value from the list, and re-add this one)</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerProductListRemoveFrom",
-    "title": "buyerProductListRemoveFrom",
-    "name": "buyerProductListRemoveFrom",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": "<p>listid=sku=</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerPurchaseHistory",
-    "title": "buyerPurchaseHistory",
-    "name": "buyerPurchaseHistory",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "onal",
-            "defaultValue": "1",
-            "optional": true,
-            "description": "<p>id=&quot;POOL RECENT,COMPLETED, etc.</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerPurchaseHistoryDetail",
-    "title": "buyerPurchaseHistoryDetail",
-    "name": "buyerPurchaseHistoryDetail",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "orderid",
-            "optional": false,
-            "description": "<caution>This can ONLY be used for authenticated buyers.</caution>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerTicketCreate",
-    "title": "buyerTicketCreate",
-    "name": "buyerTicketCreate",
-    "group": "admin",
-    "description": "<p>creates a new ticket for a customerTODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerTicketList",
-    "title": "buyerTicketList",
-    "name": "buyerTicketList",
-    "group": "admin",
-    "description": "<p>shows a list of ticket for a buyerTODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerTicketUpdate",
-    "title": "buyerTicketUpdate",
-    "name": "buyerTicketUpdate",
-    "group": "admin",
-    "description": "<p>updates a ticket for a buyerTODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerUpdate",
-    "title": "buyerUpdate",
-    "name": "buyerUpdate",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "@updates",
-            "optional": false,
-            "description": "<p>Returns:</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerWalletAdd",
-    "title": "buyerWalletAdd",
-    "name": "buyerWalletAdd",
-    "group": "admin",
-    "description": "<p>creates a new wallet for the associated buyerTODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "CCCredit",
-            "optional": false,
-            "description": "<p>Card #</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "YY2",
-            "optional": false,
-            "description": "<p>Digit Year</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "MM2",
-            "optional": false,
-            "description": "<p>Digit Month</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "IP4",
-            "optional": false,
-            "description": "<p>digit numeric ip address</p>"
-          }
-        ],
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "IDwallet",
-            "optional": false,
-            "description": "<p>id # (on success)</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerWalletDelete",
-    "title": "buyerWalletDelete",
-    "name": "buyerWalletDelete",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": "<p>walletid:#####</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerWalletList",
-    "title": "buyerWalletList",
-    "name": "buyerWalletList",
-    "group": "admin",
-    "description": "<p>Displays a list of walletsTODO</p>",
-    "parameter": {
-      "fields": {
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "@walletsan",
-            "optional": false,
-            "description": "<p>array of wallets</p><p><code type=\"json\" title=\"@wallets sample output\">[    { ID:walletid1, IS_DEFAULT:1|0, DESCRIPTION:description },    { ID:walletid2, IS_DEFAULT:1|0, DESCRIPTION:description },    { ID:walletid3, IS_DEFAULT:1|0, DESCRIPTION:description },]</code></p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "buyerWalletSetPreferred",
-    "title": "buyerWalletSetPreferred",
-    "name": "buyerWalletSetPreferred",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": "<p>walletid:#####</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
     "url": "canIUse",
     "title": "canIUse",
     "name": "canIUse",
@@ -10768,16 +10178,8 @@
   },
   {
     "type": "POST",
-    "url": "appMashUpRedis",
-    "title": "appMashUpRedis",
-    "group": "app",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "appMashUpSQL",
-    "title": "appMashUpSQL",
+    "url": "appMashUpHTTPS",
+    "title": "appMashUpHTTPS",
     "group": "app",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -10792,8 +10194,16 @@
   },
   {
     "type": "POST",
-    "url": "appMashUpHTTPS",
-    "title": "appMashUpHTTPS",
+    "url": "appMashUpSQL",
+    "title": "appMashUpSQL",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpRedis",
+    "title": "appMashUpRedis",
     "group": "app",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -10803,6 +10213,596 @@
     "url": "appMashUpMemCache",
     "title": "appMashUpMemCache",
     "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerAddressAddUpdate",
+    "title": "buyerAddressAddUpdate",
+    "name": "buyerAddressAddUpdate",
+    "group": "buyer",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": "<notes>&lt;![CDATA[shortcut:tag for this address ex: &#39;HOME&#39; (must be unique within bill or ship)type:bill    bill/countrycode:US    bill/email:user@domain    bill/firstname:    bill/lastname:    bill/fullname:    bill/phone:    bill/state:    bill/zip: type:ship<br>    ship/address1:    ship/address2:    ship/city:    ship/countrycode:US    ship/fullname:    ship/firstname:    ship/lastname:    ship/phone:    ship/region:    ship/postal:NOTE: (fullname) or (firstname lastname)NOTE: (country) or (countrycode) ]]&gt;</notes>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerAddressDelete",
+    "title": "buyerAddressDelete",
+    "name": "buyerAddressDelete",
+    "group": "buyer",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": "<p>Returns:</p><CODE>type:SHIP|BILLshortcut:DEFAULT</CODE>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerDetail",
+    "title": "buyerDetail",
+    "name": "buyerDetail",
+    "group": "buyer",
+    "description": "<p>TODO</p>",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerLogout",
+    "title": "buyerLogout",
+    "name": "buyerLogout",
+    "group": "buyer",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerNotificationAdd",
+    "title": "buyerNotificationAdd",
+    "name": "buyerNotificationAdd",
+    "group": "buyer",
+    "description": "<p>Used to register a buyer for a notification when a inventory is back in stock.TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "typeinventory",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "=",
+            "optional": false,
+            "description": "<p>&quot;type:inventory&quot; id=&quot;emailuser@somedomain.com</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerOrderGet",
+    "title": "buyerOrderGet",
+    "name": "buyerOrderGet",
+    "group": "buyer",
+    "description": "<p>Grabs a raw order object (buyer perspective) so that status information can be displayed. TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": "<hint>In order to access an order status the user must either be an authenticated buyer, OR use softauth=order withcartid + either orderid or erefid</hint>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "softauthorder",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "erefid",
+            "optional": false,
+            "description": "<p>(conditionally-required for softauth=order) external reference identifier (ex: ebay sale #) or amazon order #</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "orderid",
+            "optional": false,
+            "description": "<p>(conditionally-required for softauth=order) internal zoovy order #</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "cartid",
+            "optional": false,
+            "description": "<p>(conditionally-required for softauth=order) internal cartid #</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerOrderPaymentAdd",
+    "title": "buyerOrderPaymentAdd",
+    "name": "buyerOrderPaymentAdd",
+    "group": "buyer",
+    "description": "<p>Adds and processes a new payment transaction on an order.TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "orderid2012-01-1234",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "tenderCREDIT",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "amt",
+            "optional": false,
+            "description": "<p>(optional - will default to order balance_due) transaction amount</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "uuid",
+            "optional": false,
+            "description": "<p>(optional - will be autogenerated if not supplied) unique identifier for this transaction</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "payment.cc",
+            "optional": false,
+            "description": "<p>(required on tender=CREDIT) Credit card #</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "payment.yy",
+            "optional": false,
+            "description": "<p>(required on tender=CREDIT) Credit card Expiration Year</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "payment.mm",
+            "optional": false,
+            "description": "<p>(required on tender=CREDIT) Credit card Expiration Month</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "payment.cv",
+            "optional": false,
+            "description": "<p>(required on tender=CREDIT) Credit card CVV/CID #</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerPasswordUpdate",
+    "title": "buyerPasswordUpdate",
+    "name": "buyerPasswordUpdate",
+    "group": "buyer",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": "<p>password:newpassword</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerProductListAppendTo",
+    "title": "buyerProductListAppendTo",
+    "name": "buyerProductListAppendTo",
+    "group": "buyer",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": "<p>listid=sku=OPTIONAL:    qty=(will default to zero)    priority=# (will defualt to zero)    note=    (optional string up to 255 characters)    replace=1    (will delete any existing value from the list, and re-add this one)</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerProductListRemoveFrom",
+    "title": "buyerProductListRemoveFrom",
+    "name": "buyerProductListRemoveFrom",
+    "group": "buyer",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": "<p>listid=sku=</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerPurchaseHistory",
+    "title": "buyerPurchaseHistory",
+    "name": "buyerPurchaseHistory",
+    "group": "buyer",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "onal",
+            "defaultValue": "1",
+            "optional": true,
+            "description": "<p>id=&quot;POOL RECENT,COMPLETED, etc.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerPurchaseHistoryDetail",
+    "title": "buyerPurchaseHistoryDetail",
+    "name": "buyerPurchaseHistoryDetail",
+    "group": "buyer",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "orderid",
+            "optional": false,
+            "description": "<caution>This can ONLY be used for authenticated buyers.</caution>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerTicketCreate",
+    "title": "buyerTicketCreate",
+    "name": "buyerTicketCreate",
+    "group": "buyer",
+    "description": "<p>creates a new ticket for a customerTODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerTicketList",
+    "title": "buyerTicketList",
+    "name": "buyerTicketList",
+    "group": "buyer",
+    "description": "<p>shows a list of ticket for a buyerTODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerTicketUpdate",
+    "title": "buyerTicketUpdate",
+    "name": "buyerTicketUpdate",
+    "group": "buyer",
+    "description": "<p>updates a ticket for a buyerTODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerUpdate",
+    "title": "buyerUpdate",
+    "name": "buyerUpdate",
+    "group": "buyer",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "@updates",
+            "optional": false,
+            "description": "<p>Returns:</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerWalletAdd",
+    "title": "buyerWalletAdd",
+    "name": "buyerWalletAdd",
+    "group": "buyer",
+    "description": "<p>creates a new wallet for the associated buyerTODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "CCCredit",
+            "optional": false,
+            "description": "<p>Card #</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "YY2",
+            "optional": false,
+            "description": "<p>Digit Year</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "MM2",
+            "optional": false,
+            "description": "<p>Digit Month</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "IP4",
+            "optional": false,
+            "description": "<p>digit numeric ip address</p>"
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "IDwallet",
+            "optional": false,
+            "description": "<p>id # (on success)</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerWalletDelete",
+    "title": "buyerWalletDelete",
+    "name": "buyerWalletDelete",
+    "group": "buyer",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": "<p>walletid:#####</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerWalletList",
+    "title": "buyerWalletList",
+    "name": "buyerWalletList",
+    "group": "buyer",
+    "description": "<p>Displays a list of walletsTODO</p>",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "@walletsan",
+            "optional": false,
+            "description": "<p>array of wallets</p><p><code type=\"json\" title=\"@wallets sample output\">[    { ID:walletid1, IS_DEFAULT:1|0, DESCRIPTION:description },    { ID:walletid2, IS_DEFAULT:1|0, DESCRIPTION:description },    { ID:walletid3, IS_DEFAULT:1|0, DESCRIPTION:description },]</code></p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "buyerWalletSetPreferred",
+    "title": "buyerWalletSetPreferred",
+    "name": "buyerWalletSetPreferred",
+    "group": "buyer",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": "<p>walletid:#####</p>"
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
   },
