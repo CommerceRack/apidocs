@@ -53,6 +53,16 @@
   },
   {
     "type": "POST",
+    "url": "/domainLookup",
+    "title": "",
+    "group": "admin",
+    "name": "domainLookup",
+    "description": "<p>Not available <strong> EXPERIMENTAL </strong></p>",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
     "url": "/providerExec",
     "title": "providerExec",
     "group": "admin",
