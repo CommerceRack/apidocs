@@ -124,14 +124,6 @@
   },
   {
     "type": "POST",
-    "url": "appInteractInternalRedis",
-    "title": "appInteractInternalRedis",
-    "group": "JSONAPI_pm",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
     "url": "API:",
     "title": "adminOrderReserve API: adminOrderReserve",
     "name": "API:_adminOrderReserve",
@@ -763,11 +755,11 @@
     "group": "admin",
     "parameter": {
       "fields": {
-        "Response": [
+        "Request": [
           {
-            "group": "Response",
+            "group": "Request",
             "type": "String",
-            "field": "@MSGS",
+            "field": "MSGID",
             "optional": false,
             "description": ""
           }
@@ -785,11 +777,11 @@
     "group": "admin",
     "parameter": {
       "fields": {
-        "Request": [
+        "Response": [
           {
-            "group": "Request",
+            "group": "Response",
             "type": "String",
-            "field": "MSGID",
+            "field": "@MSGS",
             "optional": false,
             "description": ""
           }
@@ -2536,9 +2528,16 @@
           {
             "group": "Response",
             "type": "String",
-            "field": "@MSGS",
+            "field": "@HOSTS",
             "optional": false,
-            "description": ""
+            "description": "<pre><code>{ &quot;HOSTNAME&quot;:&quot;www&quot;, &quot;HOSTTYPE&quot;:&quot;APP|REDIR|VSTORE|CUSTOM&quot; },HOSTTYPE=APP        will have &quot;PROJECT&quot;HOSTTYPE=REDIR    will have &quot;REDIR&quot;:&quot;www.domain.com&quot; &quot;URI&quot;:&quot;/path/to/301&quot;  (if URI is blank then it will redirect with previous path)HOSTTYPE=VSTORE    will have @REWRITES</code></pre>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "%EMAIL",
+            "optional": false,
+            "description": "<pre><code>EMAIL_TYPE=FUSEMAILEMAIL_TYPE=GOOGLEEMAIL_TYPE=NONEEMAIL_TYPE=MX        MX1,MX2 parameters</code></pre>"
           }
         ]
       }
@@ -2567,16 +2566,9 @@
           {
             "group": "Response",
             "type": "String",
-            "field": "@HOSTS",
+            "field": "@MSGS",
             "optional": false,
-            "description": "<pre><code>{ &quot;HOSTNAME&quot;:&quot;www&quot;, &quot;HOSTTYPE&quot;:&quot;APP|REDIR|VSTORE|CUSTOM&quot; },HOSTTYPE=APP        will have &quot;PROJECT&quot;HOSTTYPE=REDIR    will have &quot;REDIR&quot;:&quot;www.domain.com&quot; &quot;URI&quot;:&quot;/path/to/301&quot;  (if URI is blank then it will redirect with previous path)HOSTTYPE=VSTORE    will have @REWRITES</code></pre>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "%EMAIL",
-            "optional": false,
-            "description": "<pre><code>EMAIL_TYPE=FUSEMAILEMAIL_TYPE=GOOGLEEMAIL_TYPE=NONEEMAIL_TYPE=MX        MX1,MX2 parameters</code></pre>"
+            "description": ""
           }
         ]
       }
@@ -7555,59 +7547,11 @@
   },
   {
     "type": "POST",
-    "url": "canIUse",
-    "title": "canIUse",
-    "name": "canIUse",
-    "group": "admin",
-    "description": "<p>Utility function which checks access to a specific bundle ex: CRM, XSELLTODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "flag",
-            "optional": false,
-            "description": ""
-          }
-        ],
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "allowed",
-            "optional": false,
-            "description": "<p>1|0</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "/cryptTool",
-    "title": "cryptTool",
-    "group": "admin",
-    "name": "cryptTool_cryptTool",
-    "examples": [
-      {
-        "title": "Legacy Doc",
-        "content": "Legacy Doc\n<API id=\"cryptTool\">\n<input  id=\"verb\">make-key|make-csr|make-self-signed-crt</input>\n<input  if=\"verb:make-key\" id=\"length\" optional=\"1\">1024|2048|4096</input>\n<output if=\"verb:make-key\" id=\"key\">key text\n<input  if=\"verb:make-csr\" id=\"key\"></input>\n<input  if=\"verb:make-csr\" id=\"company\">any company, inc.</input>\n<input  if=\"verb:make-csr\" id=\"city\"></input>\n<input  if=\"verb:make-csr\" id=\"state\"></input>\n<input  if=\"verb:make-csr\" id=\"fqdn\">www.domain.com</input>\n<output if=\"verb:make-csr\" id=\"csr\">csr text\n<input  if=\"verb:make-self-signed-crt\" id=\"key\"></input>\n<input  if=\"verb:make-self-signed-crt\" id=\"csr\"></input>\n<output if=\"verb:make-self-signed-crt\" id=\"crt\">crt text\n",
-        "type": "json"
-      }
-    ],
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
     "url": "getKeywordAutoComplete",
     "title": "getKeywordAutoComplete",
     "name": "getKeywordAutoComplete",
     "group": "admin",
-    "description": "<p>returns a list of matching possible keywords (note: currently disabled pending rewrite)TODO</p>",
+    "description": "<p><strong> Deprecated </strong> don&#39;t use this, use elasticsearch instead.returns a list of matching possible keywords (note: currently disabled pending rewrite)</p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -7631,29 +7575,6 @@
             "field": "catalog",
             "optional": false,
             "description": "<hint>pass value of catalog=TESTING to always generate an auto-complete result</hint>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "getSearchCatalogs",
-    "title": "getSearchCatalogs",
-    "name": "getSearchCatalogs",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
           }
         ]
       }
@@ -7702,25 +7623,6 @@
   },
   {
     "type": "POST",
-    "url": "/loadPlatformJSON",
-    "title": "loadPlatformJSON",
-    "group": "admin",
-    "name": "loadPlatformJSON_loadPlatformJSON",
-    "description": "<p>TODO</p>",
-    "success": {
-      "examples": [
-        {
-          "title": "Response",
-          "content": "Response\n{\n\"_version\":201318,\n\"_start\":\"xyz\",\t\t\t// default starting position\n\"_inputs\":[\n   { \"required\":1,\"var\":\"email\",\"type\":\"text\",\"label\":\"Email\" },\n   { \"required\":1,\"var\":\"firstname\",\"type\":\"text\",\"label\":\"Purchasing Contact Firstname\" },\n   { \"required\":1,\"var\":\"lastname\",\"type\":\"text\",\"label\":\"Purchasing Contact Lastname\" },\n\t   { \"required\":1,\"var\":\"register_password\",\"type\":\"text\",\"label\":\"Registration Password\" },\n \n   // *** HOW TO OVERRIDE _start ***\n   // example1: variable starting points, user specified, no security, no validation.\n   { \"required\":0, \"type\":\"text\", \"var\":\"_start\", \"label\":\"This is a horrible idea.\" },\n \n   // example2: using plain text passwords (poor security) \n   // for 'match/plain' - we have two passwords \"TURTLE\" and \"LLAMA\", both use the same starting points 'start-insecure'\n   { \"required\":0, \"type\":\"match\", \"if\":\"register_password\", \"is\":\"TURTLE\", \"var\":\"_start\", \"value\":\"start-insecure\" },\n   { \"required\":0, \"type\":\"match\", \"if\":\"register_password\", \"is\":\"LLAMA\" , \"var\":\"_start\", \"value\":\"start-insecure\" },\n   \n   // example3: using md5 digest for best security\n   // for 'match-md5' - we will prepend the \"saltedby\" 'concatenateMe' with the users password \n\t// (which *MUST* not be stored in the file - but for this example it is 'KITTEN')\n   // the md5 digest for 'concatenateMeKITTEN' is c3b9ba2823f9c2ba02a4ee89f8ac4450\n   // since digests aren't reversible, they can be stored safely in public repos.\n   { \"required\":0, \"type\":\"match-md5\", \"if\":\"register_password\", \"saltedby\":\"concatenateMe\", \n\t\t\t\t\t\t\"is\":\"c3b9ba2823f9c2ba02a4ee89f8ac4450\", \"var\":\"_start\", \"value\":\"start-secure\" },\n   \n],\n}\n",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
     "url": "/providerExec",
     "title": "providerExec",
     "group": "admin",
@@ -7732,75 +7634,6 @@
         "type": "json"
       }
     ],
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "searchResult",
-    "title": "searchResult",
-    "name": "searchResult",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "=",
-            "optional": false,
-            "description": "<p>&quot;Required&quot; id=&quot;KEYWORDS</p>"
-          }
-        ],
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "@products",
-            "optional": false,
-            "description": "<p>an array of product ids</p>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "@LOG",
-            "optional": false,
-            "description": "<p>an array of strings explaining how the search was performed (if LOG=1 or TRACEPID non-blank)</p><caution>Using LOG=1 or TRACEPID in a product (non debug) environment will result in the search feature beingdisabled on a site.</caution>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "time",
-    "title": "time",
-    "name": "time",
-    "group": "admin",
-    "description": "<p>Utility/Diagnostic FunctionTODO</p>",
-    "parameter": {
-      "fields": {
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "unix",
-            "optional": false,
-            "description": "<h6 id=\"-\">#</h6><hint>Unix is an epoch timestamp (which represents the number of seconds since midnight january 1st, 1970)</hint>"
-          }
-        ]
-      }
-    },
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
   },
@@ -9278,8 +9111,8 @@
   },
   {
     "type": "POST",
-    "url": "appMashUpHTTPS",
-    "title": "appMashUpHTTPS",
+    "url": "appMashUpHTTP",
+    "title": "appMashUpHTTP",
     "group": "app",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -9294,8 +9127,16 @@
   },
   {
     "type": "POST",
-    "url": "appMashUpRedis",
-    "title": "appMashUpRedis",
+    "url": "appInteractInternalMemCache",
+    "title": "appInteractInternalMemCache",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpSQL",
+    "title": "appMashUpSQL",
     "group": "app",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -9310,16 +9151,24 @@
   },
   {
     "type": "POST",
-    "url": "appInteractInternalMemCache",
-    "title": "appInteractInternalMemCache",
+    "url": "appMashUpRedis",
+    "title": "appMashUpRedis",
     "group": "app",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
   },
   {
     "type": "POST",
-    "url": "appMashUpHTTP",
-    "title": "appMashUpHTTP",
+    "url": "appInteractInternalRedis",
+    "title": "appInteractInternalRedis",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpHTTPS",
+    "title": "appMashUpHTTPS",
     "group": "app",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -9328,14 +9177,6 @@
     "type": "POST",
     "url": "appMashUpFTP",
     "title": "appMashUpFTP",
-    "group": "app",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "appMashUpSQL",
-    "title": "appMashUpSQL",
     "group": "app",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -10644,6 +10485,48 @@
   },
   {
     "type": "POST",
+    "url": "getSearchCatalogs",
+    "title": "getSearchCatalogs",
+    "name": "getSearchCatalogs",
+    "group": "site",
+    "description": "<p>This is the old search catalog interface, don&#39;t use this, it will be removed.use elasticsearch instead.</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "/loadPlatformJSON",
+    "title": "loadPlatformJSON",
+    "group": "site",
+    "name": "loadPlatformJSON_loadPlatformJSON",
+    "description": "<p>TODO</p>",
+    "success": {
+      "examples": [
+        {
+          "title": "Response",
+          "content": "Response\n{\n\"_version\":201318,\n\"_start\":\"xyz\",\t\t\t// default starting position\n\"_inputs\":[\n   { \"required\":1,\"var\":\"email\",\"type\":\"text\",\"label\":\"Email\" },\n   { \"required\":1,\"var\":\"firstname\",\"type\":\"text\",\"label\":\"Purchasing Contact Firstname\" },\n   { \"required\":1,\"var\":\"lastname\",\"type\":\"text\",\"label\":\"Purchasing Contact Lastname\" },\n\t   { \"required\":1,\"var\":\"register_password\",\"type\":\"text\",\"label\":\"Registration Password\" },\n \n   // *** HOW TO OVERRIDE _start ***\n   // example1: variable starting points, user specified, no security, no validation.\n   { \"required\":0, \"type\":\"text\", \"var\":\"_start\", \"label\":\"This is a horrible idea.\" },\n \n   // example2: using plain text passwords (poor security) \n   // for 'match/plain' - we have two passwords \"TURTLE\" and \"LLAMA\", both use the same starting points 'start-insecure'\n   { \"required\":0, \"type\":\"match\", \"if\":\"register_password\", \"is\":\"TURTLE\", \"var\":\"_start\", \"value\":\"start-insecure\" },\n   { \"required\":0, \"type\":\"match\", \"if\":\"register_password\", \"is\":\"LLAMA\" , \"var\":\"_start\", \"value\":\"start-insecure\" },\n   \n   // example3: using md5 digest for best security\n   // for 'match-md5' - we will prepend the \"saltedby\" 'concatenateMe' with the users password \n\t// (which *MUST* not be stored in the file - but for this example it is 'KITTEN')\n   // the md5 digest for 'concatenateMeKITTEN' is c3b9ba2823f9c2ba02a4ee89f8ac4450\n   // since digests aren't reversible, they can be stored safely in public repos.\n   { \"required\":0, \"type\":\"match-md5\", \"if\":\"register_password\", \"saltedby\":\"concatenateMe\", \n\t\t\t\t\t\t\"is\":\"c3b9ba2823f9c2ba02a4ee89f8ac4450\", \"var\":\"_start\", \"value\":\"start-secure\" },\n   \n],\n}\n",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
     "url": "ping",
     "title": "ping",
     "name": "ping",
@@ -10718,10 +10601,127 @@
   },
   {
     "type": "POST",
+    "url": "searchResult",
+    "title": "searchResult",
+    "name": "searchResult",
+    "group": "site",
+    "description": "<p>This is deprecated, it is the old legacy search system. Don&#39;t use this, it will be removed.</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "=",
+            "optional": false,
+            "description": "<p>&quot;Required&quot; id=&quot;KEYWORDS</p>"
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "@products",
+            "optional": false,
+            "description": "<p>an array of product ids</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "@LOG",
+            "optional": false,
+            "description": "<p>an array of strings explaining how the search was performed (if LOG=1 or TRACEPID non-blank)</p><caution>Using LOG=1 or TRACEPID in a product (non debug) environment will result in the search feature beingdisabled on a site.</caution>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "canIUse",
+    "title": "canIUse",
+    "name": "canIUse",
+    "group": "utility",
+    "description": "<p>Utility function which checks access to a specific bundle ex: CRM, XSELLTODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "flag",
+            "optional": false,
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "allowed",
+            "optional": false,
+            "description": "<p>1|0</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "/cryptTool",
+    "title": "cryptTool",
+    "group": "utility",
+    "name": "cryptTool_cryptTool",
+    "examples": [
+      {
+        "title": "Legacy Doc",
+        "content": "Legacy Doc\n<API id=\"cryptTool\">\n<input  id=\"verb\">make-key|make-csr|make-self-signed-crt</input>\n<input  if=\"verb:make-key\" id=\"length\" optional=\"1\">1024|2048|4096</input>\n<output if=\"verb:make-key\" id=\"key\">key text\n<input  if=\"verb:make-csr\" id=\"key\"></input>\n<input  if=\"verb:make-csr\" id=\"company\">any company, inc.</input>\n<input  if=\"verb:make-csr\" id=\"city\"></input>\n<input  if=\"verb:make-csr\" id=\"state\"></input>\n<input  if=\"verb:make-csr\" id=\"fqdn\">www.domain.com</input>\n<output if=\"verb:make-csr\" id=\"csr\">csr text\n<input  if=\"verb:make-self-signed-crt\" id=\"key\"></input>\n<input  if=\"verb:make-self-signed-crt\" id=\"csr\"></input>\n<output if=\"verb:make-self-signed-crt\" id=\"crt\">crt text\n",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "time",
+    "title": "time",
+    "name": "time",
+    "group": "utility",
+    "description": "<p>Utility/Diagnostic FunctionTODO</p>",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "unix",
+            "optional": false,
+            "description": "<h6 id=\"-\">#</h6><hint>Unix is an epoch timestamp (which represents the number of seconds since midnight january 1st, 1970)</hint>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
     "url": "whereAmI",
     "title": "whereAmI",
     "name": "whereAmI",
-    "group": "site",
+    "group": "utility",
     "description": "<p>Utility function that returns the city/state/zip of the IP making the call.TODO</p>",
     "parameter": {
       "fields": {
@@ -10765,7 +10765,7 @@
     "url": "whoAmI",
     "title": "whoAmI",
     "name": "whoAmI",
-    "group": "site",
+    "group": "utility",
     "description": "<p>Utility function that returns who the current session is authenticated as.TODO</p>",
     "parameter": {
       "fields": {
