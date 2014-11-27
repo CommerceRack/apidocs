@@ -5,10 +5,15 @@
     "title": "API Usage",
     "name": "API_Usage",
     "group": "INTRODUCTION",
-    "description": "<p>Parameters are passed back and forth using a json hash containing 3 critical elements:_uuid, _cartid, and either _cmd (for single commands) The API itself is designed to be asynchronous, however at this time only a synchronous responses are available. </p><p>*_uuid : a unique request id, this is passed back, and is used to identify duplicate requests.</p><ul><li>_cartid : the unique cart id (cart id) for this cart, you will receive this after making a request if you do not pass one, you must store this in the browser and pass it on subsequent requests.</li><li>_cmd : a complete list of commands is passed below.  If _cmd is used then parameters to _cmd are passed in the upper hash at the same level as _cmd.  If @cmds is used, then that is an array of hashes, each with their own &quot;_cmd&quot; - the example below includes <em>both usages</em>, however you will only need to use one:</li></ul>",
+    "description": "<p>Parameters are passed back and forth using a json hash containing 3 critical elements:_uuid, _cartid, and either _cmd (for single commands) The API itself is designed to be asynchronous, however at this time only a synchronous responses are available. </p><ul><li>_uuid : a unique request id, this is passed back, and is used to identify duplicate requests.</li><li>_cartid : the unique cart id (cart id) for this cart, you will receive this after making a request if you do not pass one, you must store this in the browser and pass it on subsequent requests.</li><li>_cmd : a complete list of commands is passed below.  If _cmd is used then parameters to _cmd are passed in the upper hash at the same level as _cmd.  If @cmds is used, then that is an array of hashes, each with their own &quot;_cmd&quot; - the example below includes <em>both usages</em>, however you will only need to use one:</li></ul>",
     "examples": [
       {
-        "title": "{",
+        "title": "Simple Request",
+        "content": "Simple Request\nPOST http://www.domain.com/jsonapi/call/v201411/time.json\n",
+        "type": "json"
+      },
+      {
+        "title": "",
         "content": "{\n\"_uuid\" : 1234,\n\"_cartid\" : \"12345\",\n\"_cmd\" : \"cartItemsAdd\",\n\"_tag\" : \"some data you'd like returned\",\n\"_v\" : \"unique mvc/app id (used for debugging)\"\n}\n",
         "type": "json"
       }
