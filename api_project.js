@@ -5,7 +5,8 @@ define({
   "title": "CommerceRack API",
   "url": "/jsonapi",
   "generator": {
-    "version": "0.7.1",
-    "time": "2014-11-27T19:34:46.565Z"
-  }
+    "version": "0.8.2",
+    "time": "2014-11-27T20:56:16.334Z"
+  },
+  "apidoc": "0.2.0"
 });
