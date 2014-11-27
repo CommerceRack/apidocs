@@ -182,158 +182,6 @@ define({ api: [
   },
   {
     "type": "POST",
-    "url": "API:",
-    "title": "adminSEOInit API: adminSEOInit",
-    "name": "API__adminSEOInit",
-    "group": "admin",
-    "description": "<p>Starts an SEO SessionTODO</p> ",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "optional": false,
-            "field": "token",
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm",
-    "groupTitle": "admin"
-  },
-  {
-    "type": "POST",
-    "url": "API:",
-    "title": "appSEOFetch API: appSEOFetch",
-    "name": "API__appSEOFetch",
-    "group": "admin",
-    "description": "<p>TODO</p> ",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "optional": false,
-            "field": "token",
-            "description": ""
-          }
-        ],
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "optional": false,
-            "field": "@OBJECTS",
-            "description": "<p>[ { type:&quot;product&quot;, pid:&quot;&quot; }, { type:&quot;product&quot;, pid:&quot;&quot;, noindex:&quot;1&quot;, xyz:&quot;abc&quot; }, { type:&quot;navcat&quot;, pid:&quot;&quot; } ]</p> "
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm",
-    "groupTitle": "admin"
-  },
-  {
-    "type": "POST",
-    "url": "API:",
-    "title": "appSEOFinish API: appSEOFinish",
-    "name": "API__appSEOFinish",
-    "group": "admin",
-    "description": "<p>Makes the token live, generates sitemap.xml based on submitted objectsTODO</p> ",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "optional": false,
-            "field": "token",
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm",
-    "groupTitle": "admin"
-  },
-  {
-    "type": "POST",
-    "url": "API:",
-    "title": "appSEORewriteDebug API: appSEORewriteDebug",
-    "name": "API__appSEORewriteDebug",
-    "group": "admin",
-    "description": "<p>Starts an SEO SessionTODO</p> ",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "optional": false,
-            "field": "url",
-            "description": ""
-          }
-        ],
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "optional": false,
-            "field": "@log",
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm",
-    "groupTitle": "admin"
-  },
-  {
-    "type": "POST",
-    "url": "API:",
-    "title": "appSEOStore API: appSEOStore",
-    "name": "API__appSEOStore",
-    "group": "admin",
-    "description": "<p>TODO</p> ",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "optional": false,
-            "field": "token",
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "optional": false,
-            "field": "_escaped_fragment_",
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "optional": false,
-            "field": "html",
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm",
-    "groupTitle": "admin"
-  },
-  {
-    "type": "POST",
     "url": "adminWalletList",
     "title": "",
     "group": "admin",
@@ -2588,8 +2436,15 @@ define({ api: [
             "group": "Response",
             "type": "String",
             "optional": false,
-            "field": "@MSGS",
-            "description": ""
+            "field": "@HOSTS",
+            "description": "<pre><code>{ &quot;HOSTNAME&quot;:&quot;www&quot;, &quot;HOSTTYPE&quot;:&quot;APP|REDIR|VSTORE|CUSTOM&quot; }, HOSTTYPE=APP        will have &quot;PROJECT&quot; HOSTTYPE=REDIR    will have &quot;REDIR&quot;:&quot;www.domain.com&quot; &quot;URI&quot;:&quot;/path/to/301&quot;  (if URI is blank then it will redirect with previous path) HOSTTYPE=VSTORE    will have @REWRITES </code></pre>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "%EMAIL",
+            "description": "<pre><code>EMAIL_TYPE=FUSEMAIL EMAIL_TYPE=GOOGLE EMAIL_TYPE=NONE EMAIL_TYPE=MX        MX1,MX2 parameters </code></pre>"
           }
         ]
       }
@@ -2620,15 +2475,8 @@ define({ api: [
             "group": "Response",
             "type": "String",
             "optional": false,
-            "field": "@HOSTS",
-            "description": "<pre><code>{ &quot;HOSTNAME&quot;:&quot;www&quot;, &quot;HOSTTYPE&quot;:&quot;APP|REDIR|VSTORE|CUSTOM&quot; }, HOSTTYPE=APP        will have &quot;PROJECT&quot; HOSTTYPE=REDIR    will have &quot;REDIR&quot;:&quot;www.domain.com&quot; &quot;URI&quot;:&quot;/path/to/301&quot;  (if URI is blank then it will redirect with previous path) HOSTTYPE=VSTORE    will have @REWRITES </code></pre>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "optional": false,
-            "field": "%EMAIL",
-            "description": "<pre><code>EMAIL_TYPE=FUSEMAIL EMAIL_TYPE=GOOGLE EMAIL_TYPE=NONE EMAIL_TYPE=MX        MX1,MX2 parameters </code></pre>"
+            "field": "@MSGS",
+            "description": ""
           }
         ]
       }
@@ -3170,6 +3018,7 @@ define({ api: [
     "title": "adminGiftcardSetupProduct",
     "name": "adminGiftcardSetupProduct",
     "group": "admin",
+    "description": "<p>creates a product that when purchased automatically creates a giftcardTODO</p> ",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
@@ -3180,7 +3029,6 @@ define({ api: [
     "title": "adminGiftcardSetupProduct",
     "name": "adminGiftcardSetupProduct",
     "group": "admin",
-    "description": "<p>creates a product that when purchased automatically creates a giftcardTODO</p> ",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
@@ -4467,7 +4315,7 @@ define({ api: [
             "group": "Request",
             "type": "String",
             "optional": false,
-            "field": "orderi",
+            "field": "orderid",
             "description": "<p>Order ID</p> "
           }
         ],
@@ -4507,7 +4355,7 @@ define({ api: [
             "group": "Request",
             "type": "String",
             "optional": false,
-            "field": "orderid",
+            "field": "orderi",
             "description": "<p>Order ID</p> "
           }
         ],
@@ -8815,6 +8663,101 @@ define({ api: [
   },
   {
     "type": "POST",
+    "url": "adminSEOInit",
+    "title": "adminSEOInit",
+    "name": "API__adminSEOInit",
+    "group": "app",
+    "description": "<p>Starts an SEO SessionTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appSEOFetch",
+    "title": "appSEOFetch",
+    "name": "API__appSEOFetch",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@OBJECTS",
+            "description": "<p>[ { type:&quot;product&quot;, pid:&quot;&quot; }, { type:&quot;product&quot;, pid:&quot;&quot;, noindex:&quot;1&quot;, xyz:&quot;abc&quot; }, { type:&quot;navcat&quot;, pid:&quot;&quot; } ]</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appSEOStore",
+    "title": "appSEOStore",
+    "name": "API__appSEOStore",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_escaped_fragment_",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "html",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
     "url": "appInteractInternalMemCache",
     "title": "appInteractInternalMemCache",
     "group": "app",
@@ -10332,6 +10275,63 @@ define({ api: [
             "type": "String",
             "optional": false,
             "field": "pidproductid",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appSEOFinish",
+    "title": "appSEOFinish",
+    "name": "appSEOFinish",
+    "group": "app",
+    "description": "<p>Makes the token live, generates sitemap.xml based on submitted objectsTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appSEORewriteDebug",
+    "title": "appSEORewriteDebug",
+    "name": "appSEORewriteDebug",
+    "group": "app",
+    "description": "<p>Starts an SEO SessionTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "url",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@log",
             "description": ""
           }
         ]
