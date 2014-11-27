@@ -146,14 +146,6 @@
   },
   {
     "type": "POST",
-    "url": "appInteractInternalMemCache",
-    "title": "appInteractInternalMemCache",
-    "group": "JSONAPI_pm",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
     "url": "appMashUpSFTP",
     "title": " appMashUpSFTP",
     "group": "JSONAPI_pm",
@@ -172,6 +164,22 @@
     "type": "POST",
     "url": "appInteractInternalRedis",
     "title": "appInteractInternalRedis",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpRedis",
+    "title": "appMashUpRedis",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appInteractInternalMemCache",
+    "title": "appInteractInternalMemCache",
     "group": "JSONAPI_pm",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -204,14 +212,6 @@
     "type": "POST",
     "url": "appMashUpMemCache",
     "title": "appMashUpMemCache",
-    "group": "JSONAPI_pm",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "appMashUpRedis",
-    "title": "appMashUpRedis",
     "group": "JSONAPI_pm",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -762,10 +762,19 @@
   },
   {
     "type": "POST",
-    "url": "adminNavTreeList",
-    "title": "adminNavTreeList",
-    "name": "adminNavTreeList",
-    "group": "other_<output_id=\"@NAVS\">_a_list_of_nav_elements_[_{_\"type\":\"navcat\",_\"prt\":\"0\",_\"nav\":\"PRT000\",_\"title\":\"Partition_0\"_},_{_\"type\":\"navcat\",_\"prt\":\"1\",_\"nav\":\"PRT001\",_\"title\":\"Partition_1\"_},_]_</output>_</API>",
+    "url": "adminProductAmazonDetail",
+    "title": "adminProductAmazonDetail",
+    "name": "adminProductAmazonDetail",
+    "group": "other_<output_id=\"%thesaurus\"></output>_<output_id=\"@DETAIL\"></output>",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminProductAmazonVerify",
+    "title": "adminProductAmazonVerify",
+    "name": "adminProductAmazonVerify",
+    "group": "other_<output_id=\"@MSGS\"></output>_<note>_TITLE|SUCCESS|INFO|WARN|STOP|PAUSE|ERROR|DEPRECATION|DEBUG|XML_</note>",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
   },
@@ -1132,6 +1141,38 @@
   },
   {
     "type": "POST",
+    "url": "adminNavTreeList",
+    "title": "adminNavTreeList",
+    "name": "adminNavTreeList",
+    "description": "<p>a list of nav elements</p>",
+    "group": "other",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Array",
+            "field": "@NAVS",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "{",
+          "content": "{\n'@NAVS':[\n]\n}\n",
+          "type": "\t\"type\":\"navcat\", \"prt\":\"1\", \"nav\":\"PRT001\", \"title\":\"Partition 1\"  "
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
     "url": "adminNavcatCreate",
     "title": "adminNavcatCreate",
     "name": "adminNavcatCreate",
@@ -1152,7 +1193,7 @@
             "type": "String",
             "field": "root.root.category",
             "optional": false,
-            "description": "<p>(set to $ for list)</API></p>"
+            "description": "<p>(set to $ for list)</p>"
           }
         ]
       }
@@ -1175,7 +1216,7 @@
             "type": "String",
             "field": "path.safe.name",
             "optional": false,
-            "description": "<p>or path:$listname</API></p>"
+            "description": "<p>or path:$listname</p>"
           }
         ]
       }
@@ -1189,7 +1230,7 @@
     "title": "adminNavcatModify",
     "name": "adminNavcatModify",
     "group": "other",
-    "description": "<p>changes the pretty name of a navigation category or list</purpose></p>",
+    "description": "<p>changes the pretty name of a navigation category or list</purpose></p><p>note: will support %meta tags in the future.</p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -1205,7 +1246,7 @@
             "type": "String",
             "field": "prettynew",
             "optional": false,
-            "description": "<p>name for category</p><p><hint>will support %meta tags in the future.</hint></API></p>"
+            "description": "<p>name for category</API></p>"
           }
         ]
       }
@@ -1219,7 +1260,7 @@
     "title": "adminNavcatProductDelete",
     "name": "adminNavcatProductDelete",
     "group": "other",
-    "description": "<p>removes a single product from a navigation category or list.</purpose></p>",
+    "description": "<p>removes a single product from a navigation category or list.</p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -1249,7 +1290,7 @@
     "title": "adminNavcatProductInsert",
     "name": "adminNavcatProductInsert",
     "group": "other",
-    "description": "<p>adds a single product to a navigation category or list.</purpose></p>",
+    "description": "<p>adds a single product to a navigation category or list.</p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -1263,16 +1304,16 @@
           {
             "group": "Request",
             "type": "String",
-            "field": "pidpid1",
+            "field": "pid",
             "optional": false,
-            "description": ""
+            "description": "<p>pid1</p>"
           },
           {
             "group": "Request",
             "type": "String",
             "field": "position",
             "optional": false,
-            "description": "<h1 id=\"-0-first-element-in-the-list-1-last-element-in-the-list-\">(0=first element in the list, -1=last element in the list)</h1><p></API></p>"
+            "description": "<h1 id=\"-0-first-element-in-the-list-1-last-element-in-the-list-\">(0=first element in the list, -1=last element in the list)</h1>"
           }
         ]
       }
@@ -1448,11 +1489,11 @@
   },
   {
     "type": "POST",
-    "url": "adminPrivateFileList",
-    "title": "adminPrivateFileList",
-    "name": "adminPrivateFileList",
+    "url": "adminPrivateFileDownload",
+    "title": "adminPrivateFileDownload",
+    "name": "adminPrivateFileDownload",
     "group": "other",
-    "description": "<p></purpose></p>",
+    "description": "<p>TODO</p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -1461,15 +1502,194 @@
             "type": "String",
             "field": "GUID",
             "optional": false,
-            "description": "<p></API></p>"
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminPrivateFileList",
+    "title": "adminPrivateFileList",
+    "name": "adminPrivateFileList",
+    "group": "other",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "type",
+            "optional": true,
+            "description": ""
           },
           {
             "group": "Request",
             "type": "String",
-            "field": "onal",
-            "defaultValue": "1",
+            "field": "guid",
             "optional": true,
-            "description": "<p>id=&quot;type</p>"
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "active",
+            "optional": true,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "keyword",
+            "optional": true,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "limit",
+            "optional": true,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminProductBUYDetail",
+    "title": "adminProductBUYDetail",
+    "name": "adminProductBUYDetail",
+    "group": "other",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "pidpid1",
+            "optional": false,
+            "description": "<output id=\"@DBMAPS\"></output><output id=\"buycom/dbmap\"></output><output id=\"%FLEX\"></output>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminProductCreate",
+    "title": "adminProductCreate",
+    "name": "adminProductCreate",
+    "group": "other",
+    "description": "<p>creates a new product in the database</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "pidpid",
+            "optional": false,
+            "description": "<p>: an A-Z|0-9|-|_ -- max length 20 characters, case insensitive</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "%attribs",
+            "optional": false,
+            "description": "<p>[ &#39;zoovy:prod_name&#39;:&#39;value&#39; ]</p><example>%attribs:[ &#39;zoovy:prod_name&#39;:&#39;value&#39; ]</example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminProductDebugLog",
+    "title": "adminProductDebugLog",
+    "name": "adminProductDebugLog",
+    "group": "other",
+    "description": "<p>see reports for @HEAD,@BODY format</purpose></p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "pidpid1",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "GUID",
+            "optional": false,
+            "description": "<output id=\"@HEAD\"></output><output id=\"@BODY\"></output>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminProductDelete",
+    "title": "adminProductDelete",
+    "name": "adminProductDelete",
+    "group": "other",
+    "description": "<p>removes a product id (and all variations) from the database</purpose></p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "pidpid",
+            "optional": false,
+            "description": "<p>: an A-Z|0-9|-|_ -- max length 20 characters, case insensitive</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminProductEBAYDetail",
+    "title": "adminProductEBAYDetail",
+    "name": "adminProductEBAYDetail",
+    "group": "other",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminProductEventsDetail",
+    "title": "adminProductEventsDetail",
+    "name": "adminProductEventsDetail",
+    "group": "other",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "pidpid1",
+            "optional": false,
+            "description": ""
           }
         ]
       }
@@ -1483,30 +1703,89 @@
     "title": "adminProductList",
     "name": "adminProductList",
     "group": "other",
-    "description": "<p>accesses the product database to return a specific hardcoded list of products</purpose></p>",
+    "description": "<p>accesses the product database to return a specific hardcoded list of products</p><hint>indexed attributes: zoovy:prod_id,zoovy:prod_name,zoovy:prod_supplierid,  zoovy:prod_salesrank, zoovy:prod_mfgid,zoovy:prod_upc, zoovy:profile</hint>",
     "parameter": {
       "fields": {
         "Request": [
           {
             "group": "Request",
             "type": "String",
-            "field": "CREATED_BEFOREmodified",
-            "optional": false,
-            "description": "<p>since timestamp</p>"
+            "field": "CREATED_BEFORE",
+            "optional": true,
+            "description": "<p>modified since timestamp</p>"
           },
           {
             "group": "Request",
             "type": "String",
-            "field": "CREATED_SINCEmodified",
-            "optional": false,
-            "description": "<p>since timestamp</p>"
+            "field": "CREATED_SINCE",
+            "optional": true,
+            "description": "<p>modified since timestamp</p>"
           },
           {
             "group": "Request",
             "type": "String",
-            "field": "SUPPLIERsupplier",
+            "field": "SUPPLIER",
+            "optional": true,
+            "description": "<p>supplier id</API></p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminProductMacro",
+    "title": "adminProductMacro",
+    "name": "adminProductMacro",
+    "group": "other",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "pidpid1",
             "optional": false,
-            "description": "<p>id</p><p><hint>indexed attributes: zoovy:prod_id,zoovy:prod_name,zoovy:prod_supplierid,  zoovy:prod_salesrank, zoovy:prod_mfgid,zoovy:prod_upc, zoovy:profile</hint></API></p>"
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "@updates",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminProductOptionsUpdate",
+    "title": "adminProductOptionsUpdate",
+    "name": "adminProductOptionsUpdate",
+    "group": "other",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "pidpid1",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "@pogsan",
+            "optional": false,
+            "description": "<p>array of pog options</p>"
           }
         ]
       }
@@ -1529,11 +1808,157 @@
             "type": "String",
             "field": "selector",
             "optional": false,
-            "description": "<p>NAVCAT=.safe.pathNAVCAT=$listCSV=pid1,pid2,pid3CREATED=YYYYMMDD|YYYYMMDDRANGE=pid1|pid2MANAGECAT=/path/to/categorySEARCH=saerchtermPROFILE=xyzSUPPLIER=xyzMFG=xyxALL=your_base_are_belong_to_us</p><p><output id=\"@products\">an array of product id&#39;s</output></API></p>"
+            "description": "<p>NAVCAT=.safe.pathNAVCAT=$listCSV=pid1,pid2,pid3CREATED=YYYYMMDD|YYYYMMDDRANGE=pid1|pid2MANAGECAT=/path/to/categorySEARCH=saerchtermPROFILE=xyzSUPPLIER=xyzMFG=xyxALL=your_base_are_belong_to_us</p>"
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Array",
+            "field": "@products",
+            "optional": false,
+            "description": "<p>an array of product id&#39;s</API></p>"
           }
         ]
       }
     },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminProductUpdate",
+    "title": "adminProductUpdate",
+    "name": "adminProductUpdate",
+    "group": "other",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "pidpid",
+            "optional": false,
+            "description": "<p>: an A-Z|0-9|-|_ -- max length 20 characters, case insensitive</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "%attribs",
+            "optional": false,
+            "description": "<p>[ &#39;attribute&#39;:&#39;value&#39;, &#39;anotherattrib&#39;:&#39;value&#39; ]</p><example>%attribs:[ &#39;attribute&#39;:&#39;value&#39;, &#39;anotherattrib&#39;:&#39;value&#39; ]</example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appCategoryDetail",
+    "title": "appCategoryDetail",
+    "name": "appCategoryDetail",
+    "group": "other",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "safe.safe.path",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "detail",
+            "optional": false,
+            "description": "<p>fast|more|max</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "@subcategoryDetail",
+            "optional": false,
+            "description": "<p>detail:more or detail:max</p>"
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "exists",
+            "optional": false,
+            "description": "<p>1|0</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "pretty",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "sort",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "%meta",
+            "optional": false,
+            "description": "<p>[ &quot;dst&quot;:&quot;value&quot;, &quot;dst&quot;:&quot;value&quot; ]</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "@products",
+            "optional": false,
+            "description": "<p>[pid1,pid2,pid3]  detail=fast is the same as detail=more</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "subcategoryCount",
+            "optional": false,
+            "description": "<h1 id=\"of-children\">of children</h1>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "@subcategories",
+            "optional": false,
+            "description": "<p>[ &#39;.safe.sub1&#39;, &#39;safe.sub2&#39;, &#39;.safe.sub3&#39; ];</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "<errors>",
+          "content": "<errors>\n<err id=\"8001\" type=\"warning\">Requested Category does not exist.</err>\n</errors>\n",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appNavcatDetail",
+    "title": "appNavcatDetail",
+    "name": "appNavcatDetail",
+    "group": "other",
+    "description": "<p>see adminNavcatDetail (identical)</p>",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
   },
