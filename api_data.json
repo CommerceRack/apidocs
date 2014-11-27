@@ -76,6 +76,37 @@
     "groupTitle": "INTRODUCTION"
   },
   {
+    "type": "POST",
+    "url": "adminWalletList",
+    "title": "",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "methodCHANGED",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "limit",
+            "description": "<h2 id=\"-\">#</h2> <p><example>&lt;![CDATA[</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "group": "_core_lib_JSONAPI_pm",
+    "groupTitle": "_core_lib_JSONAPI_pm",
+    "name": "PostAdminwalletlist"
+  },
+  {
     "name": "adminCIAgentZipDownload",
     "type": "",
     "url": "",
@@ -146,6 +177,202 @@
     "filename": "lib/JSONAPI.pm",
     "group": "_core_lib_JSONAPI_pm",
     "groupTitle": "_core_lib_JSONAPI_pm"
+  },
+  {
+    "type": "POST",
+    "url": "API:",
+    "title": "adminOrderReserve API: adminOrderReserve",
+    "name": "API__adminOrderReserve",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "count",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@RESERVED",
+            "description": "<p>returns an array, a list of order #&#39;s</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "API:",
+    "title": "adminSEOInit API: adminSEOInit",
+    "name": "API__adminSEOInit",
+    "group": "admin",
+    "description": "<p>Starts an SEO SessionTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "API:",
+    "title": "appSEOFetch API: appSEOFetch",
+    "name": "API__appSEOFetch",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@OBJECTS",
+            "description": "<p>[ { type:&quot;product&quot;, pid:&quot;&quot; }, { type:&quot;product&quot;, pid:&quot;&quot;, noindex:&quot;1&quot;, xyz:&quot;abc&quot; }, { type:&quot;navcat&quot;, pid:&quot;&quot; } ]</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "API:",
+    "title": "appSEOFinish API: appSEOFinish",
+    "name": "API__appSEOFinish",
+    "group": "admin",
+    "description": "<p>Makes the token live, generates sitemap.xml based on submitted objectsTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "API:",
+    "title": "appSEORewriteDebug API: appSEORewriteDebug",
+    "name": "API__appSEORewriteDebug",
+    "group": "admin",
+    "description": "<p>Starts an SEO SessionTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "url",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@log",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "API:",
+    "title": "appSEOStore API: appSEOStore",
+    "name": "API__appSEOStore",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_escaped_fragment_",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "html",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminAccountDetail",
+    "title": "adminAccountDetail",
+    "name": "adminAccountDetail",
+    "group": "admin",
+    "description": "<p>Generates a new securekey for a given client. You must be given a client code by Zoovy to use this.TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
   },
   {
     "type": "POST",
@@ -278,6 +505,172 @@
         ]
       }
     },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminBatchJobCleanup",
+    "title": "adminBatchJobCleanup",
+    "name": "adminBatchJobCleanup",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminBatchJobCreate",
+    "title": "adminBatchJobCreate",
+    "name": "adminBatchJobCreate",
+    "group": "admin",
+    "description": "<p>TODO guid:(optional) type: SYNDICATION|REPORT|UTILITY,etc. %vars: { variables based on type }</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminBatchJobDownload",
+    "title": "adminBatchJobDownload",
+    "name": "adminBatchJobDownload",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "GUID",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "base64",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "FILENAME",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "MIME",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "body",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminBatchJobList",
+    "title": "adminBatchJobList",
+    "name": "adminBatchJobList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@JOBS",
+            "description": "<p>type:job, id:####, guid:(guid), status:, title:</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminBatchJobParametersCreate",
+    "title": "adminBatchJobParametersCreate",
+    "name": "adminBatchJobParametersCreate",
+    "group": "admin",
+    "description": "<p>TODO UUID:(optional) TITLE:  BATCH_EXEC:  %vars: { variables based on type } PRIVATE : 1|0 (will only appear in list for this user)</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminBatchJobParametersList",
+    "title": "adminBatchJobParametersList",
+    "name": "adminBatchJobParametersList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "BATCH_EXEC",
+            "description": "<p>&quot; value=&quot;</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@PARAMETERS",
+            "description": "<p>[ { UUID:&quot;&quot;, TITLE:&quot;&quot;, BATCH_EXEC:&quot;&quot;, LASTRUN_TS:&quot;&quot;, LASTJOB_ID:&quot;&quot;, PRIVATE:1  } ]</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminBatchJobParametersRemove",
+    "title": "adminBatchJobParametersRemove",
+    "name": "adminBatchJobParametersRemove",
+    "group": "admin",
+    "description": "<p>TODO UUID:(optional)</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminBatchJobStatus",
+    "title": "adminBatchJobStatus",
+    "name": "adminBatchJobStatus",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
@@ -791,6 +1184,137 @@
   },
   {
     "type": "POST",
+    "url": "adminCSRLookup",
+    "title": "adminCSRLookup",
+    "name": "adminCSRLookup",
+    "group": "admin",
+    "description": "<p>Lookups a 4-6 digit codeTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "csr",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "cartid",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCSVExport",
+    "title": "adminCSVExport",
+    "name": "adminCSVExport",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "exportCATEGORY",
+            "description": "<p>|REWRITES</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "lines",
+            "description": "<h1 id=\"of-lines-in-the-file\">of lines in the file</h1> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "body",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "base64base64",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCSVImport",
+    "title": "adminCSVImport",
+    "name": "adminCSVImport",
+    "group": "admin",
+    "description": "<p>&lt;![CDATA[ This is a wrapper around the CSV file import available in the user interface. Creates an import batch job. Filetype may be one of the following:</p> <ul> <li>PRODUCT</li> <li>INVENTORY</li> <li>CUSTOMER</li> <li>ORDER</li> <li>CATEGORY</li> <li>REVIEW</li> <li>REWRITES</li> <li>RULES</li> <li>LISTINGS</li> </ul> <p>]]&gt;TODO</p> <hint> The file type may also be overridden in the header. See the CSV import documentation for current descriptions of the file.  </hint>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "filetype",
+            "description": "<p>PRODUCT|INVENTORY|CUSTOMER|ORDER|CATEGORY|REVIEW|REWRITES|RULES|LISTINGS</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "fileguid",
+            "description": "<p>(required if base64 not set) guid from fileupload</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "base64",
+            "description": "<p>(required if fileguid not set) base64 encoded payload</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "headers",
+            "description": "<p>any specific headers for the file import</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "JOBID",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminCampaign",
     "title": "adminCampaign",
     "name": "adminCampaign",
@@ -1032,6 +1556,117 @@
             "optional": false,
             "field": "CPGcampaign",
             "description": "<p>id#</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminConfigDetail",
+    "title": "adminConfigDetail",
+    "name": "adminConfigDetail",
+    "group": "admin",
+    "description": "<p>to obtain detail on a configuration objectTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "order",
+            "description": "<p>include %ORDER in response (contains current order sequence #)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "wms",
+            "description": "<p>include %WMS in response</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "plugins",
+            "description": "<p>include @PLUGINS in response</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "erp",
+            "description": "<p>include %ERP in response</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "inv",
+            "description": "<p>include %INVENTORY in response</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "prts",
+            "description": "<p>include @PRTS in response</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "payments",
+            "description": "<p>include @PAYMENTS in response</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "shipping",
+            "description": "<p>include %SHIPPING in response</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "shipmethods",
+            "description": "<p>include @SHIPMENTS in response</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "blast",
+            "description": "<p>include %BLAST in response</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminConfigMacro",
+    "title": "adminConfigMacro",
+    "name": "adminConfigMacro",
+    "group": "admin",
+    "description": "<p>to create/update/delete/modify (via macro) a configuration object</p> <ul> <li>PLUGIN/SET?plugin=domain.com</li> <li>PLUGIN/DATATABLE-(INSERT|EMPTY|REMOVE)?plugin=domain.com&amp;id=</li> <li>BLAST/SET?from_email=</li> <li>GLOBAL/WMS?active=1|0</li> <li>GLOBAL/ERP?active=1|0</li> <li>GLOBAL/ORDERID?start=####</li> <li>GLOBAL/ACCOUNT?</li> <li>GLOBAL/FLEXEDIT-SAVE?json=</li> <li>GLOBAL/FLEXEDIT-FIELD-SET?attrib=xyz&amp;json=</li> <li>GLOBAL/SITE-FIX         (not finished)</li> <li>GLOBAL/ADD-RESERVED-DOMAIN?</li> <li>GLOBAL/SEARCH?SYNONYMS=&amp;STOPWORDS=&amp;CHARACTERMAP=</li> <li>GLOBAL/PARTITIONCREATE?name=&amp;domain=&amp;navcats=</li> <li>GLOBAL/INVENTORY?inv_mode=1|3&amp;inv_website_remove=1|0</li> <li>NOTIFICATION/DATATABLE-EMPTY?event=ENQUIRY.ORDER</li> <li>NOTIFICATION/DATATABLE-INSERT?event=ENQUIRY.ORDER</li> <li>CRM-CONFIG?ticket_number=&amp;sequence=&amp;email_cleanup&amp;email=</li> <li>TAXRULES/EMPTY?tax_rules=</li> <li>TAXRULES/INSERT?type=&amp;state=&amp;city=&amp;zipspan=&amp;zip4=&amp;country=&amp;intprovince=&amp;intzip=&amp;rate=&amp;zone=&amp;expires=</li> <li>COUPON/INSERT?coupon=&amp;begins=YYYYMMDDHHMMSS&amp;expires=YYYYMMDDHHMMSS&amp;taxable=&amp;stackable=&amp;disabled=&amp;limiteduse=&amp;title=&amp;image=</li> <li>COUPON/UPDATE?coupon=&amp;begins=YYYYMMDDHHMMSS&amp;expires=YYYYMMDDHHMMSS&amp;taxable=&amp;stackable=&amp;disabled=&amp;limiteduse=&amp;title=&amp;image=</li> <li>COUPON/REMOVE?coupon=</li> <li>PROMOTIONS?promotion_advanced=0|1</li> <li>COUPON/RULESTABLE-EMPTY?coupon=</li> <li>COUPON/RULESTABLE-REMOVE?coupon=</li> <li>COUPON/RULESTABLE-MOVEUP?coupon=&amp;ID=</li> <li>COUPON/RULESTABLE-MOVEDOWN?coupon=&amp;ID=</li> <li>COUPON/RULESTABLE-INSERT?coupon=&amp;match=&amp;name=&amp;filter=&amp;exec=&amp;value=&amp;weight=&amp;matchvalue</li> <li>SHIPPING/CONFIG?ship_origin=zip&amp;chkout_deny_ship_po&amp;ship_int_risk=&amp;ship_latency=&amp;ship_cutoff&amp;ship_blacklist=isox,isox,isox&amp;banned=type|match|ts\\ntype|match|ts</li> <li>SHIPPING/BANNEDTABLE-EMPTY</li> <li>SHIPPING/BANNEDTABLE-INSERT?type=&amp;match=&amp;created=</li> <li>SHIPMETHOD/FEDEX-REGISTER?account=&amp;address1=&amp;address2=&amp;city=&amp;state=&amp;zip=&amp;country=&amp;firstname=&amp;lastname=&amp;company=&amp;phone=&amp;email=&amp;SUPPLIER=[optional]</li> <li>SHIPMETHOD/UPSAPI-REGISTER?shipper_number=&amp;url=&amp;address1=&amp;address2=&amp;city=&amp;state=&amp;zip=&amp;country=&amp;company=&amp;phone=&amp;email=&amp;supplier=optional</li> <li>SHIPMETHOD/UPDATE?provider=USPS&amp;usps_dom=&amp;usps_dom_handling&amp;usps_dom_ins&amp;usps_dom_insprice&amp;usps_int_priority=&amp;usps_int_express&amp;usps_int_expressg</li> <li>SHIPMETHOD/UPDATE?provider=UPSAPI&amp;upsapii_dom&amp;upsapi_int&amp;supplier=</li> <li>SHIPMETHOD/UPDATE?provider=FEDEX&amp;rates=&amp;dom=1|0&amp;int=1|0&amp;supplier=</li> <li>SHIPMETHOD/UPDATE?provider=FLEX:CODE&amp;active=1|0&amp;rules=1|0&amp;region=&amp;name=&amp;carrier=&amp;</li> <li>SHIPMETHOD/INSERT?provider=FLEX:CODE</li> <li>SHIPMETHOD/REMOVE?provider=FLEX:CODE</li> <li>SHIPMETHOD/DATATABLE-EMPTY&amp;provider=FLEX:CODE</li> <li>SHIPMETHOD/DATATABLE-INSERT&amp;provider=FLEX:CODE&amp;key1=value1&amp;key2=value2</li> <li>SHIPMETHOD/DATATABLE-REMOVE&amp;provider=FLEX:CODE&amp;guid=xyz</li> <li>SHIPMETHOD/RULESTABLE-EMPTY?provider=&amp;table=</li> <li>SHIPMETHOD/RULESTABLE-INSERT?provider=&amp;table=&amp;guid=&amp;name=&amp;filter=&amp;exec=&amp;match=&amp;value=&amp;schedule=&amp;</li> <li>SHIPMETHOD/RULESTABLE-UPDATE?provider=&amp;table=&amp;guid=&amp;name=&amp;filter=&amp;exec=&amp;match=&amp;value=&amp;schedule=&amp;</li> <li>SHIPMETHOD/RULESTABLE-REMOVE?provider=&amp;table=&amp;guid=&amp;name=&amp;filter=&amp;exec=&amp;match=&amp;value=&amp;schedule=&amp;</li> <li>PAYMENT/OFFLINE?tender=CASH|GIFTCARD|PICKUP|CHECK|COD|CHKOD|PO|WIRE&amp;fee=&amp;instructions=&amp;payto=</li> <li>PAYMENT/GATEWAY?tender=CC&amp;</li> <li>PAYMENT/GATEWAY?tender=ECHECK&amp;</li> <li>PAYMENT/WALLET-AMZPAY?tender=AMZPAY&amp;color=&amp;size=&amp;background&amp;env=0|1|2</li> <li>PAYMENT/WALLET-GOOGLE?tender=GOOGLE&amp;google_key=&amp;google_merchantid=&amp;google_api_env=&amp;google_api_analytics=&amp;google_api_merchantcalc=&amp;google_dest_zip=&amp;google_int_shippolicy=&amp;google_pixelurls=&amp;google_tax_tables=</li> <li>PAYMENT/WALLET-PAYPALEC?tender=PAYPALEC&amp;paypal_api_env&amp;paypal_api_reqconfirmship&amp;paypal_api_callbacks&amp;paypal_email&amp;paypal_api_user&amp;paypal_api_pass&amp;paypal_api_sig&amp;paypal_paylater&amp;</li> <li>PAYMENT/CUSTOM?tender=CUSTOM&amp;description=</li> </ul> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@updates",
+            "description": "<p>an array of cmd objects</p> "
           }
         ]
       }
@@ -1618,6 +2253,311 @@
             "optional": false,
             "field": "@ROWS",
             "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminDebugProduct",
+    "title": "adminDebugProduct",
+    "name": "adminDebugProduct",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "PID",
+            "description": "<p>product id</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminDebugPromotion",
+    "title": "adminDebugPromotion",
+    "name": "adminDebugPromotion",
+    "group": "admin",
+    "description": "<p>does a promotion debugTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SRC",
+            "description": "<p>ORDER|DEST|CART</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>SRC:CART</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ITEM1",
+            "description": "<p>SRC=DEST: ITEM1,ITEM2,ITEM3</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "QTY1",
+            "description": "<p>SRC=DEST: QTY1, QTY2, QTY3</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ZIP",
+            "description": "<p>SRC=DEST:</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "STATE",
+            "description": "<p>SRC=DEST:</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "COUNTRY",
+            "description": "<p>SRC=DEST:</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ORDERID",
+            "description": "<p>SRC=ORDER</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminDebugSearch",
+    "title": "adminDebugSearch",
+    "name": "adminDebugSearch",
+    "group": "admin",
+    "description": "<p>runs a debug search query through the analyzerTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "VERB",
+            "description": "<p>RAWE-QUERY|RAWE-SCHEMA-PID-LIVE|RAWE-SCHEMA-PID-CONFIGURED|RAWE-SHOWPID|RAWE-INDEXPID</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "PID",
+            "description": "<p>product id (optional)</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminDebugShipping",
+    "title": "adminDebugShipping",
+    "name": "adminDebugShipping",
+    "group": "admin",
+    "description": "<p>does a shipping debugTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SRC",
+            "description": "<p>ORDER|DEST|CART</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>SRC:CART</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ITEM1",
+            "description": "<p>SRC=DEST: ITEM1,ITEM2,ITEM3</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "QTY1",
+            "description": "<p>SRC=DEST: QTY1, QTY2, QTY3</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ZIP",
+            "description": "<p>SRC=DEST:</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "STATE",
+            "description": "<p>SRC=DEST:</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "COUNTRY",
+            "description": "<p>SRC=DEST:</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ORDERID",
+            "description": "<p>SRC=ORDER</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminDebugSite",
+    "title": "adminDebugSite",
+    "name": "adminDebugSite",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "check-global",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "check-domains",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminDebugTaxes",
+    "title": "adminDebugTaxes",
+    "name": "adminDebugTaxes",
+    "group": "admin",
+    "description": "<p>does a tax debugTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SRC",
+            "description": "<p>ORDER|DEST|CART</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>SRC:CART</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ITEM1",
+            "description": "<p>SRC=DEST: ITEM1,ITEM2,ITEM3</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "QTY1",
+            "description": "<p>SRC=DEST: QTY1, QTY2, QTY3</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ZIP",
+            "description": "<p>SRC=DEST:</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "STATE",
+            "description": "<p>SRC=DEST:</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "COUNTRY",
+            "description": "<p>SRC=DEST:</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ORDERID",
+            "description": "<p>SRC=ORDER</p> "
           }
         ]
       }
@@ -2230,7 +3170,6 @@
     "title": "adminGiftcardSetupProduct",
     "name": "adminGiftcardSetupProduct",
     "group": "admin",
-    "description": "<p>creates a product that when purchased automatically creates a giftcardTODO</p> ",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
@@ -2241,6 +3180,7 @@
     "title": "adminGiftcardSetupProduct",
     "name": "adminGiftcardSetupProduct",
     "group": "admin",
+    "description": "<p>creates a product that when purchased automatically creates a giftcardTODO</p> ",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
@@ -3152,6 +4092,92 @@
   },
   {
     "type": "POST",
+    "url": "adminMessagesList",
+    "title": "adminMessagesList",
+    "name": "adminMessagesList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "msgid",
+            "description": "<example>&lt;![CDATA[ ConfigVersion Response ResponseMsg ]]&gt;</example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminMessagesRemove",
+    "title": "adminMessagesRemove",
+    "name": "adminMessagesRemove",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "msgid",
+            "description": "<example>&lt;![CDATA[ ConfigVersion Response ResponseMsg ]]&gt;</example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminMySystemHealth",
+    "title": "adminMySystemHealth",
+    "name": "adminMySystemHealth",
+    "group": "admin",
+    "description": "<p>Runs a series of diagnostics and returns 3 arrays @SYSTEM, @MYAPPS, @MARKET the call itself may be <em>VERY</em> slow - taking up to 30 seconds.</p> <p>each array will contain one or more responses ex: {      &#39;type&#39;:&#39;critical|issue|alert|bad|fyi|good&#39;,     &#39;system&#39;:&#39;a short (3-12 char) global unique identifier for the system ex: Inventory&#39;,     &#39;title&#39;:&#39;a pretty title for the message&#39;,     &#39;detail&#39;:&#39;not always included, but provides more detail about a specific issue what that could mean, ex: an unusually large number of unprocessed events does not mean there is a problem per-se, it means many automation systems such as inventory, supply chain,  marketplace tracking notifications and more could be delayed.&#39;,     &#39;debug&#39;:&#39;xozo some internal crap that means something to a developer&#39;, }</p> <p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@SYSTEM",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@MYAPPS",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@MARKET",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminNavTreeList",
     "title": "adminNavTreeList",
     "name": "adminNavTreeList",
@@ -3370,6 +4396,48 @@
             "optional": false,
             "field": "position",
             "description": "<h1 id=\"-0-first-element-in-the-list-1-last-element-in-the-list-\">(0=first element in the list, -1=last element in the list)</h1> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminNewsletterList",
+    "title": "adminNewsletterList",
+    "name": "adminNewsletterList",
+    "group": "admin",
+    "description": "<p>see appNewsletterList, unlike public call also show hidden and not provisioned newslettersTODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminOrderCreate",
+    "title": "adminOrderCreate",
+    "name": "adminOrderCreate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@PAYMENTS",
+            "description": ""
           }
         ]
       }
@@ -3706,6 +4774,47 @@
   },
   {
     "type": "POST",
+    "url": "adminOrderPaymentMethods",
+    "title": "adminOrderPaymentMethods",
+    "name": "adminOrderPaymentMethods",
+    "group": "admin",
+    "description": "<p>displays a list of payment methods available for an order (optional), there are a few scenarios where things get wonky. first - if the logged in user is admin, then additional methods like cash, check, all become available (assuming they are enabled). second - if the order has a zero dollar total, only ZERO will be returned. third - if the order has giftcards, no paypalec is available. (which is fine, because paypalec is only available for the client) fourth - if the order has paypalec payment (already) then other methods aren&#39;t available, because paypal doesn&#39;t support mixing and matching payment types. TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "onal",
+            "defaultValue": "1",
+            "description": "<p>id=&quot;orderidorderid #</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@methods",
+            "description": "<example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminOrderSearch",
     "title": "adminOrderSearch",
     "name": "adminOrderSearch",
@@ -3851,6 +4960,54 @@
             "optional": false,
             "field": "@PRTS",
             "description": "<p>An array of partitions</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPartnerGet",
+    "title": "adminPartnerGet",
+    "name": "adminPartnerGet",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "partnerEBAY",
+            "description": "<note> &lt;![CDATA[ ]]&gt; </note>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPartnerSet",
+    "title": "adminPartnerSet",
+    "name": "adminPartnerSet",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "partnerEBAY",
+            "description": "<note> &lt;![CDATA[ Generic call to save data retrieved from partner return URL&#39;s, parameters vary. ]]&gt; </note>"
           }
         ]
       }
@@ -4124,6 +5281,109 @@
             "optional": true,
             "field": "limit",
             "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPrivateSearch",
+    "title": "adminPrivateSearch",
+    "name": "adminPrivateSearch",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "typeorder",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>[&#39;order&#39;]</p> <note>if not specified then: type:_all is assumed.</note> <note>www.elasticsearch.org/guide/reference/query-dsl/</note>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "mode",
+            "description": "<p>elastic-native</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "filter",
+            "description": "<p>&quot;mode:elastic-native&quot; id=&quot;filter { &#39;term&#39;:{ &#39;profile&#39;:&#39;DEFAULT&#39; } };</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "query",
+            "description": "<p>&quot;mode:elastic-native&quot; id=&quot;query {&#39;text&#39;:{ &#39;profile&#39;:&#39;DEFAULT&#39; } };</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "size",
+            "description": "<p>100 # number of results</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "sort",
+            "description": "<p>[&#39;_score&#39;,&#39;base_price&#39;,&#39;prod_name&#39;]</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "from",
+            "description": "<p>100    # start from result # 100</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "scroll",
+            "description": "<p>30s,1m,5m</p> <note> &lt;![CDATA[ Filter is an exact match, whereas query is a token/substring match - filter is MUCH faster and should be used when the exact value is known (ex: tags, profiles, upc, etc.)  <ul> KNOWN KEYS:  </ul> ]]&gt; </note>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@products",
+            "description": "<p>an array of product ids</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@LOG",
+            "description": "<p>an array of strings explaining how the search was performed (if LOG=1 or TRACEPID non-blank)</p> <caution> Using LOG=1 or TRACEPID in a product (non debug) environment will result in the search feature being disabled on a site. </caution>"
           }
         ]
       }
@@ -4916,6 +6176,99 @@
   },
   {
     "type": "POST",
+    "url": "adminPublicFileDelete",
+    "title": "adminPublicFileDelete",
+    "name": "adminPublicFileDelete",
+    "group": "admin",
+    "description": "<p>Public files are hosted at a URL and can be downloaded, they are usually things like short videos, etc. TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "fileguidguid",
+            "description": "<p>from fileupload</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "filename",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPublicFileList",
+    "title": "adminPublicFileList",
+    "name": "adminPublicFileList",
+    "group": "admin",
+    "description": "<p>Public files are hosted at a URL and can be downloaded, they are usually things like short videos, etc. TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "fileguidguid",
+            "description": "<p>from fileupload</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "filename",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPublicFileUpload",
+    "title": "adminPublicFileUpload",
+    "name": "adminPublicFileUpload",
+    "group": "admin",
+    "description": "<p>Public files are hosted at a URL and can be downloaded, they are usually things like short videos, etc. TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "fileguidguid",
+            "description": "<p>from fileupload</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "filename",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminRSSClone",
     "title": "adminRSSClone",
     "name": "adminRSSClone",
@@ -5122,6 +6475,100 @@
     "name": "adminReportDownload",
     "group": "admin",
     "description": "<p>Inside &quot;$R&quot; (the REPORT object) there are following output values:</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSOGComplete",
+    "title": "adminSOGComplete",
+    "name": "adminSOGComplete",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSOGCreate",
+    "title": "adminSOGCreate",
+    "name": "adminSOGCreate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "%sogjson",
+            "description": "<p>nested sog structure</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSOGDetail",
+    "title": "adminSOGDetail",
+    "name": "adminSOGDetail",
+    "group": "admin",
+    "description": "<p>Returns a list of Store Option Groups (SOGs), see the SOG xml format for more specific information.TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "idsog-id",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSOGList",
+    "title": "adminSOGList",
+    "name": "adminSOGList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSOGUpdate",
+    "title": "adminSOGUpdate",
+    "name": "adminSOGUpdate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "%sogjson",
+            "description": "<p>nested sog structure</p> "
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
@@ -5896,6 +7343,30 @@
   },
   {
     "type": "POST",
+    "url": "adminTechnicalRequest",
+    "title": "adminTechnicalRequest",
+    "name": "adminTechnicalRequest",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "METHODCREATE",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminTemplateCreateFrom",
     "title": "adminTemplateCreateFrom",
     "name": "adminTemplateCreateFrom",
@@ -6395,6 +7866,327 @@
     "groupTitle": "admin"
   },
   {
+    "type": "POST",
+    "url": "adminVendorCreate",
+    "title": "adminVendorCreate",
+    "name": "adminVendorCreate",
+    "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminVendorDetail",
+    "title": "adminVendorDetail",
+    "name": "adminVendorDetail",
+    "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminVendorMacro",
+    "title": "adminVendorMacro",
+    "name": "adminVendorMacro",
+    "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminVendorRemove",
+    "title": "adminVendorRemove",
+    "name": "adminVendorRemove",
+    "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminVendorSearch",
+    "title": "adminVendorSearch",
+    "name": "adminVendorSearch",
+    "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminVendorUpdate",
+    "title": "adminVendorUpdate",
+    "name": "adminVendorUpdate",
+    "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminVersionCheck",
+    "title": "adminVersionCheck",
+    "name": "adminVersionCheck",
+    "group": "admin",
+    "description": "<p>Checks the clients version and compatibility level against the API&#39;s current compatibility level.TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "client",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "version",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "stationid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "subuser",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "localip",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "osver",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "finger",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "DATA",
+            "description": "<p>[ RESPONSE can be either</p> <ul> <li>OKAY - proceed with normal</li> <li>FAIL - a reason for the failure</li> <li>WARN - a warning, but it is okay to proceed ]]&gt;<example>&lt;![CDATA[ ConfigVersion Response ResponseMsg ]]&gt;</example></li> </ul> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminWarehouseDetail",
+    "title": "adminWarehouseDetail",
+    "name": "adminWarehouseDetail",
+    "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminWarehouseInventoryQuery",
+    "title": "adminWarehouseInventoryQuery",
+    "name": "adminWarehouseInventoryQuery",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "GEO",
+            "description": "<p>geocode of warehouse</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "SKU",
+            "description": "<p>SKU to filter by</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "SKUS",
+            "description": "<p>SKU1,SKU2,SKU3 to filter by</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "LOC",
+            "description": "<p>LOC to filter by</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@ROWS",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminWarehouseList",
+    "title": "adminWarehouseList",
+    "name": "adminWarehouseList",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@WAREHOUSES",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminWarehouseMacro",
+    "title": "adminWarehouseMacro",
+    "name": "adminWarehouseMacro",
+    "group": "admin",
+    "description": "<p>to create/update/delete/modify (via macro) the wms systemTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "WAREHOUSE",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@updates",
+            "description": "<p>an array of cmd objects</p> <example>&lt;![CDATA[ *  ]]&gt;</example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "appSupplierAuthorize",
+    "title": "appSupplierAuthorize",
+    "name": "appSupplierAuthorize",
+    "group": "admin",
+    "description": "<p>hashpass is generated by computing the md5 or sha1 hexadecimal value of the concatenation  of both the plain text password, and the _cartid. Here are some examples (all examples assume password is &#39;secret&#39; and  the cartid is &#39;:1234&#39;  MySQL: md5(concat(&#39;secret&#39;,&#39;:1234&#39;)) = 1ed15901cfc0cb8c61b43a440d853d45 MySQL: sha1(concat(&#39;secret&#39;,&#39;:1234&#39;)) = d9bc94d9c90e5de7a1c43a34f262d348244e9505</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>(must start with a &#39;:&#39;) as returned by appSupplierInit</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "hashtype",
+            "description": "<p>md5|sha1</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "hashpass",
+            "description": "<p>hashtype(password+_cartid)</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "appSupplierInit",
+    "title": "appSupplierInit",
+    "name": "appSupplierInit",
+    "group": "admin",
+    "description": "<p>Allow an external supplier to authorize to commerceRack (NOT FULLY IMPLEMENTED)</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "supplierxyz\\@domain.com",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "password1234",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
     "type": "",
     "url": "/authAdminLogin",
     "title": "authAdminLogin",
@@ -6680,6 +8472,102 @@
   },
   {
     "type": "POST",
+    "url": "bossRoleCreate",
+    "title": "bossRoleCreate",
+    "name": "bossRoleCreate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "tag",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "bossRoleDelete",
+    "title": "bossRoleDelete",
+    "name": "bossRoleDelete",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "tag",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "bossRoleList",
+    "title": "bossRoleList",
+    "name": "bossRoleList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "tag",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "bossRoleUpdate",
+    "title": "bossRoleUpdate",
+    "name": "bossRoleUpdate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "tag",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "bossUserCreate",
     "title": "bossUserCreate",
     "name": "bossUserCreate",
@@ -6790,6 +8678,76 @@
             "optional": false,
             "field": "tag",
             "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "getKeywordAutoComplete",
+    "title": "getKeywordAutoComplete",
+    "name": "getKeywordAutoComplete",
+    "group": "admin",
+    "description": "<p><strong> Deprecated </strong> don&#39;t use this, use elasticsearch instead. returns a list of matching possible keywords (note: currently disabled pending rewrite)</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "keywords",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "catalog",
+            "description": "<hint> pass value of catalog=TESTING to always generate an auto-complete result </hint>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "getMerchandising",
+    "title": "getMerchandising",
+    "name": "getMerchandising",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "onal",
+            "defaultValue": "1",
+            "description": "<p>id=&quot;category .some.path|.some.other.path</p> "
           }
         ]
       }
@@ -6947,6 +8905,357 @@
   },
   {
     "type": "POST",
+    "url": "appBuyerAuthenticate",
+    "title": "appBuyerAuthenticate",
+    "name": "appBuyerAuthenticate",
+    "group": "app",
+    "description": "<p>Authenticates a buyer against an enabled/supported trust serviceTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "authfacebook",
+            "description": "<p>|google</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "create0",
+            "description": "<p>|1</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "token",
+            "description": "<p>when auth=facebook</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "id_token",
+            "description": "<p>required for auth=google, only id_token or access_token are required (but both can safely be passed)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "access_token",
+            "description": "<p>required for auth=google, only id_token or access_token are required (but both can safely be passed)</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "CID",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appBuyerCreate",
+    "title": "appBuyerCreate",
+    "name": "appBuyerCreate",
+    "group": "app",
+    "description": "<p>create a buyer account (currently requires form=wholesale) long term goal is to support flexible <em>per project</em> account signups w/parameters TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "formwholesale",
+            "description": "<note> See adminCustomerUpdate for a full list of macros </note>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appBuyerDeviceRegistration",
+    "title": "appBuyerDeviceRegistration",
+    "name": "appBuyerDeviceRegistration",
+    "group": "app",
+    "description": "<p>verify or create a client registrationTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "verbverifyonly",
+            "description": "<p>|create</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "deviceidclient",
+            "description": "<p>generated device key (guid), or well known identifier from device</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "osandroid",
+            "description": "<p>|appleios</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "onal",
+            "defaultValue": "1",
+            "description": "<p>id=&quot;devicetokendevicetoken (appleios) or registrationid (android) is required      (to avoid religious debatesboth are equivalent -- either is acceptable)</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "CIDclient",
+            "description": "<p>id</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appBuyerExists",
+    "title": "appBuyerExists",
+    "name": "appBuyerExists",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>login=email address</p> <p>buyer: returns a positive number if buyer exists, or zero if it does not.</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appBuyerLogin",
+    "title": "appBuyerLogin",
+    "name": "appBuyerLogin",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "methodunsecure",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "loginemail",
+            "description": "<p>address</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "passwordclear",
+            "description": "<p>text password</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "cidcustomer",
+            "description": "<p>id</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "scheduleschedule",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appBuyerPasswordRecover",
+    "title": "appBuyerPasswordRecover",
+    "name": "appBuyerPasswordRecover",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "login",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "methodemail",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appCaptchaGet",
+    "title": "appCaptchaGet",
+    "name": "appCaptchaGet",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p><errors></p> <p><err id=\"10000\" type=\"apperr\">Profile %s could not be loaded.</err></p> <p><err id=\"10001\" type=\"apperr\">Profile request was blank/empty.</err></p> <p><err id=\"10002\" type=\"apperr\">No profile was requested.</err> </errors></p> <note><strong>*</strong> NOT FINISHED <em>**</em></note>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appCartCreate",
+    "title": "appCartCreate",
+    "name": "appCartCreate",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "cartDetail",
+            "description": "<hint> You should take care to maintain your cart in a local persisent cookie.<br>This is <em>your</em> responsibility to pass this value on subsequent requests. (use appCartExists to test to see if it&#39;s valid) </hint>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appCartExists",
+    "title": "appCartExists",
+    "name": "appCartExists",
+    "group": "app",
+    "description": "<p>This call tells if a cart/session has been previously created/saved. Since release 201314 it is not necessary to use because cart id&#39;s can now be created on the fly by an app.TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "exists",
+            "description": "<p>1/0</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
     "url": "appCategoryDetail",
     "title": "appCategoryDetail",
     "name": "appCategoryDetail",
@@ -7052,6 +9361,291 @@
   },
   {
     "type": "POST",
+    "url": "appCategoryList",
+    "title": "appCategoryList",
+    "name": "appCategoryList",
+    "group": "app",
+    "description": "<p>TODO</p> <note>Accepts no parameters</note>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "root",
+            "description": "<p>.root.category.path</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@paths",
+            "description": "<p>[&#39;.&#39;,&#39;.safe1&#39;,&#39;.safe2&#39;]</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appCheckoutDestinations",
+    "title": "appCheckoutDestinations",
+    "name": "appCheckoutDestinations",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appConfig",
+    "title": "appConfig",
+    "name": "appConfig",
+    "group": "app",
+    "description": "<p>TODO</p> <note>Accepts no parameters</note>",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appEmailSend",
+    "title": "appEmailSend",
+    "name": "appEmailSend",
+    "group": "app",
+    "description": "<p>TODO</p> <caution>a single ip is limited to 25 emails in a 24 hour period.</caution>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "method",
+            "description": "<p>tellafriend</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "product",
+            "description": "<p>for &quot;method:tellafriend&quot; productid</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "recipient",
+            "description": "<p>for &quot;method:tellafriend&quot; user@someotherdomain.com</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appEventAdd",
+    "title": "appEventAdd",
+    "name": "appEventAdd",
+    "group": "app",
+    "description": "<p>User events are the facility for handling a variety of &quot;future&quot; and &quot;near real time&quot; backend operations. Each event has a name that describes what type of object it is working with ex: CART, ORDER, PRODUCT, CUSTOMER then a period, and what happened (or should happen in the future) ex: CART.GOTSTUFF, ORDER.CREATED, PRODUCT.CHANGED custom program code can be associated with a users account to &quot;listen&quot; for specific events and then take action. TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "event",
+            "description": "<p>CART.REMARKET</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "pid",
+            "description": "<p>product id</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "pids",
+            "description": "<p>multiple product id&#39;s (comma separated)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "safe",
+            "description": "<p>category id</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "sku",
+            "description": "<p>inventory id</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "cid",
+            "description": "<p>customer(buyer) id</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>customer email</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "more",
+            "description": "<p>a user defined field (for custom events)</p> <note>in addition each event generated will record: sdomain, ip, and cartid</note>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "uuid",
+            "description": "<p>to create a future event, a unique identifier (cart id will be used if not specified)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "dispatch_gmt",
+            "description": "<p>to create a future event an epoch timestamp when the future event should dispatch</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appFAQs",
+    "title": "appFAQs",
+    "name": "appFAQs",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "filter-keywords",
+            "description": "<p>keywords</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "filter-topic",
+            "description": "<p>id</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "method",
+            "description": "<p>&quot;default:all&quot; topics|detail|all</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": true,
+            "field": "@topics",
+            "description": "<p>&quot;method:topics|all&quot; an array of faq topics</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": true,
+            "field": "@detail",
+            "description": "<p>&quot;method:detail|all&quot; an array of detail faq data for topics</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appGiftcardValidate",
+    "title": "appGiftcardValidate",
+    "name": "appGiftcardValidate",
+    "group": "app",
+    "description": "<p>TODO</p> <caution>a single ip is limited to 25 requests in a 24 hour period.</caution>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "giftcard",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
     "url": "appMashUpSMTP",
     "title": "appMashUpSMTP",
     "name": "appMashUpSMTP",
@@ -7132,6 +9726,2331 @@
   },
   {
     "type": "POST",
+    "url": "appNewsletterList",
+    "title": "appNewsletterList",
+    "name": "appNewsletterList",
+    "group": "app",
+    "description": "<p>shows all publically available newsletters/listsTODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appPageGet",
+    "title": "appPageGet",
+    "name": "appPageGet",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "PATH",
+            "description": "<p>.path.to.page or @CAMPAIGNID</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@get",
+            "description": "<p>[ &#39;attrib1&#39;, &#39;attrib2&#39;, &#39;attrib3&#39; ]</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "all",
+            "description": "<p>set to 1 to return all fields (handy for json libraries which don&#39;t return @get=[])</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "%page",
+            "description": "<p>[ &#39;attrib1&#39;:&#39;xyz&#39;, &#39;attrib2&#39;:&#39;xyz&#39; ],</p> <note>leave @get empty @get = [] for all page attributes</note>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appPageSet",
+    "title": "appPageSet",
+    "name": "appPageSet",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "PATH",
+            "description": "<p>.path.to.page or @CAMPAIGNID</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "%page",
+            "description": "<p>an associative array of values you want updated</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "attrib",
+            "description": "<note>leave @get empty @get = [] for all page attributes</note>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appPaymentMethods",
+    "title": "appPaymentMethods",
+    "name": "appPaymentMethods",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "onal",
+            "defaultValue": "1",
+            "description": "<p>id=&quot;countryISO country cod</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@methods",
+            "description": "<example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appProductCategories",
+    "title": "appProductCategories",
+    "name": "appProductCategories",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "pidproductid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "showOnlyCategories1",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "detailless",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@categories",
+            "description": "<p>[ &#39;.safe.path.1&#39;, &#39;.safe.path.2&#39; ];</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appProductGet",
+    "title": "appProductGet",
+    "name": "appProductGet",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "pidproductid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "verversion",
+            "description": "<p>#</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "withVariations1",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "withInventory1",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "withSchedule1",
+            "description": "<p><note>NOT IMPLEMENTED: navcatsPlease=1 = showOnlyCategories=1</note></p> <p><example> [     &#39;pid&#39; : product-id,     &#39;%attribs&#39; : [ &#39;zoovy:prod_name&#39;=&gt;&#39;xyz&#39; ],     &#39;@variations&#39; : [ JSON POG OBJECT ],     &#39;@inventory&#39; : [ &#39;sku1&#39; : [ &#39;inv&#39;:1, &#39;res&#39;:2 ], &#39;sku2&#39; : [ &#39;inv&#39;:3, &#39;res&#39;:4 ] ], ] </example></p> <p><caution> This does not apply schedule pricing. </caution></p> <hint> to tell if a product exists check the value &quot;zoovy:prod_created_gmt&quot;. It will not exist, or be set to zero if the product has been deleted or does not exist OR is not  accessible on the current partition. </hint>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appProductList",
+    "title": "appProductList",
+    "name": "appProductList",
+    "group": "app",
+    "description": "<p>deprecatedTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "srcnavcat",
+            "description": "<p>:.path.to.safename</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "srcsearch",
+            "description": "<p>:keywords</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "srccart",
+            "description": "<p>:</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@products",
+            "description": "<p>[&#39;pid1&#39;,&#39;pid2&#39;,&#39;pid3&#39;]</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appProductSelect",
+    "title": "appProductSelect",
+    "name": "appProductSelect",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "product_selector",
+            "description": "<p>navcat=.path.to.safename CSV=pid1,pid2,pid3 CREATED=STARTYYYMMDD|ENDYYYMMDD RANGE=pid1|pid2 MANAGECAT=/managecat SEARCH=keyword PROFILE=PROFILE</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@products",
+            "description": "<p>[&#39;pid1&#39;,&#39;pid2&#39;,&#39;pid3&#39;]</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appProfileInfo",
+    "title": "appProfileInfo",
+    "name": "appProfileInfo",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "profile",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "domain",
+            "description": "<p><note>Returns: profile data in key value format. </note></p> <errors> <err id=\"10000\" type=\"apperr\">Profile %s could not be loaded.</err> <err id=\"10001\" type=\"apperr\">Profile request was blank/empty.</err> <err id=\"10002\" type=\"apperr\">No profile was requested.</err> </errors>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appPublicSearch",
+    "title": "appPublicSearch",
+    "name": "appPublicSearch",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "typeproduct",
+            "description": "<p>|faq|blog</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>[&#39;product&#39;,&#39;blog&#39;]</p> <note>if not specified then: type:_all is assumed.</note> <note>www.elasticsearch.org/guide/reference/query-dsl/</note>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "modeelastic-search",
+            "description": "<p>,elastic-count,elastic-msearch, elastic-mlt,elastic-suggest,elastic-explain,elastic-scroll,elastic-scroll-helper,elastic-scroll-clear</p> <p><hint> elastic-search: a query or filter search, this is probably what you want. elastic-count: same parameters as query or search, but simply returns a count of matches elastic-msearch: a method for passing multiple pipelined search requests (ex: multiple counts) in one call elastic-mlt: &quot;More Like This&quot; uses field/terms to find other documents (ex: products) which are similar elastic-suggest: used to run did-you-mean or search-as-you-type suggestion requests,      which can also be run as part of a &quot;search()&quot; request.</p> <h1 id=\"http-www-elasticsearch-org-guide-en-elasticsearch-reference-current-search-suggesters-completion-html\"><a href=\"http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-suggesters-completion.html\">http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-suggesters-completion.html</a></h1> <p>elastic-explain: explains why the specified document did or did not match a query, and how the relevance score was calculated.  elastic-scroll,elastic-scroll-helper,elastic-scroll-clear: used to interate through scroll results using a scroll_id</p> <p><a href=\"http://search.cpan.org/~drtech/Search-Elasticsearch-1.10/lib/Search/Elasticsearch/Client/Direct.pm\">http://search.cpan.org/~drtech/Search-Elasticsearch-1.10/lib/Search/Elasticsearch/Client/Direct.pm</a> </a></p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "filter",
+            "description": "<p>mode &quot;mode:elastic-*&quot; id=&quot;filter { &#39;term&#39;:{ &#39;profile&#39;:&#39;DEFAULT&#39; } };</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "query",
+            "description": "<p>mode &quot;mode:elastic-*&quot; id=&quot;query {&#39;text&#39;:{ &#39;profile&#39;:&#39;DEFAULT&#39; } };</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "mode",
+            "description": "<p>&quot;mode:elastic-mlt&quot; id=&quot;id the document id you want to use for the mlt operation</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "size",
+            "description": "<p>100 # number of results</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "sort",
+            "description": "<p>[&#39;_score&#39;,&#39;base_price&#39;,&#39;prod_name&#39;]</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "from",
+            "description": "<p>100    # start from result # 100</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "scroll",
+            "description": "<p>30s,1m,5m</p> <note> &lt;![CDATA[ Filter is an exact match, whereas query is a token/substring match - filter is MUCH faster and should be used when the exact value is known (ex: tags, profiles, upc, etc.)  <ul> KNOWN KEYS: <em> pid </em> skus: [ &#39;PID:ABCD&#39;, &#39;PID:ABCE&#39; ] <em> options : [ &#39;Size: Large&#39;, &#39;Size: Medium&#39;, &#39;Size: Small&#39; ] </em> pogs: [ &#39;AB&#39;, &#39;ABCD&#39;, &#39;ABCE&#39; ] <em> tags: [ IS_FRESH, IS_NEEDREVIEW, IS_HASERRORS, IS_CONFIGABLE, IS_COLORFUL, IS_SIZEABLE, IS_OPENBOX, IS_PREORDER, IS_DISCONTINUED, IS_SPECIALORDER, IS_BESTSELLER, IS_SALE, IS_SHIPFREE, IS_NEWARRIVAL, IS_CLEARANCE, IS_REFURB, IS_USER1, ..] </em> images: [ &#39;path/to/image1&#39;, &#39;path/to/image2&#39; ] <em> ean, asin, upc, fakeupc, isbn, prod_mfgid </em> accessory_products: [ &#39;PID1&#39;, &#39;PID2&#39;, &#39;PID3&#39; ] <em> related_products: [ &#39;PID1&#39;, &#39;PID2&#39;, &#39;PID3&#39; ] </em> base_price: amount<em>100 (so $1.00 = 100) </em> keywords: [ &#39;word1&#39;, &#39;word2&#39;, &#39;word3&#39; ] <em> assembly: [ &#39;PID1&#39;, &#39;PID2&#39;, &#39;PID3&#39; ], </em> prod_condition: [ &#39;NEW&#39;, &#39;OPEN&#39;, &#39;USED&#39;, &#39;RMFG&#39;, &#39;RFRB&#39;, &#39;BROK&#39;, &#39;CRAP&#39; ] <em> prod_name, description, detail </em> prod_features <em> prod_is </em> prod_mfg <em> profile </em> salesrank </ul> ]]&gt; </note>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@products",
+            "description": "<p>an array of product ids</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@LOG",
+            "description": "<p>an array of strings explaining how the search was performed (if LOG=1 or TRACEPID non-blank)</p> <caution> Using LOG=1 or TRACEPID in a product (non debug) environment will result in the search feature being disabled on a site. </caution>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appResource",
+    "title": "appResource",
+    "name": "appResource",
+    "group": "app",
+    "description": "<ul> <li>shipcodes.json</li> <li>shipcountries.json</li> <li>payment_status.json</li> <li>flexedit.json </li> <li>review_status.json : a complete list of all valid review codes</li> <li>integrations.json : used to identify the MKT values in syndication/orders</li> <li>email_macros.json : </li> <li>inventory_conditions.json : a complete list of all inventory conditions</li> <li>ups_license.json :</li> <li>syndication_buy_storecodes.json</li> <li>syndication_buy_categories.json</li> <li>syndication_wsh_categories.json</li> <li>syndication_goo_categories.json</li> <li>definitions/amz/[catalog].json : replace [catalog] with contents of amz:catalog field.</li> </ul> <p>NOTE: You may also request filename.yaml or filename.xml (and the corresponding xml: or yaml: format will be returned)</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "filename",
+            "description": "<p>filename.json</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "json",
+            "description": "<p>content to eval</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appReviewAdd",
+    "title": "appReviewAdd",
+    "name": "appReviewAdd",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "pidproductid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SUBJECT",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "RATING",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CUSTOMER_NAME",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "LOCATION",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "MESSAGE",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "BLOG_URL",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appReviewsList",
+    "title": "appReviewsList",
+    "name": "appReviewsList",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "pidproductid",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appSearchLogList",
+    "title": "appSearchLogList",
+    "name": "appSearchLogList",
+    "group": "app",
+    "description": "<p>lists available search log filesTODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appSearchLogRemove",
+    "title": "appSearchLogRemove",
+    "name": "appSearchLogRemove",
+    "group": "app",
+    "description": "<p>permanently remove/delete all search logsTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "FILE",
+            "description": "<p>reference file id</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appSendMessage",
+    "title": "appSendMessage",
+    "name": "appSendMessage",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "msgtype",
+            "description": "<p>feedback</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "sender",
+            "description": "<p>user@domain.com   [the sender of the message]</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "subject",
+            "description": "<p>subject of the message</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "body",
+            "description": "<p>body of the message</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "PRODUCT",
+            "description": "<p>product-id-this-tellafriend-is-about</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "OID",
+            "description": "<p>2012-01-1234  [the order this feedback is about]</p> <note> msgtype:feedback requires &#39;sender&#39;, but ignores &#39;recipient&#39; msgtype:tellafriend requires &#39;recipient&#39;, &#39;product&#39; msgtype:tellafriend requi &#39;product&#39; </note>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appShippingTransitEstimate",
+    "title": "appShippingTransitEstimate",
+    "name": "appShippingTransitEstimate",
+    "group": "app",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@products",
+            "description": "<p>[pid1,pid2,pid3]</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ship_postal",
+            "description": "<p>92012</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ship_country",
+            "description": "<p>US</p> <note></note>"
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@Services",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "ships_yyyymmdd",
+            "description": "<p>which day the order is expected to ship (not arrive)</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "cutoff_hhmm",
+            "description": "<p>hour and minute (pst) that the order must be placed by</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "latency_days",
+            "description": "<p>maximum days before order ships</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "{",
+          "content": "                           {\n                             'arrival_time' => '23:00:00',\n                             'amzcc' => 'UPS',\n                             'UPS.Service.Description' => 'UPS Ground',\n                             'UPS.EstimatedArrival.DayOfWeek' => 'TUE',\n                             'carrier' => 'UPS',\n                             'expedited' => '0',\n                             'UPS.Guaranteed' => 'Y',\n                             'method' => 'UPS Ground',\n                             'code' => 'UGND',\n                             'ups' => 'GND',\n                             'arrival_date' => '20120715',\n                             'amzmethod' => 'UPS Ground',\n                             'buycomtc' => '1',\n                             'upsxml' => '03',\n                             'UPS.EstimatedArrival.PickupDate' => '2012-07-10',\n                             'transit_days' => 5\n                           }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appStash",
+    "title": "appStash",
+    "name": "appStash",
+    "group": "app",
+    "description": "<p>store a keyTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "key",
+            "description": "<p>key you want to store</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "value",
+            "description": "<p>value you want to store</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appSuck",
+    "title": "appSuck",
+    "name": "appSuck",
+    "group": "app",
+    "description": "<p>retrieve a keyTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "key",
+            "description": "<p>key you want to store</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "value",
+            "description": "<p>value you want to store</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "buyerAddressAddUpdate",
+    "title": "buyerAddressAddUpdate",
+    "name": "buyerAddressAddUpdate",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<notes> &lt;![CDATA[ shortcut:tag for this address ex: &#39;HOME&#39; (must be unique within bill or ship)  type:bill     bill/countrycode:US     bill/email:user@domain     bill/firstname:     bill/lastname:     bill/fullname:     bill/phone:     bill/state:     bill/zip:   type:ship<br>    ship/address1:     ship/address2:     ship/city:     ship/countrycode:US     ship/fullname:     ship/firstname:     ship/lastname:     ship/phone:     ship/region:     ship/postal:  NOTE: (fullname) or (firstname lastname) NOTE: (country) or (countrycode)  ]]&gt; </notes>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerAddressDelete",
+    "title": "buyerAddressDelete",
+    "name": "buyerAddressDelete",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>Returns:</p> <CODE> type:SHIP|BILL shortcut:DEFAULT </CODE>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerAddressList",
+    "title": "buyerAddressList",
+    "name": "buyerAddressList",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>Returns:</p> <CODE>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerDetail",
+    "title": "buyerDetail",
+    "name": "buyerDetail",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerLogout",
+    "title": "buyerLogout",
+    "name": "buyerLogout",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerNotificationAdd",
+    "title": "buyerNotificationAdd",
+    "name": "buyerNotificationAdd",
+    "group": "buyer",
+    "description": "<p>Used to register a buyer for a notification when a inventory is back in stock.TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>inventory</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>&quot;type:inventory&quot; ex: user@somedomain.com</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "sku",
+            "description": "<p>&quot;type:inventory&quot; sku</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "msgid",
+            "description": "<p>&quot;type:inventory&quot; msgid</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerOrderGet",
+    "title": "buyerOrderGet",
+    "name": "buyerOrderGet",
+    "group": "buyer",
+    "description": "<p>Grabs a raw order object (buyer perspective) so that status information can be displayed.  TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<hint>In order to access an order status the user must either be an authenticated buyer, OR use softauth=order with cartid + either orderid or erefid</hint>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "softauthorder",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "erefid",
+            "description": "<p>(conditionally-required for softauth=order) external reference identifier (ex: ebay sale #) or amazon order #</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "orderid",
+            "description": "<p>(conditionally-required for softauth=order) internal zoovy order #</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "cartid",
+            "description": "<p>(conditionally-required for softauth=order) internal cartid #</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerOrderPaymentAdd",
+    "title": "buyerOrderPaymentAdd",
+    "name": "buyerOrderPaymentAdd",
+    "group": "buyer",
+    "description": "<p>Adds and processes a new payment transaction on an order. TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "orderid2012-01-1234",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "tenderCREDIT",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "amt",
+            "description": "<p>(optional - will default to order balance_due) transaction amount</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "uuid",
+            "description": "<p>(optional - will be autogenerated if not supplied) unique identifier for this transaction</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "payment.cc",
+            "description": "<p>(required on tender=CREDIT) Credit card #</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "payment.yy",
+            "description": "<p>(required on tender=CREDIT) Credit card Expiration Year</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "payment.mm",
+            "description": "<p>(required on tender=CREDIT) Credit card Expiration Month</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "payment.cv",
+            "description": "<p>(required on tender=CREDIT) Credit card CVV/CID #</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerOrderUpdate",
+    "title": "buyerOrderUpdate",
+    "name": "buyerOrderUpdate",
+    "group": "buyer",
+    "description": "<p>A macro is a set of commands that will be applied to an order, they are useful because they are applied (whenever possible) as a single atomic transaction. buyers have access to a subset of macros from full order processing, but enough to adjust payment, and in some cases cancel orders. TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "orderid2012-01-1234",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@updatessee",
+            "description": "<p>example below</p> <p><note> This uses the same syntax as adminCartMacro adminOrderMacro, but only a subset are supported (actually at this point ALL commands are supported, but we&#39;ll restrict this eventually),  and may (eventually) differ based on business logic and/or add some custom ones.  </note></p> <example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerPasswordUpdate",
+    "title": "buyerPasswordUpdate",
+    "name": "buyerPasswordUpdate",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>password:newpassword</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerProductListAppendTo",
+    "title": "buyerProductListAppendTo",
+    "name": "buyerProductListAppendTo",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>listid= sku= OPTIONAL:     qty=(will default to zero)     priority=# (will defualt to zero)     note=    (optional string up to 255 characters)     replace=1    (will delete any existing value from the list, and re-add this one)</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerProductListDetail",
+    "title": "buyerProductListDetail",
+    "name": "buyerProductListDetail",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>listid:</p> <example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerProductListRemoveFrom",
+    "title": "buyerProductListRemoveFrom",
+    "name": "buyerProductListRemoveFrom",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>listid= sku=</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerProductLists",
+    "title": "buyerProductLists",
+    "name": "buyerProductLists",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerPurchaseHistory",
+    "title": "buyerPurchaseHistory",
+    "name": "buyerPurchaseHistory",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "onal",
+            "defaultValue": "1",
+            "description": "<p>id=&quot;POOL RECENT,COMPLETED, etc.</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerPurchaseHistoryDetail",
+    "title": "buyerPurchaseHistoryDetail",
+    "name": "buyerPurchaseHistoryDetail",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "orderid",
+            "description": "<caution> This can ONLY be used for authenticated buyers. </caution>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerTicketCreate",
+    "title": "buyerTicketCreate",
+    "name": "buyerTicketCreate",
+    "group": "buyer",
+    "description": "<p>creates a new ticket for a customer TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerTicketList",
+    "title": "buyerTicketList",
+    "name": "buyerTicketList",
+    "group": "buyer",
+    "description": "<p>shows a list of ticket for a buyer TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerTicketUpdate",
+    "title": "buyerTicketUpdate",
+    "name": "buyerTicketUpdate",
+    "group": "buyer",
+    "description": "<p>updates a ticket for a buyer TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerUpdate",
+    "title": "buyerUpdate",
+    "name": "buyerUpdate",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@updates",
+            "description": "<p>Returns:</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerWalletAdd",
+    "title": "buyerWalletAdd",
+    "name": "buyerWalletAdd",
+    "group": "buyer",
+    "description": "<p>creates a new wallet for the associated buyerTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CCCredit",
+            "description": "<p>Card #</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "YY2",
+            "description": "<p>Digit Year</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "MM2",
+            "description": "<p>Digit Month</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "IP4",
+            "description": "<p>digit numeric ip address</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "IDwallet",
+            "description": "<p>id # (on success)</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerWalletDelete",
+    "title": "buyerWalletDelete",
+    "name": "buyerWalletDelete",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>walletid:#####</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerWalletList",
+    "title": "buyerWalletList",
+    "name": "buyerWalletList",
+    "group": "buyer",
+    "description": "<p>Displays a list of walletsTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@walletsan",
+            "description": "<p>array of wallets</p> <p><code type=\"json\" title=\"@wallets sample output\"> [     { ID:walletid1, IS_DEFAULT:1|0, DESCRIPTION:description },     { ID:walletid2, IS_DEFAULT:1|0, DESCRIPTION:description },     { ID:walletid3, IS_DEFAULT:1|0, DESCRIPTION:description }, ] </code></p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "buyerWalletSetPreferred",
+    "title": "buyerWalletSetPreferred",
+    "name": "buyerWalletSetPreferred",
+    "group": "buyer",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>walletid:#####</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "buyer is cool"
+  },
+  {
+    "type": "POST",
+    "url": "cartAmazonPaymentURL",
+    "title": "cartAmazonPaymentURL",
+    "name": "cartAmazonPaymentURL",
+    "group": "cart",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "shipping",
+            "description": "<p>1|0     (prompt for shipping address)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CancelUrl",
+            "description": "<p>URL to redirect user to if cancel is pressed.</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ReturnUrl",
+            "description": "<p>URL to redirect user to upon order completion</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "YourAccountUrl",
+            "description": "<p>URL where user can be directed to by amazon if they wish to lookup order status. (don&#39;t stree about this, rarely used)</p> <hint> &lt;![CDATA[ Returns parameters necessary for CBA interaction:  merchantid: the checkout by amazon assigned merchantid (referred to as [merchantid] in the example below) b64xml: a base64 encoded xml order object based on the current cart geometry referred to as [b64xml], BUT passed to amazon following &quot;order:&quot; signature: a sha1, base64 encoded concatenation of the b64xml and the configured cba secret key refrerred to as [signature] in the example below, AND passed to amazon following &quot;signature:&quot; aws-access-key-id: a public string cba needs to identify this merchant refrred to as [aws-access-key-id] AND passed to amazon following the &quot;aws-access-key-id:&quot; parameter  To generate/create a payment button, suggested parameters are: color: orange, size: small, background: white <a href=\"https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=[color]&amp;background=[background]&amp;size=[size\">https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=[color]&amp;background=[background]&amp;size=[size</a>] ex: <a href=\"https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=orange&amp;background=white&amp;size=small\">https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=orange&amp;background=white&amp;size=small</a> Use this as the <strong>your button image url</strong> in the example.  The [formurl] is created by the developer using the merchant id, specify either sandbox or non-sandbox (live): <a href=\"https://payments.amazon.com/checkout/[merchantid\">https://payments.amazon.com/checkout/[merchantid</a>] <a href=\"https://payments-sandbox.amazon.com/checkout/[merchantid]?debug=true\">https://payments-sandbox.amazon.com/checkout/[merchantid]?debug=true</a> ]]&gt; </hint>  <example title=\"Example\">&lt;![CDATA[  &lt;!- NOTE: you do NOT need to include jquery if you already are using jquery -&gt; <script type=\"text/javascript\" src=\"https://images-na.ssl-images-amazon.com/images/G/01/cba/js/jquery.js\"></script>  <script type=\"text/javascript\" src=\"https://images-na.ssl-images-amazon.com/images/G/01/cba/js/widget/widget.js\"></script> <form method=POST action=\"https://payments.amazon.com/checkout/[merchantid]\"> <input type=\"hidden\" name=\"order-input\" value=\"type:merchant-signed-order/aws-accesskey/1;order:[b64xml];signature:[signature];aws-access-key-id:[aws-access-key-id]\"> <input type=\"image\" id=\"cbaImage\" name=\"cbaImage\" src=\"**your button image url**\" onClick=\"this.form.action='[formurl]'; checkoutByAmazon(this.form)\"> </form>  ]]&gt; </example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartCSRShortcut",
+    "title": "cartCSRShortcut",
+    "name": "cartCSRShortcut",
+    "group": "cart",
+    "description": "<p>Returns a 4-6 digit authorization token that can be used by a  call center operator to identify a session.  CSR shortcuts are only valid for approximately 10 minutes.TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "csr",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartCheckoutValidate",
+    "title": "cartCheckoutValidate",
+    "name": "cartCheckoutValidate",
+    "group": "cart",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "sender",
+            "description": "<p>stage (LOGIN,BILLING_LOCATION,SHIPPING_LOCATION,ORDER_CONFIRMATION,ADMIN)</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@issues",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartCouponAdd",
+    "title": "cartCouponAdd",
+    "name": "cartCouponAdd",
+    "group": "cart",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "coupon",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartDetail",
+    "title": "cartDetail",
+    "name": "cartDetail",
+    "group": "cart",
+    "description": "<p>Lists the contents/settings in a cart along with summary valuesTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "create1/0",
+            "description": "<ul> <li>shall we create a cart if the cart requested doesn&#39;t exit?</li> </ul> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartGiftcardAdd",
+    "title": "cartGiftcardAdd",
+    "name": "cartGiftcardAdd",
+    "group": "cart",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "giftcard",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartGoogleCheckoutURL",
+    "title": "cartGoogleCheckoutURL",
+    "name": "cartGoogleCheckoutURL",
+    "group": "cart",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "analyticsdata",
+            "description": "<p>(required, but may be blank) obtained by calling getUrchinFieldValue()  in the pageTracker or _gaq Google Analytics object.</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "edit_cart_url",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "continue_shopping_url",
+            "description": "<hint> &lt;![CDATA[ Google has extensive documentation on it&#39;s checkout protocols, you need use buttons served by google. MORE INFO: <a href=\"http://code.google.com/apis/checkout/developer/index.html#google_checkout_buttons\">http://code.google.com/apis/checkout/developer/index.html#google_checkout_buttons</a>  NOTE: googleCheckoutMerchantId is passed in the config.js if it&#39;s blank, the configuration is incomplete and don&#39;t try using it as a payment method.  To select a button you will need to know the merchant id (which is returned by this call), the style and variant type of the button. Examples are provided below so hopefully you can skip reading it!  You must use their button(s). Possible: style: white|trans, Possible variant: text|disable ]]&gt; </hint>  <caution> &lt;![CDATA[ note: if one or more items in the cart has &#39;gc:blocked&#39; set to true - then google checkout button must be shown as DISABLED using code below: <a href=\"https://checkout.google.com/buttons/checkout.gif?merchant_id=[merchantid]&amp;w=160&amp;h=43&amp;style=[style]&amp;variant=[variant]&amp;loc=en_US\">https://checkout.google.com/buttons/checkout.gif?merchant_id=[merchantid]&amp;w=160&amp;h=43&amp;style=[style]&amp;variant=[variant]&amp;loc=en_US</a>  These are Googles branding guidelines, hiding the button (on a website) can lead to stern reprimand and even termination from  Google programs such as &quot;trusted merchant&quot;. ]]&gt; </caution>  <hint> &lt;![CDATA[ Here is example HTML that would be used with the Asynchronous Google Analytics tracker (_gaq).  <a href=\"javascript:_gaq.push(function() {    var pageTracker = _gaq._getAsyncTracker();setUrchinInputCode(pageTracker);});    document.location='$googlecheckout_url?analyticsdata='+getUrchinFieldValue();\"> <img height=43 width=160 border=0      src=\"https://checkout.google.com/buttons/checkout.gif?merchant_id=[merchantid]&w=160&h=43&style=[style]&variant=[variant]&loc=en_US\"     ></a> ]]&gt; </hint>"
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "googleCheckoutMerchantId",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "URL",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartItemAppend",
+    "title": "cartItemAppend",
+    "name": "cartItemAppend",
+    "group": "cart",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartItemUpdate",
+    "title": "cartItemUpdate",
+    "name": "cartItemUpdate",
+    "group": "cart",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "stidxyz",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "uuidxyz",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "quantity1",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_msgs",
+            "description": "<p>(contains a count of the number of messages)</p> <errors> <err id=\"9101\" type=\"cfgerr\">Item cannot be added to cart due to price not set.</err> <err id=\"9102\" type=\"cfgerr\">could not lookup pogs</err> <err id=\"9103\" type=\"cfgerr\">Some of the items in this kit are not available for purchase: </err> <err id=\"9000\" type=\"cfgerr\">Unhandled item detection error</err> <err id=\"9001\" type=\"cfgerr\">Product xyz is no longer available</err> <err id=\"9002\" type=\"cfgerr\">Product xyz has already been purchased</err> </errors>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartItemsInventoryVerify",
+    "title": "cartItemsInventoryVerify",
+    "name": "cartItemsInventoryVerify",
+    "group": "cart",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "trace",
+            "description": "<p>0|1    (optional)</p> <example> %changes = [     [ sku1: newqty, sku2:newqty ]     ] </example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartOrderCreate",
+    "title": "cartOrderCreate",
+    "name": "cartOrderCreate",
+    "group": "cart",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "iama",
+            "description": "<p>some string that makes sense to you</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "orderid",
+            "description": "<p>2011-01-1234</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "payment",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "_uuid",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartOrderStatus",
+    "title": "cartOrderStatus",
+    "name": "cartOrderStatus",
+    "group": "cart",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "orderid",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "orderid",
+            "description": "<p>2011-01-1234</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "payment",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartPaymentQ",
+    "title": "cartPaymentQ",
+    "name": "cartPaymentQ",
+    "group": "cart",
+    "description": "<p>Manipulate or display the PaymentQ (a list of payment types for a given cart/order)TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "cmd",
+            "description": "<p>reset|delete|insert|sync</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "ID",
+            "description": "<p>required for cmd=delete|insert</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "TN",
+            "description": "<p>required for cmd=insert ex: CASH|CREDIT|PO|etc.</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "AMOUNT",
+            "description": "<p>(passed as variable $$) optional for cmd=insert (max to charge on this payment method)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "TWO_DIGIT_TENDER_VARIABLES",
+            "description": "<p>required for cmd=insert, example: CC, MM, YY, CV for credit card</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "paymentQ",
+            "description": "<p>[].ID    unique id # for this</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartPaypalSetExpressCheckout",
+    "title": "cartPaypalSetExpressCheckout",
+    "name": "cartPaypalSetExpressCheckout",
+    "group": "cart",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "useMobile0",
+            "description": "<p>|1 (if true - we&#39;ll tell paypal to use the mobile version)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "onal",
+            "defaultValue": "1",
+            "description": "<p>id=&quot;drt&#39;device token&#39; - obtain them from the native IOS paypal library (not required, but useful)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "getBuyerAddress",
+            "description": "<p>0|1 (if true - paypal will ask shopper for address)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "cancelURL",
+            "description": "<p>&#39;&#39;   (required, but may be blank for legacy checkout)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "returnURL",
+            "description": "<p>&#39;&#39;     (required, but may be blank for legacy checkout)</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "URL",
+            "description": "<p>url to redirect checkout to (checkout will finish with legacy method, but you CAN build your own)</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "TOKEN",
+            "description": "<p>paypal token</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "ACK",
+            "description": "<p>paypal &quot;ACK&quot; message</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "ERR",
+            "description": "<p>(optional message from paypal api)</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "_ADDRESS_CHANGED",
+            "description": "<p>1|0</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "_SHIPPING_CHANGED",
+            "description": "<p>methodid (the new value of CART-&gt;ship.selected_id)</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartPromoCodeAdd",
+    "title": "cartPromoCodeAdd",
+    "name": "cartPromoCodeAdd",
+    "group": "cart",
+    "description": "<p>TODO</p> <note>A promo code can be either a giftcard, or a coupon (we&#39;ll detect which it is)</note>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "promocode",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartSet",
+    "title": "cartSet",
+    "name": "cartSet",
+    "group": "cart",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
+    "url": "cartShippingMethods",
+    "title": "cartShippingMethods",
+    "name": "cartShippingMethods",
+    "group": "cart",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "trace0",
+            "description": "<p>|1    (optional)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "update0",
+            "description": "<p>|1 (optional - defaults to 0): set the shipping address, etc. in the cart to the new values.</p> <p><hint> in cart the following pieces of data must be set:     data.ship_address     data.ship_country     data.ship_zip     data.ship_state </hint></p> <example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "cart"
+  },
+  {
+    "type": "POST",
     "url": "/configJS",
     "title": "configJS",
     "group": "site",
@@ -7161,6 +12080,30 @@
   },
   {
     "type": "POST",
+    "url": "getSearchCatalogs",
+    "title": "getSearchCatalogs",
+    "name": "getSearchCatalogs",
+    "group": "site",
+    "description": "<p>This is the old search catalog interface, don&#39;t use this, it will be removed. use elasticsearch instead.</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "site"
+  },
+  {
+    "type": "POST",
     "url": "/loadPlatformJSON",
     "title": "loadPlatformJSON",
     "group": "site",
@@ -7181,6 +12124,211 @@
   },
   {
     "type": "POST",
+    "url": "ping",
+    "title": "ping",
+    "name": "ping",
+    "group": "site",
+    "description": "<p>TODO</p> <note>Accepts: nothing</note> <note>Returns: (nothing of importance)</note>",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "pong",
+            "description": "<p>1</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "site"
+  },
+  {
+    "type": "POST",
+    "url": "platformInfo",
+    "title": "platformInfo",
+    "name": "platforminfo",
+    "group": "site",
+    "description": "<p>Utility FunctionTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "time",
+            "description": "<h6 id=\"-\">#</h6> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "media-host",
+            "description": "<h6 id=\"-\">#</h6> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "api-max-version",
+            "description": "<h6 id=\"-\">#</h6> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "api-min-version",
+            "description": "<h6 id=\"-\">#</h6> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "api-our-version",
+            "description": "<h6 id=\"-\">#</h6> <hint> Time is an epoch timestamp (which represents the number of seconds since midnight january 1st, 1970) </hint>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "site"
+  },
+  {
+    "type": "POST",
+    "url": "searchResult",
+    "title": "searchResult",
+    "name": "searchResult",
+    "group": "site",
+    "description": "<p>This is deprecated, it is the old legacy search system. Don&#39;t use this, it will be removed.</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "KEYWORDS",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "MODE",
+            "description": "<p>EXACT|STRUCTURED|AND|OR</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "CATALOG",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "PRT",
+            "description": "<p>0</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "ISOLATION_LEVEL",
+            "description": "<p>0-9</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "ROOT",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "LOG",
+            "description": "<p>1 (dianostic)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "TRACE",
+            "description": "<p>PID productid</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@products",
+            "description": "<p>an array of product ids</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@LOG",
+            "description": "<p>an array of strings explaining how the search was performed (if LOG=1 or TRACEPID non-blank)</p> <caution> Using LOG=1 or TRACEPID in a product (non debug) environment will result in the search feature being disabled on a site. </caution>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "site"
+  },
+  {
+    "type": "POST",
+    "url": "canIUse",
+    "title": "canIUse",
+    "name": "canIUse",
+    "group": "utility",
+    "description": "<p>Utility function which checks access to a specific bundle ex: CRM, XSELLTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "flag",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "allowed",
+            "description": "<p>1|0</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "utility"
+  },
+  {
+    "type": "POST",
     "url": "/cryptTool",
     "title": "cryptTool",
     "group": "utility",
@@ -7192,6 +12340,106 @@
         "type": "json"
       }
     ],
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "utility"
+  },
+  {
+    "type": "POST",
+    "url": "time",
+    "title": "time",
+    "name": "time",
+    "group": "utility",
+    "description": "<p>Utility/Diagnostic FunctionTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "unix",
+            "description": "<h6 id=\"-\">#</h6> <hint> Unix is an epoch timestamp (which represents the number of seconds since midnight january 1st, 1970) </hint>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "utility"
+  },
+  {
+    "type": "POST",
+    "url": "whereAmI",
+    "title": "whereAmI",
+    "name": "whereAmI",
+    "group": "utility",
+    "description": "<p>Utility function that returns the city/state/zip of the IP making the call.TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "city",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "state",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "zip",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "country",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "utility"
+  },
+  {
+    "type": "POST",
+    "url": "whoAmI",
+    "title": "whoAmI",
+    "name": "whoAmI",
+    "group": "utility",
+    "description": "<p>Utility function that returns who the current session is authenticated as.TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "cid",
+            "description": "<h4 id=\"-customer-buyer-id-\">(customer [buyer] id)</h4> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>user@fromloggedindomain.com</p> <hint> If logged in as an admin sessino you&#39;ll get fun stuff like USERNAME,MID,RESELLER and more. </hint>"
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "utility"
