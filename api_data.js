@@ -131,6 +131,24 @@ define({ api: [
   },
   {
     "type": "POST",
+    "url": "/configJS",
+    "title": "configJS",
+    "group": "site",
+    "name": "configJS",
+    "description": "<p>outputs a variety of useful information about a site.</p> ",
+    "examples": [
+      {
+        "title": "Request",
+        "content": "\nhttp:/www.domain.com/jsonapi/config.js",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "site"
+  },
+  {
+    "type": "POST",
     "url": "/domainLookup",
     "title": "domainLookup",
     "group": "site",
