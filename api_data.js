@@ -54,7 +54,7 @@ define({ api: [
   {
     "type": "POST",
     "url": "/domainLookup",
-    "title": "",
+    "title": "domainLookup",
     "group": "admin",
     "name": "domainLookup_domainLookup",
     "description": "<p>Not available <strong> EXPERIMENTAL </strong></p>",
@@ -64,7 +64,7 @@ define({ api: [
   {
     "type": "POST",
     "url": "/loadPlatformJSON",
-    "title": "",
+    "title": "loadPlatformJSON",
     "group": "admin",
     "name": "loadPlatformJSON_loadPlatformJSON",
     "description": "<p>TODO</p>",
