@@ -154,8 +154,8 @@ define({ api: [
   },
   {
     "type": "POST",
-    "url": "appMashUpMemCache",
-    "title": "appMashUpMemCache",
+    "url": "appMashUpSFTP",
+    "title": " appMashUpSFTP",
     "group": "JSONAPI_pm",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -164,14 +164,6 @@ define({ api: [
     "type": "POST",
     "url": "appMashUpFTP",
     "title": "appMashUpFTP",
-    "group": "JSONAPI_pm",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "appMashUpRedis",
-    "title": "appMashUpRedis",
     "group": "JSONAPI_pm",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -210,8 +202,16 @@ define({ api: [
   },
   {
     "type": "POST",
-    "url": "appMashUpSFTP",
-    "title": " appMashUpSFTP",
+    "url": "appMashUpMemCache",
+    "title": "appMashUpMemCache",
+    "group": "JSONAPI_pm",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpRedis",
+    "title": "appMashUpRedis",
     "group": "JSONAPI_pm",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -284,9 +284,19 @@ define({ api: [
   },
   {
     "type": "POST",
-    "url": "adminSupplierProductList",
-    "title": "adminSupplierProductList",
-    "name": "adminSupplierProductList",
+    "url": "adminSupplierCreate",
+    "title": "adminSupplierCreate",
+    "name": "adminSupplierCreate",
+    "group": "admin",
+    "description": "<p>TODO</p>",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminSupplierDetail",
+    "title": "adminSupplierDetail",
+    "name": "adminSupplierDetail",
     "group": "admin",
     "description": "<p>TODO</p>",
     "parameter": {
@@ -298,13 +308,72 @@ define({ api: [
             "field": "VENDORID6-8",
             "optional": false,
             "description": "<p>digit supplier/vendor id</p>"
-          },
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminSupplierList",
+    "title": "adminSupplierList",
+    "name": "adminSupplierList",
+    "group": "admin",
+    "description": "<p>TODO</p>",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminSupplierMacro",
+    "title": "adminSupplierMacro",
+    "name": "adminSupplierMacro",
+    "group": "admin",
+    "description": "<p>TODO</p>",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminSupplierOrderItemList",
+    "title": "adminSupplierOrderItemList",
+    "name": "adminSupplierOrderItemList",
+    "group": "admin",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
           {
             "group": "Request",
             "type": "String",
-            "field": "products0",
+            "field": "FILTER",
             "optional": false,
-            "description": "<p>|1</p>"
+            "description": "<p>OPEN</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminSupplierOrderList",
+    "title": "adminSupplierOrderList",
+    "name": "adminSupplierOrderList",
+    "group": "admin",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "VENDORID6-8",
+            "optional": false,
+            "description": "<p>digit supplier/vendor id</p>"
           },
           {
             "group": "Request",
@@ -333,6 +402,46 @@ define({ api: [
             "field": "@ORDERDETAIL",
             "optional": false,
             "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminSupplierProductList",
+    "title": "adminSupplierProductList",
+    "name": "adminSupplierProductList",
+    "group": "admin",
+    "description": "<p>TODO</p>",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminSupplierRemove",
+    "title": "adminSupplierRemove",
+    "name": "adminSupplierRemove",
+    "group": "admin",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "VENDORID6-8",
+            "optional": false,
+            "description": "<p>digit supplier/vendor id</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "products0",
+            "optional": false,
+            "description": "<p>|1</p>"
           }
         ]
       }
@@ -1191,7 +1300,7 @@ define({ api: [
           {
             "group": "Request",
             "type": "String",
-            "field": "orderid",
+            "field": "orderi",
             "optional": false,
             "description": "<p>Order ID</p>"
           }
@@ -1202,7 +1311,7 @@ define({ api: [
             "type": "String",
             "field": "order",
             "optional": false,
-            "description": "<p>a json representation of an order (exact fields depend on version/order source)</API></p>"
+            "description": "<p>a json representation of an order (exact fields depend on version/order source)</p>"
           }
         ]
       }
@@ -1230,7 +1339,7 @@ define({ api: [
           {
             "group": "Request",
             "type": "String",
-            "field": "orderi",
+            "field": "orderid",
             "optional": false,
             "description": "<p>Order ID</p>"
           }
@@ -1241,7 +1350,7 @@ define({ api: [
             "type": "String",
             "field": "order",
             "optional": false,
-            "description": "<p>a json representation of an order (exact fields depend on version/order source)</p>"
+            "description": "<p>a json representation of an order (exact fields depend on version/order source)</API></p>"
           }
         ]
       }
