@@ -56,7 +56,7 @@
     "url": "/providerExec",
     "title": "providerExec",
     "group": "admin",
-    "name": "cryptTool_cryptTool",
+    "name": "providerExec",
     "examples": [
       {
         "title": "Legacy Doc",
