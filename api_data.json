@@ -114,6 +114,675 @@
   },
   {
     "type": "POST",
+    "url": "adminDataQuery",
+    "title": "adminDataQuery",
+    "name": "adminDataQuery",
+    "group": "admin",
+    "description": "<p>accesses local management database for a variety of fields/reports</purpose></p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "query",
+            "description": "<pre><code>listing-active,listing-active-fixed,listing-active-store,listing-active-auction,listing-all,listing-allwattempts, event-warnings,event-success,event-pending,event-target-powr.auction,event-target-ebay.auction,event-target-ebay.fixed </code></pre>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "since_gmtepoch",
+            "description": "<p>timestamp - returns all data since that time</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "batchidbatchid",
+            "description": "<p>(only valid with event- requests)</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@HEADER",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@ROWS",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminImageDetail",
+    "title": "adminImageDetail",
+    "name": "adminImageDetail",
+    "group": "admin",
+    "description": "<p>returns stored details about an media library image file.</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "file",
+            "description": "<p>filename of the image ex: path/to/image.jpg</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "FILENAME",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "EXT",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "H",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "W",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "SIZE",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "TS",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "FID",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminImageFolderCreate",
+    "title": "adminImageFolderCreate",
+    "name": "adminImageFolderCreate",
+    "group": "admin",
+    "description": "<p>creates a new folder in the media library, folder names must be in lower case.</purpose></p> <p>you can call these in any order, subpaths will be created.</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "folder",
+            "description": "<p>DIR1|DIR2</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "fid",
+            "description": "<p>the internal folder id#</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>the name the folder was created</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "<Category FID=\"1234\" Name=\"\"/>",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminImageFolderDelete",
+    "title": "adminImageFolderDelete",
+    "name": "adminImageFolderDelete",
+    "group": "admin",
+    "description": "<p>request the deletion of a category (do not implement this right now)</purpose></p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "folder",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminImageFolderList",
+    "title": "adminImageFolderList",
+    "name": "adminImageFolderList",
+    "group": "admin",
+    "description": "<p>returns a list of image categories and timestamps for each category</purpose></p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@folders",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "\n<Folder ImageCount=\"5\" TS=\"123\" Name=\"Path1\" FID=\"1\" ParentFID=\"0\" ParentName=\"|\"/>\n<Folder ImageCount=\"2\" TS=\"456\" Name=\"Path1b\" FID=\"2\" ParentFID=\"1\" ParentName=\"|Path1\"/>\n<Folder ImageCount=\"1\" TS=\"567\" Name=\"Path1bI\" FID=\"3\" ParentFID=\"2\" ParentName=\"|Path1|Pathb\"/>\n<Folder ImageCount=\"0\" TS=\"789\" Name=\"Path2\" FID=\"4\" ParentFID=\"0\" ParentName=\"|\"/>",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminImageList",
+    "title": "adminImageList",
+    "name": "adminImageList",
+    "group": "admin",
+    "description": "<p>returns the list of images for a given folder (if specified).</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "folderfolder",
+            "description": "<p>to view</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "reindexif",
+            "description": "<p>a folder is requested, this will reindex the current folder</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "keywordkeyword",
+            "description": "<p>(uses case insensitive substring)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "orderbyNONE",
+            "description": "<p>|TS|TS_DESC|NAME|NAME_DESC|DISKSIZE|DISKSIZE_DESC|PIXEL|PIXEL_DESC</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "detailNONE",
+            "description": "<p>|FOLDER</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@images",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Request Example ",
+          "content": "<Image Name=\"abc\" TS=\"1234\" Format=\"jpg\" />\n<Image Name=\"abc2\" TS=\"1234\" Format=\"jpg\" />\n<Image Name=\"abc3\" TS=\"1234\" Format=\"jpg\" />\n<Image Name=\"abc4\" TS=\"1234\" Format=\"jpg\" />\n<Image Name=\"abc5\" TS=\"1234\" Format=\"jpg\" />",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminOrderDetail",
+    "title": "adminOrderDetail",
+    "name": "adminOrderDetail",
+    "group": "admin",
+    "description": "<p>provides a full dump of data inside an order</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>admin session id</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "orderid",
+            "description": "<p>Order ID</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "order",
+            "description": "<p>a json representation of an order (exact fields depend on version/order source)</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminOrderDetail",
+    "title": "adminOrderDetail",
+    "name": "adminOrderDetail",
+    "group": "admin",
+    "description": "<p>provides a full dump of data inside an order</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_cartid",
+            "description": "<p>admin session id</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "orderi",
+            "description": "<p>Order ID</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "order",
+            "description": "<p>a json representation of an order (exact fields depend on version/order source)</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminOrderList",
+    "title": "adminOrderList",
+    "name": "adminOrderList",
+    "group": "admin",
+    "description": "<p>returns a list of orders based on one or more filter criteria</purpose></p> <p><strong> caution </strong> maximum number of records returned is 1,000</p> <p>Detail level 3 includes POOL, CREATED_GMT Detail level 5 includes CUSTOMER ID, ORDER_BILL_NAME, ORDER_BILL_EMAIL, ORDER_BILL_ZONE, ORDER_PAYMENT_STATUS, ORDER_PAYMENT_METHOD, ORDER_TOTAL, ORDER_SPECIAL, MKT, MKT_BITSTR</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "_admin",
+            "description": "<p>admin session id</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "TS",
+            "description": "<p>modified since timestamp</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "EREFID",
+            "description": "<p>string (external reference id)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "CUSTOMER",
+            "description": "<p>CID</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "DETAIL",
+            "description": "<p>1,3,5</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "POOL",
+            "description": "<p>RECENT,PENDING,PROCESSING</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "PRT",
+            "description": "<p>0</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "BILL_FULLNAME",
+            "description": "<p>string</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "BILL_EMAIL",
+            "description": "<p>string</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "BILL_PHONE",
+            "description": "<p>string</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "SHIP_FULLNAME",
+            "description": "<p>string</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "CREATED_GMT",
+            "description": "<h1 id=\"epoch\">epoch</h1> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "CREATEDTILL_GMT",
+            "description": "<h1 id=\"epoch\">epoch</h1> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "PAID_GMT",
+            "description": "<h1 id=\"epoch\">epoch</h1> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "PAIDTILL_GMT",
+            "description": "<h1 id=\"epoch\">epoch</h1> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "PAYMENT_STATUS",
+            "description": "<p>001</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "SHIPPED_GMT",
+            "description": "<p>1/0</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "NEEDS_SYNC",
+            "description": "<p>1/0</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "MKT",
+            "description": "<p>EBY,AMZ</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "LIMIT",
+            "description": "<h1 id=\"int-records-returned-\">int (records returned)</h1> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@orders",
+            "description": "<p>an array of orders containing varied amounts of data based on the detail level requested</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Detail Level 1",
+          "content": "{\n'@orders':[\n\t[ 'ORDERID':'2012-01-1234', 'MODIFIED_GMT':123456 ],\n\t[ 'ORDERID':'2012-01-1235', 'MODIFIED_GMT':123457 ],\n\t[ 'ORDERID':'2012-01-1236', 'MODIFIED_GMT':123458 ]\n\t]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminOrderMacro",
+    "title": "adminOrderMacro",
+    "name": "adminOrderMacro",
+    "group": "admin",
+    "description": "<p>uses the embedded macro language to set order parameters, depending on access levels macros may not be available.</p> <p><strong>Using Order Macros (@updates)</strong></p> <p>Order Macros provide a developer with a way to make easy, incremental, non-destructive updates to orders.  The syntax for a macro payload uses a familiar dsn format cmd?key=value&amp;key=value, along with the same uri encoding rules, and one command per line (making the files very easy to read) -- here is an example: &quot;SETPOOL?pool=COMPLETED&quot; (without the quotes). A complete list of available commands is below:</p> <ul> <li>CREATE</li> <li>SETPOOL?pool=[pool]\\n</li> <li>CAPTURE?amount=[amount]\\n</li> <li>ADDTRACKING?carrier=[UPS|FDX]&amp;track=[1234]\\n</li> <li>EMAIL?msg=[msgname]\\n</li> <li>ADDPUBLICNOTE?note=[note]\\n</li> <li>ADDPRIVATENOTE?note=[note]\\n</li> <li>ADDCUSTOMERNOTE?note=[note]\\n</li> <li>SET?key=value     (for setting attributes)</li> <li>SPLITORDER</li> <li>MERGEORDER?oid=src orderid</li> <li>ADDPAYMENT?tender=CREDIT&amp;amt=0.20&amp;UUID=&amp;ts=&amp;note=&amp;CC=&amp;CY=&amp;CI=&amp;amt=</li> <li>ADDPROCESSPAYMENT?VERB=&amp;same_params_as_addpayment<br>   NOTE: unlike &#39;ADDPAYMENT&#39; the &#39;ADDPROCESSPAYMENT&#39; this will add then run the specified verb.   Verbs are: &#39;INIT&#39; the payment as if it had been entered by the buyer at checkout,   other verbs: AUTHORIZE|CAPTURE|CHARGE|VOID|REFUND</li> <li>PROCESSPAYMENT?VERB=verb&amp;UUID=uuid&amp;amt=<br>   Possible verbs: AUTHORIZE|CAPTURE|CHARGE|VOID|REFUND</li> <li>SETSHIPADDR?ship/company=&amp;ship/firstname=&amp;ship/lastname=&amp;ship/phone=&amp;ship/address1=&amp;ship/address2=&amp;ship/city=&amp;ship/country=&amp;ship/email=&amp;ship/state=&amp;ship/province=&amp;ship/zip=&amp;ship/int_zip=</li> <li>SETBILLADDR?bill/company=&amp;bill/firstname=&amp;bill/lastname=&amp;bill/phone=&amp;bill/address1=&amp;bill/address2=&amp;bill/city=&amp;bill/country=&amp;bill/email=&amp;bill/state=&amp;bill/province=&amp;bill/zip=&amp;bill/int_zip=</li> <li>SETSHIPPING?shp_total=&amp;shp_taxable=&amp;shp_carrier=&amp;hnd_total=&amp;hnd_taxable=&amp;ins_total=&amp;ins_taxable=&amp;spc_total=&amp;spc_taxable=</li> <li>SETADDRS?any=attribute&amp;anyother=attribute</li> <li>SETTAX?sum/tax_method=&amp;sum/tax_total&amp;sum/tax_rate_state=&amp;sum/tax_rate_zone=&amp;</li> <li>SETSTUFFXML?xml=encodedstuffxml</li> <li>ITEMADD?uuid=&amp;sku=xyz&amp;</li> <li>ITEMREMOVE?uuid=</li> <li>ITEMUPDATE?uuid=&amp;qty=&amp;price=&amp;</li> <li>SAVE</li> <li>ECHO</li> </ul> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "orderid",
+            "description": "<p>order id of the order# to update</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@updates",
+            "description": "<p>macro content</p> "
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\n'@updates':[\n\t'cmd',\n\t'cmd?some=param',\n\t]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminOrderPaymentAction",
+    "title": "adminOrderPaymentAction",
+    "name": "adminOrderPaymentAction",
+    "group": "admin",
+    "description": "<p>interally runs the PAYMENTACTION orderUpdate Macro, but can be called as a separate API</purpose></p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "orderid",
+            "description": "<p>2011-01-1234</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "payment",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminOrderSearch",
+    "title": "adminOrderSearch",
+    "name": "adminOrderSearch",
+    "group": "admin",
+    "description": "<p>returns a list of orders based on the results of an elastic search</purpose></p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ELASTIC",
+            "description": "<p>elastic search parameters</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "DETAIL",
+            "description": "<p>1,3,5</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "DEBUG",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminPasswordUpdate",
     "title": "adminPasswordUpdate",
     "name": "adminPasswordUpdate",
