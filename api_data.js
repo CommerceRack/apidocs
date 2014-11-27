@@ -76,6 +76,78 @@ define({ api: [
     "groupTitle": "INTRODUCTION"
   },
   {
+    "name": "adminCIAgentZipDownload",
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "group": "_core_lib_JSONAPI_pm",
+    "groupTitle": "_core_lib_JSONAPI_pm"
+  },
+  {
+    "name": "adminCampaignZipDownload",
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "group": "_core_lib_JSONAPI_pm",
+    "groupTitle": "_core_lib_JSONAPI_pm"
+  },
+  {
+    "name": "adminEBAYProfileZipDownload",
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "group": "_core_lib_JSONAPI_pm",
+    "groupTitle": "_core_lib_JSONAPI_pm"
+  },
+  {
+    "name": "adminFileContents",
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "group": "_core_lib_JSONAPI_pm",
+    "groupTitle": "_core_lib_JSONAPI_pm"
+  },
+  {
+    "name": "adminFileSave",
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "group": "_core_lib_JSONAPI_pm",
+    "groupTitle": "_core_lib_JSONAPI_pm"
+  },
+  {
+    "name": "adminFileUpload",
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "group": "_core_lib_JSONAPI_pm",
+    "groupTitle": "_core_lib_JSONAPI_pm"
+  },
+  {
+    "name": "adminSiteZipDownload",
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "group": "_core_lib_JSONAPI_pm",
+    "groupTitle": "_core_lib_JSONAPI_pm"
+  },
+  {
+    "name": "adminZipDownload",
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "group": "_core_lib_JSONAPI_pm",
+    "groupTitle": "_core_lib_JSONAPI_pm"
+  },
+  {
     "type": "POST",
     "url": "adminBlastMacroCreate",
     "title": "adminBlastMacroCreate",
@@ -578,6 +650,257 @@ define({ api: [
     "title": "adminCIEngineMacro",
     "name": "adminCIEngineMacro",
     "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCampaign",
+    "title": "adminCampaign",
+    "name": "adminCampaign",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCampaign",
+    "title": "adminCampaign",
+    "name": "adminCampaign",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCampaignAvailableCoupons",
+    "title": "adminCampaignAvailableCoupons",
+    "name": "adminCampaignAvailableCoupons",
+    "group": "admin",
+    "description": "<p>a campaign can be associated with a couponTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@COUPONS",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCampaignCreate",
+    "title": "adminCampaignCreate",
+    "name": "adminCampaignCreate",
+    "group": "admin",
+    "description": "<p>Creates a new campaignTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CAMPAIGNID",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "TITLE",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SEND_EMAIL1",
+            "description": "<p>|0</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SEND_APPLEIOS1",
+            "description": "<p>|0</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SEND_ANDROID1",
+            "description": "<p>|0</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SEND_FACEBOOK1",
+            "description": "<p>|0</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SEND_TWITTER1",
+            "description": "<p>|0</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SEND_SMS1",
+            "description": "<p>|0</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "QUEUEMODEFRONT",
+            "description": "<p>|BACK|OVERWRITE</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "EXPIRESYYYYMMDD",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "COUPONCODE",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCampaignDetail",
+    "title": "adminCampaignDetail",
+    "name": "adminCampaignDetail",
+    "group": "admin",
+    "description": "<p>returns a campaign object in %CAMPAIGNTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CAMPAIGNID",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "%CAMPAIGN",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCampaignMacro",
+    "title": "adminCampaignMacro",
+    "name": "adminCampaignMacro",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CPG",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@updates",
+            "description": "<ul> <li>CPGCOPY</li> <li>CPGTEST?</li> <li>CPGSTART?STARTTS=timestamp</li> <li>CPGSTOP?</li> <li>SUBADD?email=</li> <li>SUBDEL?email=</li> </ul> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCampaignRemove",
+    "title": "adminCampaignRemove",
+    "name": "adminCampaignRemove",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CAMPAIGNIDcampaign",
+            "description": "<p>id#</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCampaignUpdate",
+    "title": "adminCampaignUpdate",
+    "name": "adminCampaignUpdate",
+    "group": "admin",
+    "description": "<p>see adminCampaignCreate for parametersTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CPGcampaign",
+            "description": "<p>id#</p> "
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
@@ -3093,6 +3416,190 @@ define({ api: [
     "name": "adminTaskUpdate",
     "group": "admin",
     "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminTemplateCreateFrom",
+    "title": "adminTemplateCreateFrom",
+    "name": "adminTemplateCreateFrom",
+    "group": "admin",
+    "description": "<p>copies from a container into a templateTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CONTAINERIDebay",
+            "description": "<p>profile or campaign id</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "TYPEEBAY",
+            "description": "<p>|CPG|CIA|APP</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "PROJECTIDoptional",
+            "description": "<p>(defaults to TEMPLATES)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SUBDIR",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "files",
+            "description": "<h1 id=\"of-files-copied\">of files copied</h1> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "dirs",
+            "description": "<h1 id=\"of-sub-directories-copied\">of sub-directories copied</h1> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminTemplateDetail",
+    "title": "adminTemplateDetail",
+    "name": "adminTemplateDetail",
+    "group": "admin",
+    "description": "<p>displays the details of a TEMPLATETODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "TYPEEBAY",
+            "description": "<p>|CPG|CIA|APP</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "PROJECTID",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SUBDIR",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminTemplateInstall",
+    "title": "adminTemplateInstall",
+    "name": "adminTemplateInstall",
+    "group": "admin",
+    "description": "<p>installs a template into a containerTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CONTAINERIDebay",
+            "description": "<p>profile or campaign id</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "TYPEEBAY",
+            "description": "<p>|CPG|CIA|APP</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "PROJECTIDoptional",
+            "description": "<p>(defaults to TEMPLATES)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SUBDIR",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminTemplateList",
+    "title": "adminTemplateList",
+    "name": "adminTemplateList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CONTAINERIDebay",
+            "description": "<p>profile or campaign id</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "TYPEEBAY",
+            "description": "<p>|CPG|CIA|APP</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@TEMPLATES",
+            "description": ""
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
