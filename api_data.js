@@ -1079,6 +1079,135 @@ define({ api: [
   },
   {
     "type": "POST",
+    "url": "adminCustomerCreate",
+    "title": "adminCustomerCreate",
+    "name": "adminCustomerCreate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@updates",
+            "description": "<p>&lt;![CDATA[</p> <ul> <li>CREATE?email= see adminCustomerUpdate ]]&gt;</li> </ul> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "%CUSTOMER",
+            "description": "<p>Customer Object</p> <example> &lt;![CDATA[ example needed. ]]&gt; </example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCustomerDetail",
+    "title": "adminCustomerDetail",
+    "name": "adminCustomerDetail",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CID",
+            "description": "<p>Customer ID adminCustomerDetail supports additional parameters:</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "newsletters",
+            "description": "<p>1 (returns @NEWSLETTERS)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "addresses",
+            "description": "<p>1  (returns @BILLING @SHIPPING)   [[ this may duplicate data from %CUSTOMER ]]</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "wallets",
+            "description": "<p>1   (returns @WALLETS)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "wholesale",
+            "description": "<p>1  (returns %WS)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "giftcards",
+            "description": "<p>1 (returns @GIFTCARDS)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "tickets",
+            "description": "<p>1 (returns @TICKETS)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "notes",
+            "description": "<p>1 (returns @NOTES)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "events",
+            "description": "<p>1 (returns @EVENTS)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "orders",
+            "description": "<p>1 (returns @ORDERS)</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "%CUSTOMER",
+            "description": "<p>Customer Object</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminCustomerOrganizationCreate",
     "title": "adminCustomerOrganizationCreate",
     "name": "adminCustomerOrganizationCreate",
@@ -1242,6 +1371,30 @@ define({ api: [
   },
   {
     "type": "POST",
+    "url": "adminCustomerRemove",
+    "title": "adminCustomerRemove",
+    "name": "adminCustomerRemove",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CIDcustomer",
+            "description": "<p>id #</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminCustomerSearch",
     "title": "adminCustomerSearch",
     "name": "adminCustomerSearch",
@@ -1309,6 +1462,57 @@ define({ api: [
         ]
       }
     },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCustomerUpdate",
+    "title": "adminCustomerUpdate",
+    "name": "adminCustomerUpdate",
+    "group": "admin",
+    "description": "<ul> <li>PASSWORDRESET?password=xyz    (or leave blank for random)</li> <li>HINTRESET</li> <li>SET?firstname=&amp;lastname=&amp;is_locked=&amp;newsletter_1=</li> <li>ADDRCREATE?SHORTCUT=DEFAULT&amp;TYPE=BILL|SHIP&amp;firstname=&amp;lastname=&amp;phone=&amp;company=&amp;address1&amp;email=.. </li> <li>ADDRUPDATE? [see ADDRCREATE]</li> <li>ADDRREMOVE?TYPE=&amp;SHORTCUT=</li> <li>SENDEMAIL?MSGID=&amp;MSGSUBJECT=optional&amp;MSGBODY=optional</li> <li>ORGCREATE?firstname=&amp;middlename=&amp;lastname=&amp;company=&amp;address1=&amp;address2=&amp;city=&amp;region=&amp;postal=&amp;countrycode=&amp;phone=&amp;email=&amp;ALLOW_PO=&amp;SCHEDULE=&amp;RESALE=&amp;RESALE_PERMIT=&amp;CREDIT_LIMIT=&amp;CREDIT_BALANCE=&amp;CREDIT_TERMS=&amp;ACCOUNT_MANAGER=&amp;ACCOUNT_TYPE=&amp;ACCOUNT_REFID=&amp;JEDI_MID=&amp;DOMAIN=&amp;LOGO=&amp;IS_LOCKED=&amp;BILLING_PHONE=&amp;BILLING_CONTACT=&amp;</li> <li>ORDERLINK?OID=</li> <li>NOTECREATE?TXT=</li> <li>NOTEREMOVE?NOTEID=</li> <li>WALLETCREATE?CC=&amp;YY=&amp;MM=</li> <li>WALLETDEFAULT?SECUREID=</li> <li>WALLETREMOVE?SECUREID=</li> <li>REWARDUPDATE?i=&amp;reason=&amp;</li> <li>SETORIGIN?origin=integer</li> <li>ADDTODO?title=&amp;note=</li> <li>ADDTICKET?title=&amp;note=</li> <li>DEPRECATED: WSSET?SCHEDULE=&amp;ALLOW_PO=&amp;RESALE=&amp;RESALE_PERMIT=&amp;CREDIT_LIMIT=&amp;CREDIT_BALANCE=&amp;ACCOUNT_MANAGER=&amp;</li> </ul> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CIDCustomer",
+            "description": "<p>ID</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@updates",
+            "description": "<p></ul> ]]&gt;</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "%CUSTOMER",
+            "description": "<p>Customer Object</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCustomerWalletPeek",
+    "title": "adminCustomerWalletPeek",
+    "name": "adminCustomerWalletPeek",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
@@ -1414,6 +1618,141 @@ define({ api: [
             "optional": false,
             "field": "@ROWS",
             "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminDomainDetail",
+    "title": "adminDomainDetail",
+    "name": "adminDomainDetail",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DOMAINNAME",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@MSGS",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminDomainDetail",
+    "title": "adminDomainDetail",
+    "name": "adminDomainDetail",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DOMAINNAME",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@HOSTS",
+            "description": "<pre><code>{ &quot;HOSTNAME&quot;:&quot;www&quot;, &quot;HOSTTYPE&quot;:&quot;APP|REDIR|VSTORE|CUSTOM&quot; }, HOSTTYPE=APP        will have &quot;PROJECT&quot; HOSTTYPE=REDIR    will have &quot;REDIR&quot;:&quot;www.domain.com&quot; &quot;URI&quot;:&quot;/path/to/301&quot;  (if URI is blank then it will redirect with previous path) HOSTTYPE=VSTORE    will have @REWRITES </code></pre>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "%EMAIL",
+            "description": "<pre><code>EMAIL_TYPE=FUSEMAIL EMAIL_TYPE=GOOGLE EMAIL_TYPE=NONE EMAIL_TYPE=MX        MX1,MX2 parameters </code></pre>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminDomainList",
+    "title": "adminDomainList",
+    "name": "adminDomainList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "onal",
+            "defaultValue": "1",
+            "description": "<p>id=&quot;prtpartition (optional)</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@DOMAINS",
+            "description": "<p>an array of domains, each row contains { id:domainname prt:# }</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminDomainMacro",
+    "title": "adminDomainMacro",
+    "name": "adminDomainMacro",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DOMAINNAMEdomain.com",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@updates",
+            "description": "<p>&lt;![CDATA[ DOMAIN-RESERVE        (note: leave DOMAINNAME blank/empty) DOMAIN-TRANSFER DOMAIN-REGISTER DOMAIN-DELEGATE DOMAIN-REMOVE DOMAIN-PRT-SET?PRT=### HOST-ADD?HOSTNAME=www|app|m HOST-SET?HOSTNAME=www|app|m&amp;HOSTTYPE=PROJECT|VSTORE|REDIR|CUSTOM HOST-KILL?HOSTNAME=www EMAIL-DKIM-INIT EMAIL-SET?TYPE=FUSEMAIL|GOOGLE|NONE|MX&amp;MX1=&amp;MX2= VSTORE-MAKE-PRIMARY VSTORE-KILL-REWRITE?PATH= VSTORE-ADD-REWRITE?PATH=&amp;TARGETURL= ]]&gt;</p> "
           }
         ]
       }
@@ -1891,6 +2230,7 @@ define({ api: [
     "title": "adminGiftcardSetupProduct",
     "name": "adminGiftcardSetupProduct",
     "group": "admin",
+    "description": "<p>creates a product that when purchased automatically creates a giftcardTODO</p> ",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
@@ -1901,7 +2241,6 @@ define({ api: [
     "title": "adminGiftcardSetupProduct",
     "name": "adminGiftcardSetupProduct",
     "group": "admin",
-    "description": "<p>creates a product that when purchased automatically creates a giftcardTODO</p> ",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
@@ -2734,6 +3073,85 @@ define({ api: [
   },
   {
     "type": "POST",
+    "url": "adminLUserTagGet",
+    "title": "adminLUserTagGet",
+    "name": "adminLUserTagGet",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "tag1",
+            "description": "<p>&#39;&#39;</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "tag2",
+            "description": "<p>&#39;&#39;</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminLUserTagList",
+    "title": "adminLUserTagList",
+    "name": "adminLUserTagList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "tag",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminLUserTagSet",
+    "title": "adminLUserTagSet",
+    "name": "adminLUserTagSet",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "tagdata",
+            "description": "<hint>Limited to 128 bytes per tag, 10,000 tags max (then old tags are auto-expired)</hint>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminNavTreeList",
     "title": "adminNavTreeList",
     "name": "adminNavTreeList",
@@ -3419,6 +3837,30 @@ define({ api: [
   },
   {
     "type": "POST",
+    "url": "adminPartitionList",
+    "title": "adminPartitionList",
+    "name": "adminPartitionList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@PRTS",
+            "description": "<p>An array of partitions</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminPasswordUpdate",
     "title": "adminPasswordUpdate",
     "name": "adminPasswordUpdate",
@@ -4024,6 +4466,87 @@ define({ api: [
             "type": "Array",
             "optional": false,
             "field": "@updates",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminProductManagementCategoriesComplete",
+    "title": "adminProductManagementCategoriesComplete",
+    "name": "adminProductManagementCategoriesComplete",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "%CATEGORIES",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminProductManagementCategoriesDetail",
+    "title": "adminProductManagementCategoriesDetail",
+    "name": "adminProductManagementCategoriesDetail",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "category",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@PRODUCTS",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminProductManagementCategoriesList",
+    "title": "adminProductManagementCategoriesList",
+    "name": "adminProductManagementCategoriesList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@CATEGORIES",
             "description": ""
           }
         ]
@@ -5146,6 +5669,44 @@ define({ api: [
   },
   {
     "type": "POST",
+    "url": "adminTOXMLSetFavorite",
+    "title": "adminTOXMLSetFavorite",
+    "name": "adminTOXMLSetFavorite",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "formatWRAPPER",
+            "description": "<p>|LAYOUT|EMAIL</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "docid",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "favoritetrue",
+            "description": "<p>|false</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminTaskComplete",
     "title": "adminTaskComplete",
     "name": "adminTaskComplete",
@@ -5702,6 +6263,138 @@ define({ api: [
     "groupTitle": "admin"
   },
   {
+    "type": "POST",
+    "url": "adminUIBuilderPanelExecute",
+    "title": "adminUIBuilderPanelExecute",
+    "name": "adminUIBuilderPanelExecute",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "subEDIT",
+            "description": "<p>|SAVE|SAVE-EDIT</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "idelement",
+            "description": "<p>id</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "panelPanel",
+            "description": "<p>Identifier (the &#39;id&#39; field returned by adminUIProductList</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "html",
+            "description": "<p>the html content of the product editor panel</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "js",
+            "description": "<p>the js which is required by the panel.</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminUIExecuteCGI",
+    "title": "adminUIExecuteCGI",
+    "name": "adminUIExecuteCGI",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "uri/biz/setup/shipping/index.cgi",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "%vars",
+            "description": "<p>{ x:1, y:2, z:3 }</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminUIMediaLibraryExecute",
+    "title": "adminUIMediaLibraryExecute",
+    "name": "adminUIMediaLibraryExecute",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "verbLOAD",
+            "description": "<p>|SAVE</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "src",
+            "description": "<p>(required for LOAD|SAVE)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "IMG",
+            "description": "<p>(required for SAVE)</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "IMG",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
     "type": "",
     "url": "/authAdminLogin",
     "title": "authAdminLogin",
@@ -5981,6 +6674,126 @@ define({ api: [
     "name": "billingTransactions",
     "group": "admin",
     "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "bossUserCreate",
+    "title": "bossUserCreate",
+    "name": "bossUserCreate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "tag",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "bossUserDelete",
+    "title": "bossUserDelete",
+    "name": "bossUserDelete",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "tag",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "bossUserDetail",
+    "title": "bossUserDetail",
+    "name": "bossUserDetail",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "tag",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "bossUserList",
+    "title": "bossUserList",
+    "name": "bossUserList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "tag",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "bossUserUpdate",
+    "title": "bossUserUpdate",
+    "name": "bossUserUpdate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "tag",
+            "description": ""
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
