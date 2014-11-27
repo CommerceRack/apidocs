@@ -149,6 +149,141 @@ define({ api: [
   },
   {
     "type": "POST",
+    "url": "adminAffiliateCreate",
+    "title": "adminAffiliateCreate",
+    "name": "adminAffiliateCreate",
+    "group": "admin",
+    "description": "<p>TODO Not finished</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminAffiliateDetail",
+    "title": "adminAffiliateDetail",
+    "name": "adminAffiliateDetail",
+    "group": "admin",
+    "description": "<p>TODO Not finished</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminAffiliateList",
+    "title": "adminAffiliateList",
+    "name": "adminAffiliateList",
+    "group": "admin",
+    "description": "<p>returns a list of projectsTODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminAffiliateRemove",
+    "title": "adminAffiliateRemove",
+    "name": "adminAffiliateRemove",
+    "group": "admin",
+    "description": "<p>TODO Not finished</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminAffiliateUpdate",
+    "title": "adminAffiliateUpdate",
+    "name": "adminAffiliateUpdate",
+    "group": "admin",
+    "description": "<p>TODO Not finished</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminAppTicketCreate",
+    "title": "adminAppTicketCreate",
+    "name": "adminAppTicketCreate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminAppTicketDetail",
+    "title": "adminAppTicketDetail",
+    "name": "adminAppTicketDetail",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminAppTicketList",
+    "title": "adminAppTicketList",
+    "name": "adminAppTicketList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminAppTicketMacro",
+    "title": "adminAppTicketMacro",
+    "name": "adminAppTicketMacro",
+    "group": "admin",
+    "description": "<p>TODO</p> <ul> <li>ADDNOTE?note=xyz&amp;private=1|0</li> <li>ASK?</li> <li>UPDATE?escalate=1|0&amp;class=PRESALE|POSTSALE|EXCHANGE|RETURN</li> <li>CLOSE</li> </ul> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminAppTicketRemove",
+    "title": "adminAppTicketRemove",
+    "name": "adminAppTicketRemove",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminAppTicketSearch",
+    "title": "adminAppTicketSearch",
+    "name": "adminAppTicketSearch",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "onal",
+            "defaultValue": "1",
+            "description": "<p>id=&quot;lookupany string</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminBlastMacroCreate",
     "title": "adminBlastMacroCreate",
     "name": "adminBlastMacroCreate",
@@ -314,12 +449,12 @@ define({ api: [
     "group": "admin",
     "parameter": {
       "fields": {
-        "Request": [
+        "Response": [
           {
-            "group": "Request",
+            "group": "Response",
             "type": "String",
             "optional": false,
-            "field": "MSGID",
+            "field": "@MSGS",
             "description": ""
           }
         ]
@@ -337,12 +472,12 @@ define({ api: [
     "group": "admin",
     "parameter": {
       "fields": {
-        "Response": [
+        "Request": [
           {
-            "group": "Response",
+            "group": "Request",
             "type": "String",
             "optional": false,
-            "field": "@MSGS",
+            "field": "MSGID",
             "description": ""
           }
         ]
@@ -944,6 +1079,242 @@ define({ api: [
   },
   {
     "type": "POST",
+    "url": "adminCustomerOrganizationCreate",
+    "title": "adminCustomerOrganizationCreate",
+    "name": "adminCustomerOrganizationCreate",
+    "group": "admin",
+    "description": "<p>TODO | ID              | int(10) unsigned    | NO   | PRI | NULL    | auto_increment | | MID             | int(10) unsigned    | NO   | MUL | 0       |                | | USERNAME        | varchar(20)         | NO   |     |         |                | | PRT             | tinyint(3) unsigned | NO   |     | 0       |                | | CID             | int(10) unsigned    | NO   |     | 0       |                | | EMAIL           | varchar(65)         | NO   |     |         |                | | DOMAIN          | varchar(65)         | YES  |     | NULL    |                | | firstname       | varchar(25)         | NO   |     |         |                | | lastname        | varchar(25)         | NO   |     |         |                | | company         | varchar(100)        | NO   |     |         |                | | address1        | varchar(60)         | NO   |     |         |                | | address2        | varchar(60)         | NO   |     |         |                | | city            | varchar(30)         | NO   |     |         |                | | region          | varchar(10)         | NO   |     |         |                | | postal          | varchar(9)          | NO   |     |         |                | | countrycode     | varchar(9)          | NO   |     |         |                | | phone           | varchar(12)         | NO   |     |         |                | | LOGO            | varchar(60)         | NO   |     |         |                | | BILLING_CONTACT | varchar(60)         | NO   |     |         |                | | BILLING_PHONE   | varchar(60)         | NO   |     |         |                | | ALLOW_PO        | tinyint(3) unsigned | NO   |     | 0       |                | | RESALE          | tinyint(3) unsigned | NO   |     | 0       |                | | RESALE_PERMIT   | varchar(20)         | NO   |     |         |                | | CREDIT_LIMIT    | decimal(10,2)       | NO   |     | NULL    |                | | CREDIT_BALANCE  | decimal(10,2)       | NO   |     | NULL    |                | | CREDIT_TERMS    | varchar(25)         | NO   |     |         |                | | ACCOUNT_MANAGER | varchar(10)         | NO   |     |         |                | | ACCOUNT_TYPE    | varchar(20)         | NO   |     |         |                | | ACCOUNT_REFID   | varchar(36)         | NO   |     |         |                | | JEDI_MID        | int(11)             | NO   |     | 0       |                |</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCustomerOrganizationDetail",
+    "title": "adminCustomerOrganizationDetail",
+    "name": "adminCustomerOrganizationDetail",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ORGID",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCustomerOrganizationRemove",
+    "title": "adminCustomerOrganizationRemove",
+    "name": "adminCustomerOrganizationRemove",
+    "group": "admin",
+    "description": "<p>remove an organizationTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ORGID",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCustomerOrganizationSearch",
+    "title": "adminCustomerOrganizationSearch",
+    "name": "adminCustomerOrganizationSearch",
+    "group": "admin",
+    "description": "<p>find an organizationTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CONTACT",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "PHONE",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DOMAIN",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "EMAIL",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ORGID",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "IS_LOCKED",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ACCOUNT_MANAGER",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ACCOUNT_TYPE",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SCHEDULE",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCustomerOrganizationUpdate",
+    "title": "adminCustomerOrganizationUpdate",
+    "name": "adminCustomerOrganizationUpdate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ORGID",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCustomerSearch",
+    "title": "adminCustomerSearch",
+    "name": "adminCustomerSearch",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "scopeGIFTCARD",
+            "description": "<p>|SCHEDULE|ORDER|NAME|CID|EMAIL|PHONE|NOTES</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "searchforany",
+            "description": "<p>text</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@CUSTOMERS",
+            "description": "<p>Customer ID</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminCustomerSelectorDetail",
+    "title": "adminCustomerSelectorDetail",
+    "name": "adminCustomerSelectorDetail",
+    "group": "admin",
+    "description": "<p>a product customer is a relative pointer to a grouping of customers.TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "selector",
+            "description": "<p>CIDS=1,2,3,4 EMAILS=user@domain.com,user2@domain.com SUBLIST=0    all subscribers (any list) SUBLIST=1-15    a specific subscriber list ALL=*            all customers (regardless of subscriber status)</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@CIDSan",
+            "description": "<p>array of product id&#39;s</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminDSAgentCreate",
     "title": "adminDSAgentCreate",
     "name": "adminDSAgentCreate",
@@ -1336,6 +1707,201 @@ define({ api: [
     "name": "adminEBAYWizardPreview",
     "group": "admin",
     "description": "<p>-- will need some love --TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminFAQCreate",
+    "title": "adminFAQCreate",
+    "name": "adminFAQCreate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminFAQDetail",
+    "title": "adminFAQDetail",
+    "name": "adminFAQDetail",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminFAQList",
+    "title": "adminFAQList",
+    "name": "adminFAQList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminFAQMacro",
+    "title": "adminFAQMacro",
+    "name": "adminFAQMacro",
+    "group": "admin",
+    "description": "<p>TODO</p> <ul> <li>ADDNOTE?note=xyz&amp;private=1|0</li> <li>ASK?</li> <li>UPDATE?escalate=1|0&amp;class=PRESALE|POSTSALE|EXCHANGE|RETURN</li> <li>CLOSE</li> </ul> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminFAQRemove",
+    "title": "adminFAQRemove",
+    "name": "adminFAQRemove",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminGiftcardCreate",
+    "title": "adminGiftcardCreate",
+    "name": "adminGiftcardCreate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "expiresYYYYMMDD",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "balancecurrency",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "quantitydefaults",
+            "description": "<p>to 1 (if not specified)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>if a customer exists this will be matched to the cid, if a customer cannot be found a new customer account will be created, not compatible with qty &gt; 1</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "series",
+            "description": "<p>a mechanism for grouping cards, usually used with quantity greater than 1</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminGiftcardDetail",
+    "title": "adminGiftcardDetail",
+    "name": "adminGiftcardDetail",
+    "group": "admin",
+    "description": "<p>TODO Not finished</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminGiftcardList",
+    "title": "adminGiftcardList",
+    "name": "adminGiftcardList",
+    "group": "admin",
+    "description": "<p>returns a list of projectsTODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminGiftcardMacro",
+    "title": "adminGiftcardMacro",
+    "name": "adminGiftcardMacro",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "Array",
+            "optional": false,
+            "field": "@updates",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "description": "<p>SET/EMAIL?email=&amp;note= SET/BALANCE?email=&amp;note= SET/EXPIRES?expires=&amp;note= SET/CARDTYPE?cardtype=&amp;note=</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminGiftcardSearch",
+    "title": "adminGiftcardSearch",
+    "name": "adminGiftcardSearch",
+    "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminGiftcardSeriesList",
+    "title": "adminGiftcardSeriesList",
+    "name": "adminGiftcardSeriesList",
+    "group": "admin",
+    "description": "<p>returns a list of projectsTODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminGiftcardSetupProduct",
+    "title": "adminGiftcardSetupProduct",
+    "name": "adminGiftcardSetupProduct",
+    "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminGiftcardSetupProduct",
+    "title": "adminGiftcardSetupProduct",
+    "name": "adminGiftcardSetupProduct",
+    "group": "admin",
+    "description": "<p>creates a product that when purchased automatically creates a giftcardTODO</p> ",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
@@ -1950,6 +2516,224 @@ define({ api: [
   },
   {
     "type": "POST",
+    "url": "adminKPIDBCollectionCreate",
+    "title": "adminKPIDBCollectionCreate",
+    "name": "adminKPIDBCollectionCreate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>Title of the Collection</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "uuid",
+            "description": "<p>Unique identifier (36 characters) for the collection</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "priority",
+            "description": "<p>The position/priority/sequence of the collection</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@GRAPH",
+            "description": "<p>San array of graphs which will be serialized and returned</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminKPIDBCollectionDetail",
+    "title": "adminKPIDBCollectionDetail",
+    "name": "adminKPIDBCollectionDetail",
+    "group": "admin",
+    "description": "<p>returns the contents of a collectionTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "uuid",
+            "description": "<p>Unique identifier for this collection</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminKPIDBCollectionList",
+    "title": "adminKPIDBCollectionList",
+    "name": "adminKPIDBCollectionList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@COLLECTIONS",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminKPIDBCollectionRemove",
+    "title": "adminKPIDBCollectionRemove",
+    "name": "adminKPIDBCollectionRemove",
+    "group": "admin",
+    "description": "<p>removes a collectionTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "uuid",
+            "description": "<p>Unique identifier (36 characters) for the collection</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminKPIDBCollectionUpdate",
+    "title": "adminKPIDBCollectionUpdate",
+    "name": "adminKPIDBCollectionUpdate",
+    "group": "admin",
+    "description": "<p>same as collection create (pass uuid of previous collection)TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminKPIDBDataQuery",
+    "title": "adminKPIDBDataQuery",
+    "name": "adminKPIDBDataQuery",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@datasets",
+            "description": "<p>[&#39;dataset1&#39;,&#39;dataset2&#39;]</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "grpby",
+            "description": "<p>day|dow|quarter|month|week|none</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "column",
+            "description": "<p>gms|distinct|total</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "function",
+            "description": "<p>sum|min|max|avg</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "period",
+            "description": "<p>a formula ex: months.1, weeks.1</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "start",
+            "description": "<p>yyyymmdd(not needed if period is passed)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "stop",
+            "description": "<p>yyyymmdd(not needed if period is passed)</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminKPIDBUserDataSetsList",
+    "title": "adminKPIDBUserDataSetsList",
+    "name": "adminKPIDBUserDataSetsList",
+    "group": "admin",
+    "description": "<p>returns a list of datasets accessible to the userTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@DATASETS",
+            "description": "<p>[ &#39;GROUP&#39;, &#39;DATASET-ID&#39;, &#39;Pretty name&#39; ], [ &#39;GROUP&#39;, &#39;DATASET-ID&#39;, &#39;Pretty name&#39; ], [ &#39;GROUP&#39;, &#39;DATASET-ID&#39;, &#39;Pretty name&#39; ],</p> <hint> The DATASET-ID is what is passed into adminKPIDBDataQuery as the &quot;dataset&quot; parameter </hint>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminNavTreeList",
     "title": "adminNavTreeList",
     "name": "adminNavTreeList",
@@ -2197,7 +2981,7 @@ define({ api: [
             "group": "Request",
             "type": "String",
             "optional": false,
-            "field": "orderid",
+            "field": "orderi",
             "description": "<p>Order ID</p> "
           }
         ],
@@ -2237,7 +3021,7 @@ define({ api: [
             "group": "Request",
             "type": "String",
             "optional": false,
-            "field": "orderi",
+            "field": "orderid",
             "description": "<p>Order ID</p> "
           }
         ],
@@ -2542,6 +3326,99 @@ define({ api: [
   },
   {
     "type": "POST",
+    "url": "adminPageGet",
+    "title": "adminPageGet",
+    "name": "adminPageGet",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "PATH",
+            "description": "<p>.path.to.page or @CAMPAIGNID</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@get",
+            "description": "<p>[ &#39;attrib1&#39;, &#39;attrib2&#39;, &#39;attrib3&#39; ]</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "all",
+            "description": "<p>set to 1 to return all fields (handy for json libraries which don&#39;t return @get=[]) </p> <p><example> attrib1:xyz attrib2:xyz </example></p> <note>leave @get blank for all page attributes</note>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPageList",
+    "title": "adminPageList",
+    "name": "adminPageList",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@PAGES",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPageSet",
+    "title": "adminPageSet",
+    "name": "adminPageSet",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "PATH.path.to.page",
+            "description": "<p>or @CAMPAIGNID</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "%set",
+            "description": "<p>{ &#39;attrib1&#39;=&gt;&#39;newvalue&#39;, &#39;attrib2&#39;=&gt;&#39;new value&#39;, &#39;attrib3&#39;=&gt;undefined }</p> <hint>set value to &quot;undefined&quot; to delete it.</hint>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "adminPasswordUpdate",
     "title": "adminPasswordUpdate",
     "name": "adminPasswordUpdate",
@@ -2630,6 +3507,109 @@ define({ api: [
     "title": "adminPlatformQueueList",
     "name": "adminPlatformQueueList",
     "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPriceScheduleCreate",
+    "title": "adminPriceScheduleCreate",
+    "name": "adminPriceScheduleCreate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPriceScheduleDetail",
+    "title": "adminPriceScheduleDetail",
+    "name": "adminPriceScheduleDetail",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SIDschedule",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPriceScheduleList",
+    "title": "adminPriceScheduleList",
+    "name": "adminPriceScheduleList",
+    "group": "admin",
+    "description": "<p>Returns a list of available schedule id&#39;s.<br>Each schedule has a unique 6 digit alphanumeric code that is used as an identifier. TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@SCHEDULES",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\n'@SCHEDULES':[\n{ 'id':'SCHED1' },\n{ 'id':'SCHED2' },\n{ 'id':'SCHED3' }\n]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPriceScheduleRemove",
+    "title": "adminPriceScheduleRemove",
+    "name": "adminPriceScheduleRemove",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "SIDschedule",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPriceScheduleUpdate",
+    "title": "adminPriceScheduleUpdate",
+    "name": "adminPriceScheduleUpdate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
@@ -3326,6 +4306,284 @@ define({ api: [
             "optional": false,
             "field": "%attribs",
             "description": "<p>[ &#39;attribute&#39;:&#39;value&#39;, &#39;anotherattrib&#39;:&#39;value&#39; ]</p> <example> %attribs:[ &#39;attribute&#39;:&#39;value&#39;, &#39;anotherattrib&#39;:&#39;value&#39; ] </example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminProjectClone",
+    "title": "adminProjectClone",
+    "name": "adminProjectClone",
+    "group": "admin",
+    "description": "<p>TODO Not finished</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminProjectCreate",
+    "title": "adminProjectCreate",
+    "name": "adminProjectCreate",
+    "group": "admin",
+    "description": "<p>TODO Not finished</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminProjectDetail",
+    "title": "adminProjectDetail",
+    "name": "adminProjectDetail",
+    "group": "admin",
+    "description": "<p>TODO Not finished</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminProjectGitMacro",
+    "title": "adminProjectGitMacro",
+    "name": "adminProjectGitMacro",
+    "group": "admin",
+    "description": "<p>TODO Not finished</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminProjectList",
+    "title": "adminProjectList",
+    "name": "adminProjectList",
+    "group": "admin",
+    "description": "<p>returns a list of projectsTODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminProjectRemove",
+    "title": "adminProjectRemove",
+    "name": "adminProjectRemove",
+    "group": "admin",
+    "description": "<p>TODO Not finished</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminProjectUpdate",
+    "title": "adminProjectUpdate",
+    "name": "adminProjectUpdate",
+    "group": "admin",
+    "description": "<p>TODO Not finished</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminRSSClone",
+    "title": "adminRSSClone",
+    "name": "adminRSSClone",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CPG",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminRSSCreate",
+    "title": "adminRSSCreate",
+    "name": "adminRSSCreate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "feed_title",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "feed_link",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "feed_link_override",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "feed_subject",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "max_products",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "cycle_interval",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "schedule",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "profile",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "list",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "image_h",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "image_w",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "translation",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "coupon",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminRSSDetail",
+    "title": "adminRSSDetail",
+    "name": "adminRSSDetail",
+    "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminRSSList",
+    "title": "adminRSSList",
+    "name": "adminRSSList",
+    "group": "admin",
+    "description": "<p>returns a list of projectsTODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminRSSRemove",
+    "title": "adminRSSRemove",
+    "name": "adminRSSRemove",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CPG",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminRSSUpdate",
+    "title": "adminRSSUpdate",
+    "name": "adminRSSUpdate",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "CPG",
+            "description": ""
           }
         ]
       }
