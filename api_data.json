@@ -314,12 +314,12 @@
     "group": "admin",
     "parameter": {
       "fields": {
-        "Response": [
+        "Request": [
           {
-            "group": "Response",
+            "group": "Request",
             "type": "String",
             "optional": false,
-            "field": "@MSGS",
+            "field": "MSGID",
             "description": ""
           }
         ]
@@ -337,12 +337,12 @@
     "group": "admin",
     "parameter": {
       "fields": {
-        "Request": [
+        "Response": [
           {
-            "group": "Request",
+            "group": "Response",
             "type": "String",
             "optional": false,
-            "field": "MSGID",
+            "field": "@MSGS",
             "description": ""
           }
         ]
@@ -1047,6 +1047,295 @@
         ]
       }
     },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminEBAYAPI-AddFixedPriceItem",
+    "title": "adminEBAYAPI-AddFixedPriceItem",
+    "name": "adminEBAYAPI_AddFixedPriceItem",
+    "group": "admin",
+    "description": "<p>runs an eBay AddFixedPriceItem (see adminEBAYAPI-AddItem)TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminEBAYAPI-AddItem",
+    "title": "adminEBAYAPI-AddItem",
+    "name": "adminEBAYAPI_AddItem",
+    "group": "admin",
+    "description": "<p>runs an eBay API callsTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "Item/SKUproduct",
+            "description": "<p>id</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "Item/Quantityquantity",
+            "description": "<p>to launch (must be 1 for auctions)</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "Item/UUIDa",
+            "description": "<p>unique # for this request</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "Profilezoovy",
+            "description": "<p>launch profile to load settings from, if profile is not set, then ebay:profile will be used.</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminEBAYAPI-VerifyAddFixedPriceItem",
+    "title": "adminEBAYAPI-VerifyAddFixedPriceItem",
+    "name": "adminEBAYAPI_VerifyAddFixedPriceItem",
+    "group": "admin",
+    "description": "<p>runs an eBay VerifyAddFixedPriceItem (see adminEBAYAPI-AddItem)TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminEBAYAPI-VerifyAddItem",
+    "title": "adminEBAYAPI-VerifyAddItem",
+    "name": "adminEBAYAPI_VerifyAddItem",
+    "group": "admin",
+    "description": "<p>runs an eBay VerifyAddItem (see adminEBAYAPI-AddItem)TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminEBAYMacro",
+    "title": "adminEBAYMacro",
+    "name": "adminEBAYMacro",
+    "group": "admin",
+    "description": "<p>Modify the eBay ConfigurationTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "PROFILE",
+            "description": "<p>Profile specific calls require admin</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminEBAYProfileDetail",
+    "title": "adminEBAYProfileDetail",
+    "name": "adminEBAYProfileDetail",
+    "group": "admin",
+    "description": "<p>Returns the data in an eBay launch profileTODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminEBAYProfileList",
+    "title": "adminEBAYProfileList",
+    "name": "adminEBAYProfileList",
+    "group": "admin",
+    "description": "<p>Returns the list of possible profilesTODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminEBAYShippingDetail",
+    "title": "adminEBAYShippingDetail",
+    "name": "adminEBAYShippingDetail",
+    "group": "admin",
+    "description": "<p>Parses and returns a structured version of the shipping configuration for the profile requestedTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "PROFILE",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@OUR_DOMESTIC",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@OUR_INTERNATIONAL",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@ALL_LOCATIONS",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@OUR_LOCATIONS",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@PREFERENCES",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@SERVICES_DOMESTIC",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@SERVICES_INTERNATIONAL",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminEBAYTemplateDownload",
+    "title": "adminEBAYTemplateDownload",
+    "name": "adminEBAYTemplateDownload",
+    "group": "admin",
+    "description": "<p>lists the fields on an html wizardTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "ebay",
+            "description": "<p>:template</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminEBAYTokenDetail",
+    "title": "adminEBAYTokenDetail",
+    "name": "adminEBAYTokenDetail",
+    "group": "admin",
+    "description": "<p>performs ebay &#39;GetUser&#39; call to verify current token, returns info associated with the partitionTODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@PROFILES",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "%TOKEN",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminEBAYTokenList",
+    "title": "adminEBAYTokenList",
+    "name": "adminEBAYTokenList",
+    "group": "admin",
+    "description": "<p>lists all tokens across all partitions (one token per partition)TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@ACCOUNTS",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminEBAYWizardPreview",
+    "title": "adminEBAYWizardPreview",
+    "name": "adminEBAYWizardPreview",
+    "group": "admin",
+    "description": "<p>-- will need some love --TODO</p> ",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
@@ -3227,6 +3516,372 @@
         ]
       }
     },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSyndicationAMZLogs",
+    "title": "adminSyndicationAMZLogs",
+    "name": "adminSyndicationAMZLogs",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DSTmarketplace",
+            "description": "<p>destination code (usually 3 or 4 digits) which can be obtained from the dst code in appResourceGet &#39;integrations&#39; file</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@ROWS",
+            "description": "<pre><code>[ pid, sku, feed, ts, msgtype, msg ] </code></pre>"
+          }
+        ]
+      }
+    },
+    "description": "<p>returns up to 1000 products where the amazon error flag is set in the SKU Lookup table.TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSyndicationAMZOrders",
+    "title": "adminSyndicationAMZOrders",
+    "name": "adminSyndicationAMZOrders",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DSTAMZ",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "description": "<p>displays orders created in the last 50 days which have not been flagged as fulfilled/processed. TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSyndicationAMZThesaurii",
+    "title": "adminSyndicationAMZThesaurii",
+    "name": "adminSyndicationAMZThesaurii",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DSTAMZ",
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@CATEGORIES",
+            "description": "<pre><code>[ safename, prettyname, thesauruskey, thesaurusvalue ] </code></pre>"
+          }
+        ]
+      }
+    },
+    "description": "<p>store categories may have one or more amazon thesauruses associated with it a thesaurus helps amazon classify a product similar to a category+tag might in other systems.     for example &#39;color&#39; &#39;navy&#39; in the amazon system might be equivalent to &#39;color&#39; &#39;blue&#39; when somebody does a search, but not &#39;color&#39; &#39;teal&#39; (which might also map to both blue/green).     a single category may have many thesaurus keys/values. TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSyndicationBUYDownloadDBMaps",
+    "title": "adminSyndicationBUYDownloadDBMaps",
+    "name": "adminSyndicationBUYDownloadDBMaps",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DSTBUY",
+            "description": "<p>|BST</p> "
+          }
+        ]
+      }
+    },
+    "description": "<p>buy.com/bestbuy.com have support for json dbmaps, which allow uses to create ad-hoc schema that maps existing product attributes to buy.com data.     since buy.com product feeds are no longer sent in an automated fasion the utility of this feature is somewhat limited, but can still be used to perform additional validation     during/prior to export.     each dbmap has a 1-8 digit code, and associated json (which uses a modified flexedit syntax).     each product would then have a corresponding buycom:dbmap or bestbuy:dbmap field set. TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSyndicationDebug",
+    "title": "adminSyndicationDebug",
+    "name": "adminSyndicationDebug",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DSTmarketplace",
+            "description": "<p>destination code (usually 3 or 4 digits) which can be obtained from the dst code in appResourceGet &#39;integrations&#39; file</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "FEEDTYPEPRODUCT",
+            "description": "<p>|INVENTORY</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "PID",
+            "description": "<p>PRODUCTID</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "HTMLHtml",
+            "description": "<p>messaging describing the syndication process + any errors</p> "
+          }
+        ]
+      }
+    },
+    "description": "<p>runs the syndication process in realtime and returns an html response describing &#39;what happened&#39;TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSyndicationDetail",
+    "title": "adminSyndicationDetail",
+    "name": "adminSyndicationDetail",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DSTmarketplace",
+            "description": "<p>destination code (usually 3 or 4 digits) which can be obtained from the dst code in appResourceGet &#39;integrations&#39; file</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSyndicationFeedErrors",
+    "title": "adminSyndicationFeedErrors",
+    "name": "adminSyndicationFeedErrors",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DSTmarketplace",
+            "description": "<p>destination code (usually 3 or 4 digits) which can be obtained from the dst code in appResourceGet &#39;integrations&#39; file</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@ROWS",
+            "description": "<pre><code>[ timestamp1, sku1, feedtype1, errcode1, errmsg1, batchjob#1 ], [ timestamp2, sku2, feedtype2, errcode2, errmsg2, batchjob#2 ], </code></pre>"
+          }
+        ]
+      }
+    },
+    "description": "<p>displays up to 500 to remove/hide these.TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSyndicationHistory",
+    "title": "adminSyndicationHistory",
+    "name": "adminSyndicationHistory",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DSTmarketplace",
+            "description": "<p>destination code (usually 3 or 4 digits) which can be obtained from the dst code in appResourceGet &#39;integrations&#39; file</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@ROWS",
+            "description": "<pre><code>[ msgtype1, timestamp1, message1 ], [ msgtype2, timestamp2, message2 ], </code></pre>"
+          }
+        ]
+      }
+    },
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSyndicationList",
+    "title": "adminSyndicationList",
+    "name": "adminSyndicationList",
+    "group": "admin",
+    "description": "<p>returns a list of marketplaces and their configuration statusTODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSyndicationListFiles",
+    "title": "adminSyndicationListFiles",
+    "name": "adminSyndicationListFiles",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DSTmarketplace",
+            "description": "<p>destination code (usually 3 or 4 digits) which can be obtained from the dst code in appResourceGet &#39;integrations&#39; file</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "@FILES",
+            "description": "<pre><code>{ FILENAME, FILETYPE, GUID } </code></pre>"
+          }
+        ]
+      }
+    },
+    "description": "<p>TODO</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSyndicationMacro",
+    "title": "adminSyndicationMacro",
+    "name": "adminSyndicationMacro",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DSTmarketplace",
+            "description": "<p>destination code (usually 3 or 4 digits) which can be obtained from the dst code in appResourceGet &#39;integrations&#39; file</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "@updates",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "description": "<p>DELETE     ENABLE     DISABLE     UNSUSPEND     CLEAR-FEED-ERRORS     SAVE?fields=from&amp;input=form     DBMAP-NUKE?MAPID=     DBMAP-SAVE?MAPID=&amp;CATID=&amp;STOREID=&amp;MAPTXT=     AMZ-THESAURUS-DELETE?guid=     AMZ-THESAURUS-SAVE?name=&amp;guid=&amp;search_terms&amp;itemtype=&amp;subjectcontent&amp;targetaudience&amp;isgiftwrapavailable&amp;     AMZ-SHIPPING-SAVE?Standard=XXX&amp;Expedited=XXY&amp;Scheduled=XXZ&amp;NextDay=XYY&amp;SecondDay=XYZ     AMZ-TOKEN-UPDATE?marketplaceId=&amp;merchantId=</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminSyndicationPublish",
+    "title": "adminSyndicationPublish",
+    "name": "adminSyndicationPublish",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "DSTmarketplace",
+            "description": "<p>destination code (usually 3 or 4 digits) which can be obtained from the dst code in appResourceGet &#39;integrations&#39; file</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "FEEDTYPEPRODUCT",
+            "description": "<p>|INVENTORY</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "JOBID",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "description": "<p>creates a batch job for publishingTODO</p> ",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
