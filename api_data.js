@@ -76,37 +76,6 @@ define({ api: [
     "groupTitle": "INTRODUCTION"
   },
   {
-    "type": "POST",
-    "url": "adminWalletList",
-    "title": "",
-    "description": "<p>TODO</p> ",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "optional": false,
-            "field": "methodCHANGED",
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "optional": false,
-            "field": "limit",
-            "description": "<h2 id=\"-\">#</h2> <p><example>&lt;![CDATA[</p> "
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm",
-    "group": "_core_lib_JSONAPI_pm",
-    "groupTitle": "_core_lib_JSONAPI_pm",
-    "name": "PostAdminwalletlist"
-  },
-  {
     "name": "adminCIAgentZipDownload",
     "type": "",
     "url": "",
@@ -362,6 +331,37 @@ define({ api: [
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminWalletList",
+    "title": "",
+    "group": "admin",
+    "description": "<p>TODO</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "methodCHANGED",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "limit",
+            "description": "<h2 id=\"-\">#</h2> <p><example>&lt;![CDATA[</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin",
+    "name": "PostAdminwalletlist"
   },
   {
     "type": "POST",
