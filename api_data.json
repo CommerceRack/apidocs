@@ -114,6 +114,329 @@
   },
   {
     "type": "POST",
+    "url": "adminPasswordUpdate",
+    "title": "adminPasswordUpdate",
+    "name": "adminPasswordUpdate",
+    "group": "admin",
+    "description": "<p>changes a users password</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "oldold",
+            "description": "<p>password</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "newnew",
+            "description": "<p>passowrd</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPlatformHealth",
+    "title": "adminPlatformHealth",
+    "name": "adminPlatformHealth",
+    "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPlatformLogDownload",
+    "title": "adminPlatformLogDownload",
+    "name": "adminPlatformLogDownload",
+    "group": "admin",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "GUID",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPlatformLogList",
+    "title": "adminPlatformLogList",
+    "name": "adminPlatformLogList",
+    "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPlatformMacro",
+    "title": "adminPlatformMacro",
+    "name": "adminPlatformMacro",
+    "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "adminPlatformQueueList",
+    "title": "adminPlatformQueueList",
+    "name": "adminPlatformQueueList",
+    "group": "admin",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "",
+    "url": "/authAdminLogin",
+    "title": "authAdminLogin",
+    "name": "authAdminLogin",
+    "group": "admin",
+    "description": "<p>performs authentication and returns an admin session id which can be used to make adminXXXXX calls.</purpose></p> <p>userid identifies a user (not a domain) within a specific account. A single user may have access to many partitions and many domains. There are for md5 or sha1 - it is a digest of hashtype(password+ts)several valid ways to write a user.  Each account is assigned a 20 character &quot;username&quot;, in addition there is a 10 digit sub-user called the &quot;luser&quot;.  the security administrator for every account is called &quot;admin&quot; and so the login for admin would be &quot;admin<em>username&quot; or simply &quot;username&quot; in addition if a domain.com is associated to an account then it is also allowed to login as admin@domain.com.  The same applies for luser which would simply be  luser</em>username or luser@domain.com.  Please note that login id&#39;s are NOT the same as email addresses, it is not possible to login with an email address unless the users email address also happens to be luser@domain.com (which would be configured by security administrator)</p> <p>authentication information (USERID, CLIENTID, DOMAIN, VERSION, AUTHTOKEN) can be passed in either of two ways - using HTTP Headers, or in the data payload. The following is a mapping of HTTP Header to payload parameter.   X-USERID = _userid, X-DOMAIN = _domain, X-VERSION = _version, X-CLIENTID = _clientid, X-DEVICEID = _deviceid, X-AUTHTOKEN = _authtoken.  Avoid using HTTP headers when making requests via the XHR XMLHTTPRequest from a browser, there are numerous compatibility issues with the CORS (Cross Origin Resource Sharing) specification 2119 so use the payload version instead. Ex: { &quot;_cmd&quot;:&quot;someThing&quot;, &quot;_clientid&quot;:&quot;your client id&quot;, &quot;_version&quot;:201249, } </p> <p>authAdminLogin calls do not require an authtoken (since they return it), depending on the circumstances the api may return a challenge  which complies with the supported challenge methods. The list of acceptable challenge methods is determined by comparing the allowed challenge  methods of the client (which were specified when the clientid was requested/assigned) and also the challenge types allowed by the administrator - if no mutually acceptable challenge types can be identified then an error is returned and access is denied.  Challenges are issued based on the accounts security administrator settings. </p> <p>authtype of md5|sha1 refers to the digest protocol being used (in all cases we will accept the hexadecimal notation) the authid is generated by computing the md5 or sha1 hexadecimal digest value of the concatenation of plain_text_password and ts . Given the following inputs password=&quot;A&quot;, ts=&quot;1B&quot; then it would be md5(&quot;A1B&quot;) or sha1(&quot;A1B&quot;) respectively. Both MD5 and SHA1 are widely implemented protocols and sufficiently secure for this exercise -  we have included the appropriate security tokens as generated by the md5 and sha1 functions in  mysql below (use these as a reference to test your own functions)</p> <p>mysql&gt; select md5(&#39;A1B&#39;); +----------------------------------+ | md5(&#39;A1B&#39;)                       | +----------------------------------+ | 9c8c7d6da17f5b90b9c2b8aa03812ab4 | +----------------------------------+</p> <p>mysql&gt; select sha1(&#39;A1B&#39;); +------------------------------------------+ | sha1(&#39;A1B&#39;)                              | +------------------------------------------+ | 7b6bfc9420addb09c8cfb1ae5f71f8e797d4685d | +------------------------------------------+</p> <p>The ts value of &quot;1B&quot; would not be valid, it should be a date in YYYYMMDDHHMMSS format.  The date must be within 60 seconds of the actual time or the request will be refused.  In addition the random security string is ONLY valid for one request within a 1 hour period.</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "device_note",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "Timestamp",
+            "optional": false,
+            "field": "current",
+            "description": "<p>timestamp YYYYMMDDHHMMSS</p> "
+          },
+          {
+            "group": "Request",
+            "type": "Enumeration",
+            "optional": true,
+            "field": "authtype",
+            "description": "<p>md5|sha1|facebook|googleid|paypal</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": true,
+            "field": "authid",
+            "description": "<p>for md5 or sha1 - it is a digest of hashtype(password+ts)</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "authtoken",
+            "description": "<p>secret user key</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "deviceid",
+            "description": "<p>deviceid</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "userid",
+            "description": "<p>userid</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "ts",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Using Headers",
+          "content": "X-USERID: user@domain.com\nX-CLIENT: your.app.client.id\nX-VERSION: 201246\nX-DEVICEID: user_specified\nX-DOMAIN: domain.com\nContent-Type: application/json\n\n{ \"_cmd\":\"authAdminLogin\", \"ts\":\"YYYYMMDDHHMMSS or seconds since 1970\", \"authtype\":\"md5\", \"authid\"  }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "authAdminLogout",
+    "title": "authAdminLogout",
+    "name": "authAdminLogout",
+    "group": "admin",
+    "description": "<p>destroy/invalidate an admin session.</p> <p>Does not need any parameters, destroys the current session (if any), always returns a success.</p> ",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "/authNewAccountCreate",
+    "title": "authNewAccountCreate",
+    "group": "admin",
+    "name": "authNewAccountCreate",
+    "description": "<p>establish a new anycommerce account (this data should be collected during the registration process) returns a valid token to the account</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "keywords",
+            "description": "<p>search string</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "domain",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "firstname",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "lastname",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "company",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "phone",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "verificationsms",
+            "description": "<p>|voice</p> "
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Array",
+            "optional": false,
+            "field": "@RESULTS",
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "ts",
+            "description": "<p>timestamp</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "userid",
+            "description": "<p>login@username</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "deviceid",
+            "description": "<p>login@username</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "authtoken",
+            "description": "<p>login@username</p> "
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "authPasswordRecover",
+    "title": "authPasswordRecover",
+    "name": "authPasswordRecover",
+    "group": "admin",
+    "description": "<p>employs the password recovery mechanism for the account (currently only email). a temporary password is created and emailed, up to 10 times in a 3 hour period.</p> ",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "emailemail",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
     "url": "/helpAPI",
     "title": "helpAPI",
     "group": "admin",
@@ -168,6 +491,165 @@
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "admin"
+  },
+  {
+    "type": "POST",
+    "url": "appInteractInternalMemCache",
+    "title": "appInteractInternalMemCache",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app",
+    "name": "PostAppinteractinternalmemcache"
+  },
+  {
+    "type": "POST",
+    "url": "appInteractInternalRedis",
+    "title": "appInteractInternalRedis",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app",
+    "name": "PostAppinteractinternalredis"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpFTP",
+    "title": "appMashUpFTP",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app",
+    "name": "PostAppmashupftp"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpHTTP",
+    "title": "appMashUpHTTP",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app",
+    "name": "PostAppmashuphttp"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpHTTPS",
+    "title": "appMashUpHTTPS",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app",
+    "name": "PostAppmashuphttps"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpMemCache",
+    "title": "appMashUpMemCache",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app",
+    "name": "PostAppmashupmemcache"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpRedis",
+    "title": "appMashUpRedis",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app",
+    "name": "PostAppmashupredis"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpSFTP",
+    "title": "appMashUpSFTP",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app",
+    "name": "PostAppmashupsftp"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpSQL",
+    "title": "appMashUpSQL",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app",
+    "name": "PostAppmashupsql"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpSMTP",
+    "title": "appMashUpSMTP",
+    "name": "appMashUpSMTP",
+    "group": "app",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "permission.mashups/smtp-sample.json",
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "sender",
+            "description": "<p>&quot; optional=&quot;1</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "recipient",
+            "description": "<p>&quot; optional=&quot;1</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "subject",
+            "description": "<p>&quot; optional=&quot;1</p> "
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "optional": false,
+            "field": "body",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": ".mashups/smtp-sample.json",
+        "content": "{\n\t\"call\":\"appMashUpSMTP\",\t\t\t/* required */\n\t\"call-limit-daily\":\"10\",\t\t/* recommended: max of 10 calls per day */\n\t\"call-limit-hourly\":\"2\",\t\t/* recommended: max of 2 calls per hour */\n\t\"min-version\":201338,\t\t\t/* recommended: minimum api version */\n\t\"max-version\":201346,\t\t\t/* recommended: maximum api version */\n\t\"@whitelist\":[\n\t\t/* the line below will force the sender to you@domain.com */\n\t\t{ \"id\":\"sender\",    \"verb\":\"set\", \"value\":\"you@domain.com\" },\n\t\t/* the line above will use the recipient provided in the app call */\n\t\t{ \"id\":\"recipient\", \"verb\":\"get\" },\n\t\t/* this is an optional parameter, provided by the app, defaulting to \"unknown\" */\n\t\t{ \"id\":\"eyecolor\",  \"verb\":\"get\", \"default\":\"unknown\" },\n\t\t/* the default behavior is \"verb\":\"get\" .. so this is basically whitelisting subject */\n\t\t{ \"id\":\"subject\"    },\n\t\t/* the body message, which will substitute %eyecolor% */\n\t\t{ \"id\":\"body\", \t  \"verb\":\"sub\", \"value\":\"Your eye color is: %eyecolor%\" }\n\t\t]\n}",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpSQS",
+    "title": "appMashUpSQS",
+    "name": "appMashUpSQS",
+    "group": "app",
+    "description": "<p><purpose></purpose></p> <notes></notes>",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm",
+    "groupTitle": "app"
   },
   {
     "type": "POST",
