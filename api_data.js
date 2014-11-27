@@ -283,6 +283,64 @@ define({ api: [
     "filename": "lib/JSONAPI.pm"
   },
   {
+    "type": "POST",
+    "url": "adminSupplierProductList",
+    "title": "adminSupplierProductList",
+    "name": "adminSupplierProductList",
+    "group": "admin",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "VENDORID6-8",
+            "optional": false,
+            "description": "<p>digit supplier/vendor id</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "products0",
+            "optional": false,
+            "description": "<p>|1</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "FILTER",
+            "optional": false,
+            "description": "<p>UNCONFIRMED|RECENT</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "DETAIL",
+            "optional": false,
+            "description": "<p>1|0 includes an optional @ORDERDETAIL in response</p>"
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "field": "@ORDERS",
+            "optional": false,
+            "description": "<p>detail about the vendor/supplier orders</p>"
+          },
+          {
+            "group": "Response",
+            "field": "@ORDERDETAIL",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
     "type": "",
     "url": "/authAdminLogin",
     "title": "authAdminLogin",
@@ -640,14 +698,14 @@ define({ api: [
             "type": "String",
             "field": "@HEADER",
             "optional": false,
-            "description": "<p>&quot;&gt;</output></p>"
+            "description": ""
           },
           {
             "group": "Response",
             "type": "String",
             "field": "@ROWS",
             "optional": false,
-            "description": "<p>&quot;&gt;</output></p><p><acl want=\"EBAY\"></acl></API></p>"
+            "description": ""
           }
         ]
       }
@@ -661,7 +719,7 @@ define({ api: [
     "title": "adminImageDelete",
     "name": "adminImageDelete",
     "group": "other",
-    "description": "<p>deletes an image</purpose></p>",
+    "description": "<p>deletes an image</p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -677,7 +735,7 @@ define({ api: [
             "type": "String",
             "field": "folderfolder",
             "optional": false,
-            "description": "<p></API></p>"
+            "description": ""
           }
         ]
       }
@@ -691,7 +749,7 @@ define({ api: [
     "title": "adminImageDetail",
     "name": "adminImageDetail",
     "group": "other",
-    "description": "<p>returns stored details about an media library image file.</purpose></p>",
+    "description": "<p>returns stored details about an media library image file.</p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -700,7 +758,7 @@ define({ api: [
             "type": "String",
             "field": "file",
             "optional": false,
-            "description": "<p>&quot; example=&quot;path/to/image.jpgfilename of the image</p>"
+            "description": "<p>filename of the image ex: path/to/image.jpg</p>"
           }
         ],
         "Response": [
@@ -751,7 +809,7 @@ define({ api: [
             "type": "String",
             "field": "FID",
             "optional": false,
-            "description": "<p></API></p>"
+            "description": ""
           }
         ]
       }
@@ -765,16 +823,16 @@ define({ api: [
     "title": "adminImageFolderCreate",
     "name": "adminImageFolderCreate",
     "group": "other",
-    "description": "<p>creates a new folder in the media library, folder names must be in lower case.</purpose></p>",
+    "description": "<p>creates a new folder in the media library, folder names must be in lower case.</purpose></p><p>you can call these in any order, subpaths will be created.</p>",
     "parameter": {
       "fields": {
         "Request": [
           {
             "group": "Request",
             "type": "String",
-            "field": "folderDIR1",
+            "field": "folder",
             "optional": false,
-            "description": "<p>|DIR2</p>"
+            "description": "<p>DIR1|DIR2</p>"
           }
         ],
         "Response": [
@@ -790,11 +848,16 @@ define({ api: [
             "type": "String",
             "field": "name",
             "optional": false,
-            "description": "<p>the name the folder was created</p><p><hint>you can call these in any order, subpaths will be created.</hint></p><p><example>&lt;![CDATA[</p><p><Category FID=\"1234\" Name=\"\"/>]]&gt;</example></API></p>"
+            "description": "<p>the name the folder was created</p>"
           }
         ]
       }
     },
+    "sampleRequest": [
+      {
+        "url": "<Category FID=\"1234\" Name=\"\"/>"
+      }
+    ],
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
   },
@@ -813,7 +876,7 @@ define({ api: [
             "type": "String",
             "field": "folder",
             "optional": false,
-            "description": "<p></API></p>"
+            "description": ""
           }
         ]
       }
@@ -836,11 +899,16 @@ define({ api: [
             "type": "String",
             "field": "@folders",
             "optional": false,
-            "description": "<p><example>&lt;![CDATA[</p><p><Folder ImageCount=\"5\" TS=\"123\" Name=\"Path1\" FID=\"1\" ParentFID=\"0\" ParentName=\"|\"/></p><p><Folder ImageCount=\"2\" TS=\"456\" Name=\"Path1b\" FID=\"2\" ParentFID=\"1\" ParentName=\"|Path1\"/></p><p><Folder ImageCount=\"1\" TS=\"567\" Name=\"Path1bI\" FID=\"3\" ParentFID=\"2\" ParentName=\"|Path1|Pathb\"/></p><p><Folder ImageCount=\"0\" TS=\"789\" Name=\"Path2\" FID=\"4\" ParentFID=\"0\" ParentName=\"|\"/>]]&gt;</example></API></p>"
+            "description": ""
           }
         ]
       }
     },
+    "sampleRequest": [
+      {
+        "url": "<Folder ImageCount=\"5\" TS=\"123\" Name=\"Path1\" FID=\"1\" ParentFID=\"0\" ParentName=\"|\"/>\n<Folder ImageCount=\"2\" TS=\"456\" Name=\"Path1b\" FID=\"2\" ParentFID=\"1\" ParentName=\"|Path1\"/>\n<Folder ImageCount=\"1\" TS=\"567\" Name=\"Path1bI\" FID=\"3\" ParentFID=\"2\" ParentName=\"|Path1|Pathb\"/>\n<Folder ImageCount=\"0\" TS=\"789\" Name=\"Path2\" FID=\"4\" ParentFID=\"0\" ParentName=\"|\"/>"
+      }
+    ],
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
   },
@@ -850,7 +918,7 @@ define({ api: [
     "title": "adminImageList",
     "name": "adminImageList",
     "group": "other",
-    "description": "<p>returns the list of images for a given folder (if specified). </purpose></p>",
+    "description": "<p>returns the list of images for a given folder (if specified).</p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -896,7 +964,56 @@ define({ api: [
             "type": "String",
             "field": "@images",
             "optional": false,
-            "description": "<p><example>&lt;![CDATA[</p><p><Image Name=\"abc\" TS=\"1234\" Format=\"jpg\" /></p><p><Image Name=\"abc2\" TS=\"1234\" Format=\"jpg\" /></p><p><Image Name=\"abc3\" TS=\"1234\" Format=\"jpg\" /></p><p><Image Name=\"abc4\" TS=\"1234\" Format=\"jpg\" /></p><p><Image Name=\"abc5\" TS=\"1234\" Format=\"jpg\" />]]&gt;</example></API></p>"
+            "description": ""
+          }
+        ]
+      }
+    },
+    "sampleRequest": [
+      {
+        "url": "<Image Name=\"abc\" TS=\"1234\" Format=\"jpg\" />\n<Image Name=\"abc2\" TS=\"1234\" Format=\"jpg\" />\n<Image Name=\"abc3\" TS=\"1234\" Format=\"jpg\" />\n<Image Name=\"abc4\" TS=\"1234\" Format=\"jpg\" />\n<Image Name=\"abc5\" TS=\"1234\" Format=\"jpg\" />"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminImageUpload",
+    "title": "adminImageUpload",
+    "name": "adminImageUpload",
+    "group": "other",
+    "description": "<p>uses the file upload api to link a fileguid into a media library directory.</purpose></p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "folderfolder",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "filename",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "base64base64",
+            "optional": true,
+            "description": "<p>encoded image data</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "fileguid",
+            "optional": true,
+            "description": "<p>fileguid (from file upload)</p>"
           }
         ]
       }
@@ -910,7 +1027,7 @@ define({ api: [
     "title": "adminNavcatCreate",
     "name": "adminNavcatCreate",
     "group": "other",
-    "description": "<p>Creates a new navigation category or product list with a given pretty name.</purpose></p><concept>navcat</concept>",
+    "description": "<p>Creates a new navigation category or product list with a given pretty name.</purpose></p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -940,7 +1057,7 @@ define({ api: [
     "title": "adminNavcatDelete",
     "name": "adminNavcatDelete",
     "group": "other",
-    "description": "<p>permanently removes a navigation category or list.</purpose></p><concept>navcat</concept>",
+    "description": "<p>permanently removes a navigation category or list.</purpose></p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -963,7 +1080,7 @@ define({ api: [
     "title": "adminNavcatModify",
     "name": "adminNavcatModify",
     "group": "other",
-    "description": "<p>changes the pretty name of a navigation category or list</purpose></p><concept>navcat</concept>",
+    "description": "<p>changes the pretty name of a navigation category or list</purpose></p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -1060,7 +1177,7 @@ define({ api: [
     "title": "adminOrderDetail",
     "name": "adminOrderDetail",
     "group": "other",
-    "description": "<p>provides a full dump of data inside an order</purpose></p>",
+    "description": "<p>provides a full dump of data inside an order</p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -1069,14 +1186,14 @@ define({ api: [
             "type": "String",
             "field": "_cartid",
             "optional": false,
-            "description": "<p>&quot; required=&quot;1admin session id</p>"
+            "description": "<p>admin session id</p>"
           },
           {
             "group": "Request",
             "type": "String",
             "field": "orderid",
             "optional": false,
-            "description": "<p>&quot; required=&quot;1Order ID</p>"
+            "description": "<p>Order ID</p>"
           }
         ],
         "Response": [
@@ -1099,7 +1216,7 @@ define({ api: [
     "title": "adminOrderDetail",
     "name": "adminOrderDetail",
     "group": "other",
-    "description": "<p>provides a full dump of data inside an order</purpose></p>",
+    "description": "<p>provides a full dump of data inside an order</p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -1108,14 +1225,14 @@ define({ api: [
             "type": "String",
             "field": "_cartid",
             "optional": false,
-            "description": "<p>&quot; required=&quot;1admin session id</p>"
+            "description": "<p>admin session id</p>"
           },
           {
             "group": "Request",
             "type": "String",
-            "field": "orderid",
+            "field": "orderi",
             "optional": false,
-            "description": "<p>&quot; required=&quot;1Order ID</p>"
+            "description": "<p>Order ID</p>"
           }
         ],
         "Response": [
@@ -1124,7 +1241,7 @@ define({ api: [
             "type": "String",
             "field": "order",
             "optional": false,
-            "description": "<p>a json representation of an order (exact fields depend on version/order source)</API></p>"
+            "description": "<p>a json representation of an order (exact fields depend on version/order source)</p>"
           }
         ]
       }
@@ -1226,7 +1343,7 @@ define({ api: [
     "title": "adminPrivateFileList",
     "name": "adminPrivateFileList",
     "group": "other",
-    "description": "<p></purpose></p><concept>report</concept>",
+    "description": "<p></purpose></p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -1294,7 +1411,7 @@ define({ api: [
     "title": "adminProductSelectorDetail",
     "name": "adminProductSelectorDetail",
     "group": "other",
-    "description": "<p>a product selector is a relative pointer to a grouping of products.</purpose></p><concept>product</concept>",
+    "description": "<p>a product selector is a relative pointer to a grouping of products.</purpose></p>",
     "parameter": {
       "fields": {
         "Request": [
@@ -1304,50 +1421,6 @@ define({ api: [
             "field": "selector",
             "optional": false,
             "description": "<p>NAVCAT=.safe.pathNAVCAT=$listCSV=pid1,pid2,pid3CREATED=YYYYMMDD|YYYYMMDDRANGE=pid1|pid2MANAGECAT=/path/to/categorySEARCH=saerchtermPROFILE=xyzSUPPLIER=xyzMFG=xyxALL=your_base_are_belong_to_us</p><p><output id=\"@products\">an array of product id&#39;s</output></API></p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "adminSupplierProductList",
-    "title": "adminSupplierProductList",
-    "name": "adminSupplierProductList",
-    "group": "other",
-    "description": "<p></purpose></p><p><concept>supplier|product</concept></API></p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "VENDORID6-8",
-            "optional": false,
-            "description": "<p>digit supplier/vendor id</API></p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "products0",
-            "optional": false,
-            "description": "<p>|1</API></p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "FILTER",
-            "optional": false,
-            "description": "<p>&quot; required=&quot;1UNCONFIRMED|RECENT</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "DETAIL",
-            "optional": false,
-            "description": "<p>&quot; required=&quot;11|0 includes an optional @ORDERDETAIL in response</p><p><output id=\"@ORDERS\">detail about the vendor/supplier orders</output></p><p><output id=\"@ORDERDETAIL\"></output></API></p>"
           }
         ]
       }
