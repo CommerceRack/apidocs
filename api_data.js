@@ -762,24 +762,6 @@ define({ api: [
   },
   {
     "type": "POST",
-    "url": "adminProductAmazonDetail",
-    "title": "adminProductAmazonDetail",
-    "name": "adminProductAmazonDetail",
-    "group": "other_<output_id=\"%thesaurus\"></output>_<output_id=\"@DETAIL\"></output>",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "adminProductAmazonVerify",
-    "title": "adminProductAmazonVerify",
-    "name": "adminProductAmazonVerify",
-    "group": "other_<output_id=\"@MSGS\"></output>_<note>_TITLE|SUCCESS|INFO|WARN|STOP|PAUSE|ERROR|DEPRECATION|DEBUG|XML_</note>",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
     "url": "adminDataQuery",
     "title": "adminDataQuery",
     "name": "adminDataQuery",
@@ -1341,7 +1323,7 @@ define({ api: [
           {
             "group": "Request",
             "type": "String",
-            "field": "orderi",
+            "field": "orderid",
             "optional": false,
             "description": "<p>Order ID</p>"
           }
@@ -1352,7 +1334,7 @@ define({ api: [
             "type": "String",
             "field": "order",
             "optional": false,
-            "description": "<p>a json representation of an order (exact fields depend on version/order source)</p>"
+            "description": "<p>a json representation of an order (exact fields depend on version/order source)</API></p>"
           }
         ]
       }
@@ -1380,7 +1362,7 @@ define({ api: [
           {
             "group": "Request",
             "type": "String",
-            "field": "orderid",
+            "field": "orderi",
             "optional": false,
             "description": "<p>Order ID</p>"
           }
@@ -1391,7 +1373,7 @@ define({ api: [
             "type": "String",
             "field": "order",
             "optional": false,
-            "description": "<p>a json representation of an order (exact fields depend on version/order source)</API></p>"
+            "description": "<p>a json representation of an order (exact fields depend on version/order source)</p>"
           }
         ]
       }
@@ -1563,6 +1545,57 @@ define({ api: [
   },
   {
     "type": "POST",
+    "url": "adminProductAmazonDetail",
+    "title": "adminProductAmazonDetail",
+    "name": "adminProductAmazonDetail",
+    "group": "other",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Hash",
+            "field": "%thesaurus",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "Array",
+            "field": "@DETAIL",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "adminProductAmazonVerify",
+    "title": "adminProductAmazonVerify",
+    "name": "adminProductAmazonVerify",
+    "group": "other",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "@MSGS",
+            "optional": false,
+            "description": "<p></output></p><note>TITLE|SUCCESS|INFO|WARN|STOP|PAUSE|ERROR|DEPRECATION|DEBUG|XML</note>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
     "url": "adminProductBUYDetail",
     "title": "adminProductBUYDetail",
     "name": "adminProductBUYDetail",
@@ -1575,7 +1608,30 @@ define({ api: [
             "type": "String",
             "field": "pidpid1",
             "optional": false,
-            "description": "<output id=\"@DBMAPS\"></output><output id=\"buycom/dbmap\"></output><output id=\"%FLEX\"></output>"
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Array",
+            "field": "@DBMAPS",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "buycom/dbmap",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "%FLEX",
+            "optional": false,
+            "description": ""
           }
         ]
       }
@@ -1635,7 +1691,23 @@ define({ api: [
             "type": "String",
             "field": "GUID",
             "optional": false,
-            "description": "<output id=\"@HEAD\"></output><output id=\"@BODY\"></output>"
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "Array",
+            "field": "@HEAD",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "Array",
+            "field": "@BODY",
+            "optional": false,
+            "description": ""
           }
         ]
       }
@@ -1753,7 +1825,7 @@ define({ api: [
           },
           {
             "group": "Request",
-            "type": "String",
+            "type": "Array",
             "field": "@updates",
             "optional": false,
             "description": ""
