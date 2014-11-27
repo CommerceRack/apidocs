@@ -124,52 +124,8 @@ define({ api: [
   },
   {
     "type": "POST",
-    "url": "authAdminLogin",
-    "title": "authAdminLogin",
-    "name": "authAdminLogin",
-    "description": "<p>Create a login session</p>",
-    "group": "JSONAPI_pm",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "authAdminLogout",
-    "title": "authAdminLogout",
-    "name": "authAdminLogout",
-    "description": "<p>destroy/invalidate an admin session.</p><p>Does not need any parameters, destroys the current session (if any), always returns a success.</p>",
-    "group": "JSONAPI_pm",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
     "url": "appInteractInternalRedis",
     "title": "appInteractInternalRedis",
-    "group": "JSONAPI_pm",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "appInteractInternalMemCache",
-    "title": "appInteractInternalMemCache",
-    "group": "JSONAPI_pm",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "appMashUpSFTP",
-    "title": " appMashUpSFTP",
-    "group": "JSONAPI_pm",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "appMashUpFTP",
-    "title": "appMashUpFTP",
     "group": "JSONAPI_pm",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -807,11 +763,11 @@ define({ api: [
     "group": "admin",
     "parameter": {
       "fields": {
-        "Request": [
+        "Response": [
           {
-            "group": "Request",
+            "group": "Response",
             "type": "String",
-            "field": "MSGID",
+            "field": "@MSGS",
             "optional": false,
             "description": ""
           }
@@ -829,11 +785,11 @@ define({ api: [
     "group": "admin",
     "parameter": {
       "fields": {
-        "Response": [
+        "Request": [
           {
-            "group": "Response",
+            "group": "Request",
             "type": "String",
-            "field": "@MSGS",
+            "field": "MSGID",
             "optional": false,
             "description": ""
           }
@@ -2580,16 +2536,9 @@ define({ api: [
           {
             "group": "Response",
             "type": "String",
-            "field": "@HOSTS",
+            "field": "@MSGS",
             "optional": false,
-            "description": "<pre><code>{ &quot;HOSTNAME&quot;:&quot;www&quot;, &quot;HOSTTYPE&quot;:&quot;APP|REDIR|VSTORE|CUSTOM&quot; },HOSTTYPE=APP        will have &quot;PROJECT&quot;HOSTTYPE=REDIR    will have &quot;REDIR&quot;:&quot;www.domain.com&quot; &quot;URI&quot;:&quot;/path/to/301&quot;  (if URI is blank then it will redirect with previous path)HOSTTYPE=VSTORE    will have @REWRITES</code></pre>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "%EMAIL",
-            "optional": false,
-            "description": "<pre><code>EMAIL_TYPE=FUSEMAILEMAIL_TYPE=GOOGLEEMAIL_TYPE=NONEEMAIL_TYPE=MX        MX1,MX2 parameters</code></pre>"
+            "description": ""
           }
         ]
       }
@@ -2618,9 +2567,16 @@ define({ api: [
           {
             "group": "Response",
             "type": "String",
-            "field": "@MSGS",
+            "field": "@HOSTS",
             "optional": false,
-            "description": ""
+            "description": "<pre><code>{ &quot;HOSTNAME&quot;:&quot;www&quot;, &quot;HOSTTYPE&quot;:&quot;APP|REDIR|VSTORE|CUSTOM&quot; },HOSTTYPE=APP        will have &quot;PROJECT&quot;HOSTTYPE=REDIR    will have &quot;REDIR&quot;:&quot;www.domain.com&quot; &quot;URI&quot;:&quot;/path/to/301&quot;  (if URI is blank then it will redirect with previous path)HOSTTYPE=VSTORE    will have @REWRITES</code></pre>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "%EMAIL",
+            "optional": false,
+            "description": "<pre><code>EMAIL_TYPE=FUSEMAILEMAIL_TYPE=GOOGLEEMAIL_TYPE=NONEEMAIL_TYPE=MX        MX1,MX2 parameters</code></pre>"
           }
         ]
       }
@@ -3973,7 +3929,7 @@ define({ api: [
           {
             "group": "Request",
             "type": "String",
-            "field": "orderi",
+            "field": "orderid",
             "optional": false,
             "description": "<p>Order ID</p>"
           }
@@ -4012,7 +3968,7 @@ define({ api: [
           {
             "group": "Request",
             "type": "String",
-            "field": "orderid",
+            "field": "orderi",
             "optional": false,
             "description": "<p>Order ID</p>"
           }
@@ -7123,8 +7079,8 @@ define({ api: [
     "type": "",
     "url": "/authAdminLogin",
     "title": "authAdminLogin",
-    "group": "admin",
     "name": "authAdminLogin",
+    "group": "admin",
     "description": "<p>performs authentication and returns an admin session id which can be used to make adminXXXXX calls.</purpose></p><p>userid identifies a user (not a domain) within a specific account. A single user may have access to many partitions and many domains. There arefor md5 or sha1 - it is a digest of hashtype(password+ts)several valid ways to write a user.  Each account is assigned a 20 character &quot;username&quot;, in addition there is a 10 digit sub-user called the &quot;luser&quot;. the security administrator for every account is called &quot;admin&quot; and so the login for admin would be &quot;admin<em>username&quot; or simply &quot;username&quot; in additionif a domain.com is associated to an account then it is also allowed to login as admin@domain.com.  The same applies for luser which would simply be luser</em>username or luser@domain.com.  Please note that login id&#39;s are NOT the same as email addresses, it is not possible to login with an email addressunless the users email address also happens to be luser@domain.com (which would be configured by security administrator)</p><p>authentication information (USERID, CLIENTID, DOMAIN, VERSION, AUTHTOKEN) can be passed in either of two ways - using HTTP Headers, or in the data payload.The following is a mapping of HTTP Header to payload parameter.   X-USERID = _userid, X-DOMAIN = _domain, X-VERSION = _version, X-CLIENTID = _clientid,X-DEVICEID = _deviceid, X-AUTHTOKEN = _authtoken.  Avoid using HTTP headers when making requests via the XHR XMLHTTPRequest from a browser, there arenumerous compatibility issues with the CORS (Cross Origin Resource Sharing) specification 2119 so use the payload version instead. Ex:{ &quot;_cmd&quot;:&quot;someThing&quot;, &quot;_clientid&quot;:&quot;your client id&quot;, &quot;_version&quot;:201249, } </p><p>authAdminLogin calls do not require an authtoken (since they return it), depending on the circumstances the api may return a challenge which complies with the supported challenge methods. The list of acceptable challenge methods is determined by comparing the allowed challenge methods of the client (which were specified when the clientid was requested/assigned) and also the challenge types allowed by the administrator -if no mutually acceptable challenge types can be identified then an error is returned and access is denied.  Challenges are issued based on theaccounts security administrator settings. </p><p>authtype of md5|sha1 refers to the digest protocol being used (in all cases we will accept the hexadecimal notation)the authid is generated by computing the md5 or sha1 hexadecimal digest value of the concatenation of plain_text_password and ts .Given the following inputs password=&quot;A&quot;, ts=&quot;1B&quot; then it would be md5(&quot;A1B&quot;) or sha1(&quot;A1B&quot;) respectively.Both MD5 and SHA1 are widely implemented protocols and sufficiently secure for this exercise - we have included the appropriate security tokens as generated by the md5 and sha1 functions in mysql below (use these as a reference to test your own functions)</p><p>mysql&gt; select md5(&#39;A1B&#39;);+----------------------------------+| md5(&#39;A1B&#39;)                       |+----------------------------------+| 9c8c7d6da17f5b90b9c2b8aa03812ab4 |+----------------------------------+</p><p>mysql&gt; select sha1(&#39;A1B&#39;);+------------------------------------------+| sha1(&#39;A1B&#39;)                              |+------------------------------------------+| 7b6bfc9420addb09c8cfb1ae5f71f8e797d4685d |+------------------------------------------+</p><p>The ts value of &quot;1B&quot; would not be valid, it should be a date in YYYYMMDDHHMMSS format. The date must be within 60 seconds of the actual time or the request will be refused. In addition the random security string is ONLY valid for one request within a 1 hour period.</p>",
     "parameter": {
       "fields": {
@@ -7195,6 +7151,16 @@ define({ api: [
         "url": "X-USERID: user@domain.com\nX-CLIENT: your.app.client.id\nX-VERSION: 201246\nX-DEVICEID: user_specified\nX-DOMAIN: domain.com\nContent-Type: application/json\n\n{ \"_cmd\":\"authAdminLogin\", \"ts\":\"YYYYMMDDHHMMSS or seconds since 1970\", \"authtype\":\"md5\", \"authid\"  }"
       }
     ],
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "authAdminLogout",
+    "title": "authAdminLogout",
+    "name": "authAdminLogout",
+    "group": "admin",
+    "description": "<p>destroy/invalidate an admin session.</p><p>Does not need any parameters, destroys the current session (if any), always returns a success.</p>",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
   },
@@ -7621,691 +7587,6 @@ define({ api: [
   },
   {
     "type": "POST",
-    "url": "cartAmazonPaymentURL",
-    "title": "cartAmazonPaymentURL",
-    "name": "cartAmazonPaymentURL",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "shipping",
-            "optional": false,
-            "description": "<p>1|0     (prompt for shipping address)</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "CancelUrl",
-            "optional": false,
-            "description": "<p>URL to redirect user to if cancel is pressed.</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "ReturnUrl",
-            "optional": false,
-            "description": "<p>URL to redirect user to upon order completion</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "YourAccountUrl",
-            "optional": false,
-            "description": "<p>URL where user can be directed to by amazon if they wish to lookup order status. (don&#39;t stree about this, rarely used)</p><hint>&lt;![CDATA[Returns parameters necessary for CBA interaction:merchantid: the checkout by amazon assigned merchantid (referred to as [merchantid] in the example below)b64xml: a base64 encoded xml order object based on the current cart geometry referred to as [b64xml], BUT passed to amazon following &quot;order:&quot;signature: a sha1, base64 encoded concatenation of the b64xml and the configured cba secret key refrerred to as [signature] in the example below, AND passed to amazon following &quot;signature:&quot;aws-access-key-id: a public string cba needs to identify this merchant refrred to as [aws-access-key-id] AND passed to amazon following the &quot;aws-access-key-id:&quot; parameterTo generate/create a payment button, suggested parameters are: color: orange, size: small, background: white<a href=\"https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=[color]&amp;background=[background]&amp;size=[size\">https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=[color]&amp;background=[background]&amp;size=[size</a>]ex:<a href=\"https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=orange&amp;background=white&amp;size=small\">https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=orange&amp;background=white&amp;size=small</a>Use this as the <strong>your button image url</strong> in the example.The [formurl] is created by the developer using the merchant id, specify either sandbox or non-sandbox (live):<a href=\"https://payments.amazon.com/checkout/[merchantid\">https://payments.amazon.com/checkout/[merchantid</a>]<a href=\"https://payments-sandbox.amazon.com/checkout/[merchantid]?debug=true\">https://payments-sandbox.amazon.com/checkout/[merchantid]?debug=true</a>]]&gt;</hint><p><example title=\"Example\">&lt;![CDATA[</p><p>&lt;!- NOTE: you do NOT need to include jquery if you already are using jquery -&gt;</p><script type=\"text/javascript\" src=\"https://images-na.ssl-images-amazon.com/images/G/01/cba/js/jquery.js\"></script><p><script type=\"text/javascript\" src=\"https://images-na.ssl-images-amazon.com/images/G/01/cba/js/widget/widget.js\"></script></p><form method=POST action=\"https://payments.amazon.com/checkout/[merchantid]\">"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "=",
-            "optional": false,
-            "description": "<p>&quot;hidden&quot; name=&quot;order-input&quot; value=&quot;type:merchant-signed-order/aws-accesskey/1;order:[b64xml];signature:[signature];aws-access-key-id:[aws-access-key-id]</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartCSRShortcut",
-    "title": "cartCSRShortcut",
-    "name": "cartCSRShortcut",
-    "group": "admin",
-    "description": "<p>Returns a 4-6 digit authorization token that can be used by a call center operator to identify a session.  CSR shortcuts are only valid for approximately 10 minutes.TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          }
-        ],
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "csr",
-            "optional": false,
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartCheckoutValidate",
-    "title": "cartCheckoutValidate",
-    "name": "cartCheckoutValidate",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "sender",
-            "optional": false,
-            "description": "<p>stage (LOGIN,BILLING_LOCATION,SHIPPING_LOCATION,ORDER_CONFIRMATION,ADMIN)</p>"
-          }
-        ],
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "@issues",
-            "optional": false,
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartCouponAdd",
-    "title": "cartCouponAdd",
-    "name": "cartCouponAdd",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "coupon",
-            "optional": false,
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartDetail",
-    "title": "cartDetail",
-    "name": "cartDetail",
-    "group": "admin",
-    "description": "<p>Lists the contents/settings in a cart along with summary valuesTODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "create1/0",
-            "optional": false,
-            "description": "<ul><li>shall we create a cart if the cart requested doesn&#39;t exit?</li></ul>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartGiftcardAdd",
-    "title": "cartGiftcardAdd",
-    "name": "cartGiftcardAdd",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "giftcard",
-            "optional": false,
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartGoogleCheckoutURL",
-    "title": "cartGoogleCheckoutURL",
-    "name": "cartGoogleCheckoutURL",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "analyticsdata",
-            "optional": false,
-            "description": "<p>(required, but may be blank) obtained by calling getUrchinFieldValue() in the pageTracker or _gaq Google Analytics object.</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "edit_cart_url",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "continue_shopping_url",
-            "optional": false,
-            "description": "<hint>&lt;![CDATA[Google has extensive documentation on it&#39;s checkout protocols, you need use buttons served by google.MORE INFO: <a href=\"http://code.google.com/apis/checkout/developer/index.html#google_checkout_buttons\">http://code.google.com/apis/checkout/developer/index.html#google_checkout_buttons</a>NOTE: googleCheckoutMerchantId is passed in the config.js if it&#39;s blank, the configuration is incomplete and don&#39;ttry using it as a payment method.To select a button you will need to know the merchant id (which is returned by this call), the style andvariant type of the button. Examples are provided below so hopefully you can skip reading it! You must use their button(s). Possible: style: white|trans, Possible variant: text|disable]]&gt;</hint><caution>&lt;![CDATA[note: if one or more items in the cart has &#39;gc:blocked&#39; set to true - then google checkout button must beshown as DISABLED using code below:<a href=\"https://checkout.google.com/buttons/checkout.gif?merchant_id=[merchantid]&amp;w=160&amp;h=43&amp;style=[style]&amp;variant=[variant]&amp;loc=en_US\">https://checkout.google.com/buttons/checkout.gif?merchant_id=[merchantid]&amp;w=160&amp;h=43&amp;style=[style]&amp;variant=[variant]&amp;loc=en_US</a>These are Googles branding guidelines, hiding the button (on a website) can lead to stern reprimand and even termination from Google programs such as &quot;trusted merchant&quot;.]]&gt;</caution><hint>&lt;![CDATA[Here is example HTML that would be used with the Asynchronous Google Analytics tracker (_gaq).<a href=\"javascript:_gaq.push(function() {   var pageTracker = _gaq._getAsyncTracker();setUrchinInputCode(pageTracker);});   document.location='$googlecheckout_url?analyticsdata='+getUrchinFieldValue();\"><img height=43 width=160 border=0     src=\"https://checkout.google.com/buttons/checkout.gif?merchant_id=[merchantid]&w=160&h=43&style=[style]&variant=[variant]&loc=en_US\"    ></a>]]&gt;</hint>"
-          }
-        ],
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "googleCheckoutMerchantId",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "URL",
-            "optional": false,
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartItemAppend",
-    "title": "cartItemAppend",
-    "name": "cartItemAppend",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartItemUpdate",
-    "title": "cartItemUpdate",
-    "name": "cartItemUpdate",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "stidxyz",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "uuidxyz",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "quantity1",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_msgs",
-            "optional": false,
-            "description": "<p>(contains a count of the number of messages)</p><errors><err id=\"9101\" type=\"cfgerr\">Item cannot be added to cart due to price not set.</err><err id=\"9102\" type=\"cfgerr\">could not lookup pogs</err><err id=\"9103\" type=\"cfgerr\">Some of the items in this kit are not available for purchase: </err><err id=\"9000\" type=\"cfgerr\">Unhandled item detection error</err><err id=\"9001\" type=\"cfgerr\">Product xyz is no longer available</err><err id=\"9002\" type=\"cfgerr\">Product xyz has already been purchased</err></errors>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartItemsInventoryVerify",
-    "title": "cartItemsInventoryVerify",
-    "name": "cartItemsInventoryVerify",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "trace0",
-            "optional": false,
-            "description": "<p>|1    (optional)</p><example>%changes = [    [ sku1: newqty, sku2:newqty ]    ]</example>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartOrderCreate",
-    "title": "cartOrderCreate",
-    "name": "cartOrderCreate",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          }
-        ],
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "iama",
-            "optional": false,
-            "description": "<p>some string that makes sense to you</p>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "orderid",
-            "optional": false,
-            "description": "<p>2011-01-1234</p>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "payment",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "_uuid",
-            "optional": false,
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartOrderStatus",
-    "title": "cartOrderStatus",
-    "name": "cartOrderStatus",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "orderid",
-            "optional": false,
-            "description": ""
-          }
-        ],
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "orderid",
-            "optional": false,
-            "description": "<p>2011-01-1234</p>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "payment",
-            "optional": false,
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartPaymentQ",
-    "title": "cartPaymentQ",
-    "name": "cartPaymentQ",
-    "group": "admin",
-    "description": "<p>Manipulate or display the PaymentQ (a list of payment types for a given cart/order)TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "cmd",
-            "optional": false,
-            "description": "<p>&quot; required=&quot;1reset|delete|insert|sync</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "ID",
-            "optional": false,
-            "description": "<p>&quot; optional=&quot;0required for cmd=delete|insert</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "TN",
-            "optional": false,
-            "description": "<p>&quot; optional=&quot;0required for cmd=insert ex: CASH|CREDIT|PO|etc.</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "$",
-            "optional": false,
-            "description": "<p>$&quot; optional=&quot;0optional for cmd=insert (max to charge on this payment method)</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "TWO_DIGIT_TENDER_VARIABLES",
-            "optional": false,
-            "description": "<p>&quot; optional=&quot;0required for cmd=insert, example: CC, MM, YY, CV for credit card</p>"
-          }
-        ],
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "paymentQ",
-            "optional": false,
-            "description": "<p>[].ID    unique id # for this</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartPaypalSetExpressCheckout",
-    "title": "cartPaypalSetExpressCheckout",
-    "name": "cartPaypalSetExpressCheckout",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "useMobile0",
-            "optional": false,
-            "description": "<p>|1 (if true - we&#39;ll tell paypal to use the mobile version)</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "onal",
-            "defaultValue": "1",
-            "optional": true,
-            "description": "<p>id=&quot;drt&#39;device token&#39; - obtain them from the native IOS paypal library (not required, but useful)</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "getBuyerAddress",
-            "optional": false,
-            "description": "<p>0|1 (if true - paypal will ask shopper for address)</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "cancelURL",
-            "optional": false,
-            "description": "<p>&#39;&#39;   (required, but may be blank for legacy checkout)</p>"
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "returnURL",
-            "optional": false,
-            "description": "<p>&#39;&#39;     (required, but may be blank for legacy checkout)</p>"
-          }
-        ],
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "URL",
-            "optional": false,
-            "description": "<p>url to redirect checkout to (checkout will finish with legacy method, but you CAN build your own)</p>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "TOKEN",
-            "optional": false,
-            "description": "<p>paypal token</p>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "ACK",
-            "optional": false,
-            "description": "<p>paypal &quot;ACK&quot; message</p>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "ERR",
-            "optional": false,
-            "description": "<p>(optional message from paypal api)</p>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "_ADDRESS_CHANGED",
-            "optional": false,
-            "description": "<p>1|0</p>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "_SHIPPING_CHANGED",
-            "optional": false,
-            "description": "<p>methodid (the new value of CART-&gt;ship.selected_id)</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartPromoCodeAdd",
-    "title": "cartPromoCodeAdd",
-    "name": "cartPromoCodeAdd",
-    "group": "admin",
-    "description": "<p>TODO</p><note>A promo code can be either a giftcard, or a coupon (we&#39;ll detect which it is)</note>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "promocode",
-            "optional": false,
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "cartSet",
-    "title": "cartSet",
-    "name": "cartSet",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
     "url": "/cryptTool",
     "title": "cryptTool",
     "group": "admin",
@@ -8317,16 +7598,6 @@ define({ api: [
         "type": "json"
       }
     ],
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "/domainLookup",
-    "title": "domainLookup",
-    "group": "admin",
-    "name": "domainLookup_domainLookup",
-    "description": "<p>Not available <strong> EXPERIMENTAL </strong></p>",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
   },
@@ -8431,57 +7702,6 @@ define({ api: [
   },
   {
     "type": "POST",
-    "url": "info",
-    "title": "info",
-    "name": "info",
-    "group": "admin",
-    "description": "<p>Utility FunctionTODO</p>",
-    "parameter": {
-      "fields": {
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "time",
-            "optional": false,
-            "description": "<h6 id=\"-\">#</h6>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "media-host",
-            "optional": false,
-            "description": "<h6 id=\"-\">#</h6>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "api-max-version",
-            "optional": false,
-            "description": "<h6 id=\"-\">#</h6>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "api-min-version",
-            "optional": false,
-            "description": "<h6 id=\"-\">#</h6>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "api-our-version",
-            "optional": false,
-            "description": "<h6 id=\"-\">#</h6><hint>Time is an epoch timestamp (which represents the number of seconds since midnight january 1st, 1970)</hint>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
     "url": "/loadPlatformJSON",
     "title": "loadPlatformJSON",
     "group": "admin",
@@ -8495,29 +7715,6 @@ define({ api: [
           "type": "json"
         }
       ]
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "ping",
-    "title": "ping",
-    "name": "ping",
-    "group": "admin",
-    "description": "<p>TODO</p><note>Accepts: nothing</note><note>Returns: (nothing of importance)</note>",
-    "parameter": {
-      "fields": {
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "pong",
-            "optional": false,
-            "description": "<p>1</p>"
-          }
-        ]
-      }
     },
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -8586,29 +7783,6 @@ define({ api: [
   },
   {
     "type": "POST",
-    "url": "stub",
-    "title": "stub",
-    "name": "stub",
-    "group": "admin",
-    "description": "<p>TODO</p>",
-    "parameter": {
-      "fields": {
-        "Request": [
-          {
-            "group": "Request",
-            "type": "String",
-            "field": "_cartid",
-            "optional": false,
-            "description": "<note>Does nothing, just a stub.</note>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
     "url": "time",
     "title": "time",
     "name": "time",
@@ -8623,80 +7797,6 @@ define({ api: [
             "field": "unix",
             "optional": false,
             "description": "<h6 id=\"-\">#</h6><hint>Unix is an epoch timestamp (which represents the number of seconds since midnight january 1st, 1970)</hint>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "whereAmI",
-    "title": "whereAmI",
-    "name": "whereAmI",
-    "group": "admin",
-    "description": "<p>Utility function that returns the city/state/zip of the IP making the call.TODO</p>",
-    "parameter": {
-      "fields": {
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "city",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "state",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "zip",
-            "optional": false,
-            "description": ""
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "country",
-            "optional": false,
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "whoAmI",
-    "title": "whoAmI",
-    "name": "whoAmI",
-    "group": "admin",
-    "description": "<p>Utility function that returns who the current session is authenticated as.TODO</p>",
-    "parameter": {
-      "fields": {
-        "Response": [
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "cid",
-            "optional": false,
-            "description": "<h4 id=\"-customer-buyer-id-\">(customer [buyer] id)</h4>"
-          },
-          {
-            "group": "Response",
-            "type": "String",
-            "field": "email",
-            "optional": false,
-            "description": "<p>user@fromloggedindomain.com</p><hint>If logged in as an admin sessino you&#39;ll get fun stuff like USERNAME,MID,RESELLER and more.</hint>"
           }
         ]
       }
@@ -10186,16 +9286,8 @@ define({ api: [
   },
   {
     "type": "POST",
-    "url": "appMashUpHTTP",
-    "title": "appMashUpHTTP",
-    "group": "app",
-    "version": "0.0.0",
-    "filename": "lib/JSONAPI.pm"
-  },
-  {
-    "type": "POST",
-    "url": "appMashUpSQL",
-    "title": "appMashUpSQL",
+    "url": "appMashUpSFTP",
+    "title": " appMashUpSFTP",
     "group": "app",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -10212,6 +9304,38 @@ define({ api: [
     "type": "POST",
     "url": "appMashUpMemCache",
     "title": "appMashUpMemCache",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appInteractInternalMemCache",
+    "title": "appInteractInternalMemCache",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpHTTP",
+    "title": "appMashUpHTTP",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpFTP",
+    "title": "appMashUpFTP",
+    "group": "app",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "appMashUpSQL",
+    "title": "appMashUpSQL",
     "group": "app",
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
@@ -10808,6 +9932,691 @@ define({ api: [
   },
   {
     "type": "POST",
+    "url": "cartAmazonPaymentURL",
+    "title": "cartAmazonPaymentURL",
+    "name": "cartAmazonPaymentURL",
+    "group": "cart",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "shipping",
+            "optional": false,
+            "description": "<p>1|0     (prompt for shipping address)</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "CancelUrl",
+            "optional": false,
+            "description": "<p>URL to redirect user to if cancel is pressed.</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "ReturnUrl",
+            "optional": false,
+            "description": "<p>URL to redirect user to upon order completion</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "YourAccountUrl",
+            "optional": false,
+            "description": "<p>URL where user can be directed to by amazon if they wish to lookup order status. (don&#39;t stree about this, rarely used)</p><hint>&lt;![CDATA[Returns parameters necessary for CBA interaction:merchantid: the checkout by amazon assigned merchantid (referred to as [merchantid] in the example below)b64xml: a base64 encoded xml order object based on the current cart geometry referred to as [b64xml], BUT passed to amazon following &quot;order:&quot;signature: a sha1, base64 encoded concatenation of the b64xml and the configured cba secret key refrerred to as [signature] in the example below, AND passed to amazon following &quot;signature:&quot;aws-access-key-id: a public string cba needs to identify this merchant refrred to as [aws-access-key-id] AND passed to amazon following the &quot;aws-access-key-id:&quot; parameterTo generate/create a payment button, suggested parameters are: color: orange, size: small, background: white<a href=\"https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=[color]&amp;background=[background]&amp;size=[size\">https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=[color]&amp;background=[background]&amp;size=[size</a>]ex:<a href=\"https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=orange&amp;background=white&amp;size=small\">https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=orange&amp;background=white&amp;size=small</a>Use this as the <strong>your button image url</strong> in the example.The [formurl] is created by the developer using the merchant id, specify either sandbox or non-sandbox (live):<a href=\"https://payments.amazon.com/checkout/[merchantid\">https://payments.amazon.com/checkout/[merchantid</a>]<a href=\"https://payments-sandbox.amazon.com/checkout/[merchantid]?debug=true\">https://payments-sandbox.amazon.com/checkout/[merchantid]?debug=true</a>]]&gt;</hint><p><example title=\"Example\">&lt;![CDATA[</p><p>&lt;!- NOTE: you do NOT need to include jquery if you already are using jquery -&gt;</p><script type=\"text/javascript\" src=\"https://images-na.ssl-images-amazon.com/images/G/01/cba/js/jquery.js\"></script><p><script type=\"text/javascript\" src=\"https://images-na.ssl-images-amazon.com/images/G/01/cba/js/widget/widget.js\"></script></p><form method=POST action=\"https://payments.amazon.com/checkout/[merchantid]\">"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "=",
+            "optional": false,
+            "description": "<p>&quot;hidden&quot; name=&quot;order-input&quot; value=&quot;type:merchant-signed-order/aws-accesskey/1;order:[b64xml];signature:[signature];aws-access-key-id:[aws-access-key-id]</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartCSRShortcut",
+    "title": "cartCSRShortcut",
+    "name": "cartCSRShortcut",
+    "group": "cart",
+    "description": "<p>Returns a 4-6 digit authorization token that can be used by a call center operator to identify a session.  CSR shortcuts are only valid for approximately 10 minutes.TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "csr",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartCheckoutValidate",
+    "title": "cartCheckoutValidate",
+    "name": "cartCheckoutValidate",
+    "group": "cart",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "sender",
+            "optional": false,
+            "description": "<p>stage (LOGIN,BILLING_LOCATION,SHIPPING_LOCATION,ORDER_CONFIRMATION,ADMIN)</p>"
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "@issues",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartCouponAdd",
+    "title": "cartCouponAdd",
+    "name": "cartCouponAdd",
+    "group": "cart",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "coupon",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartDetail",
+    "title": "cartDetail",
+    "name": "cartDetail",
+    "group": "cart",
+    "description": "<p>Lists the contents/settings in a cart along with summary valuesTODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "create1/0",
+            "optional": false,
+            "description": "<ul><li>shall we create a cart if the cart requested doesn&#39;t exit?</li></ul>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartGiftcardAdd",
+    "title": "cartGiftcardAdd",
+    "name": "cartGiftcardAdd",
+    "group": "cart",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "giftcard",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartGoogleCheckoutURL",
+    "title": "cartGoogleCheckoutURL",
+    "name": "cartGoogleCheckoutURL",
+    "group": "cart",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "analyticsdata",
+            "optional": false,
+            "description": "<p>(required, but may be blank) obtained by calling getUrchinFieldValue() in the pageTracker or _gaq Google Analytics object.</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "edit_cart_url",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "continue_shopping_url",
+            "optional": false,
+            "description": "<hint>&lt;![CDATA[Google has extensive documentation on it&#39;s checkout protocols, you need use buttons served by google.MORE INFO: <a href=\"http://code.google.com/apis/checkout/developer/index.html#google_checkout_buttons\">http://code.google.com/apis/checkout/developer/index.html#google_checkout_buttons</a>NOTE: googleCheckoutMerchantId is passed in the config.js if it&#39;s blank, the configuration is incomplete and don&#39;ttry using it as a payment method.To select a button you will need to know the merchant id (which is returned by this call), the style andvariant type of the button. Examples are provided below so hopefully you can skip reading it! You must use their button(s). Possible: style: white|trans, Possible variant: text|disable]]&gt;</hint><caution>&lt;![CDATA[note: if one or more items in the cart has &#39;gc:blocked&#39; set to true - then google checkout button must beshown as DISABLED using code below:<a href=\"https://checkout.google.com/buttons/checkout.gif?merchant_id=[merchantid]&amp;w=160&amp;h=43&amp;style=[style]&amp;variant=[variant]&amp;loc=en_US\">https://checkout.google.com/buttons/checkout.gif?merchant_id=[merchantid]&amp;w=160&amp;h=43&amp;style=[style]&amp;variant=[variant]&amp;loc=en_US</a>These are Googles branding guidelines, hiding the button (on a website) can lead to stern reprimand and even termination from Google programs such as &quot;trusted merchant&quot;.]]&gt;</caution><hint>&lt;![CDATA[Here is example HTML that would be used with the Asynchronous Google Analytics tracker (_gaq).<a href=\"javascript:_gaq.push(function() {   var pageTracker = _gaq._getAsyncTracker();setUrchinInputCode(pageTracker);});   document.location='$googlecheckout_url?analyticsdata='+getUrchinFieldValue();\"><img height=43 width=160 border=0     src=\"https://checkout.google.com/buttons/checkout.gif?merchant_id=[merchantid]&w=160&h=43&style=[style]&variant=[variant]&loc=en_US\"    ></a>]]&gt;</hint>"
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "googleCheckoutMerchantId",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "URL",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartItemAppend",
+    "title": "cartItemAppend",
+    "name": "cartItemAppend",
+    "group": "cart",
+    "description": "<p>TODO</p>",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartItemUpdate",
+    "title": "cartItemUpdate",
+    "name": "cartItemUpdate",
+    "group": "cart",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "stidxyz",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "uuidxyz",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "quantity1",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_msgs",
+            "optional": false,
+            "description": "<p>(contains a count of the number of messages)</p><errors><err id=\"9101\" type=\"cfgerr\">Item cannot be added to cart due to price not set.</err><err id=\"9102\" type=\"cfgerr\">could not lookup pogs</err><err id=\"9103\" type=\"cfgerr\">Some of the items in this kit are not available for purchase: </err><err id=\"9000\" type=\"cfgerr\">Unhandled item detection error</err><err id=\"9001\" type=\"cfgerr\">Product xyz is no longer available</err><err id=\"9002\" type=\"cfgerr\">Product xyz has already been purchased</err></errors>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartItemsInventoryVerify",
+    "title": "cartItemsInventoryVerify",
+    "name": "cartItemsInventoryVerify",
+    "group": "cart",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "trace0",
+            "optional": false,
+            "description": "<p>|1    (optional)</p><example>%changes = [    [ sku1: newqty, sku2:newqty ]    ]</example>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartOrderCreate",
+    "title": "cartOrderCreate",
+    "name": "cartOrderCreate",
+    "group": "cart",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "iama",
+            "optional": false,
+            "description": "<p>some string that makes sense to you</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "orderid",
+            "optional": false,
+            "description": "<p>2011-01-1234</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "payment",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "_uuid",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartOrderStatus",
+    "title": "cartOrderStatus",
+    "name": "cartOrderStatus",
+    "group": "cart",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "orderid",
+            "optional": false,
+            "description": ""
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "orderid",
+            "optional": false,
+            "description": "<p>2011-01-1234</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "payment",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartPaymentQ",
+    "title": "cartPaymentQ",
+    "name": "cartPaymentQ",
+    "group": "cart",
+    "description": "<p>Manipulate or display the PaymentQ (a list of payment types for a given cart/order)TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "cmd",
+            "optional": false,
+            "description": "<p>&quot; required=&quot;1reset|delete|insert|sync</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "ID",
+            "optional": false,
+            "description": "<p>&quot; optional=&quot;0required for cmd=delete|insert</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "TN",
+            "optional": false,
+            "description": "<p>&quot; optional=&quot;0required for cmd=insert ex: CASH|CREDIT|PO|etc.</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "$",
+            "optional": false,
+            "description": "<p>$&quot; optional=&quot;0optional for cmd=insert (max to charge on this payment method)</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "TWO_DIGIT_TENDER_VARIABLES",
+            "optional": false,
+            "description": "<p>&quot; optional=&quot;0required for cmd=insert, example: CC, MM, YY, CV for credit card</p>"
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "paymentQ",
+            "optional": false,
+            "description": "<p>[].ID    unique id # for this</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartPaypalSetExpressCheckout",
+    "title": "cartPaypalSetExpressCheckout",
+    "name": "cartPaypalSetExpressCheckout",
+    "group": "cart",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "useMobile0",
+            "optional": false,
+            "description": "<p>|1 (if true - we&#39;ll tell paypal to use the mobile version)</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "onal",
+            "defaultValue": "1",
+            "optional": true,
+            "description": "<p>id=&quot;drt&#39;device token&#39; - obtain them from the native IOS paypal library (not required, but useful)</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "getBuyerAddress",
+            "optional": false,
+            "description": "<p>0|1 (if true - paypal will ask shopper for address)</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "cancelURL",
+            "optional": false,
+            "description": "<p>&#39;&#39;   (required, but may be blank for legacy checkout)</p>"
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "returnURL",
+            "optional": false,
+            "description": "<p>&#39;&#39;     (required, but may be blank for legacy checkout)</p>"
+          }
+        ],
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "URL",
+            "optional": false,
+            "description": "<p>url to redirect checkout to (checkout will finish with legacy method, but you CAN build your own)</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "TOKEN",
+            "optional": false,
+            "description": "<p>paypal token</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "ACK",
+            "optional": false,
+            "description": "<p>paypal &quot;ACK&quot; message</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "ERR",
+            "optional": false,
+            "description": "<p>(optional message from paypal api)</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "_ADDRESS_CHANGED",
+            "optional": false,
+            "description": "<p>1|0</p>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "_SHIPPING_CHANGED",
+            "optional": false,
+            "description": "<p>methodid (the new value of CART-&gt;ship.selected_id)</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartPromoCodeAdd",
+    "title": "cartPromoCodeAdd",
+    "name": "cartPromoCodeAdd",
+    "group": "cart",
+    "description": "<p>TODO</p><note>A promo code can be either a giftcard, or a coupon (we&#39;ll detect which it is)</note>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "promocode",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "cartSet",
+    "title": "cartSet",
+    "name": "cartSet",
+    "group": "cart",
+    "description": "<p>TODO</p>",
+    "parameter": {
+      "fields": {
+        "Request": [
+          {
+            "group": "Request",
+            "type": "String",
+            "field": "_cartid",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
     "url": "/configJS",
     "title": "configJS",
     "group": "site",
@@ -10820,6 +10629,164 @@ define({ api: [
         "type": "json"
       }
     ],
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "/domainLookup",
+    "title": "domainLookup",
+    "group": "site",
+    "name": "domainLookup_domainLookup",
+    "description": "<p>Not available <strong> EXPERIMENTAL </strong></p>",
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "ping",
+    "title": "ping",
+    "name": "ping",
+    "group": "site",
+    "description": "<p>TODO</p><note>Accepts: nothing</note><note>Returns: (nothing of importance)</note>",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "pong",
+            "optional": false,
+            "description": "<p>1</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "platformInfo",
+    "title": "platformInfo",
+    "name": "platforminfo",
+    "group": "site",
+    "description": "<p>Utility FunctionTODO</p>",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "time",
+            "optional": false,
+            "description": "<h6 id=\"-\">#</h6>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "media-host",
+            "optional": false,
+            "description": "<h6 id=\"-\">#</h6>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "api-max-version",
+            "optional": false,
+            "description": "<h6 id=\"-\">#</h6>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "api-min-version",
+            "optional": false,
+            "description": "<h6 id=\"-\">#</h6>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "api-our-version",
+            "optional": false,
+            "description": "<h6 id=\"-\">#</h6><hint>Time is an epoch timestamp (which represents the number of seconds since midnight january 1st, 1970)</hint>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "whereAmI",
+    "title": "whereAmI",
+    "name": "whereAmI",
+    "group": "site",
+    "description": "<p>Utility function that returns the city/state/zip of the IP making the call.TODO</p>",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "city",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "state",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "zip",
+            "optional": false,
+            "description": ""
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "country",
+            "optional": false,
+            "description": ""
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "lib/JSONAPI.pm"
+  },
+  {
+    "type": "POST",
+    "url": "whoAmI",
+    "title": "whoAmI",
+    "name": "whoAmI",
+    "group": "site",
+    "description": "<p>Utility function that returns who the current session is authenticated as.TODO</p>",
+    "parameter": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "cid",
+            "optional": false,
+            "description": "<h4 id=\"-customer-buyer-id-\">(customer [buyer] id)</h4>"
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "field": "email",
+            "optional": false,
+            "description": "<p>user@fromloggedindomain.com</p><hint>If logged in as an admin sessino you&#39;ll get fun stuff like USERNAME,MID,RESELLER and more.</hint>"
+          }
+        ]
+      }
+    },
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm"
   }
