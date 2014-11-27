@@ -66,7 +66,7 @@ define({ api: [
     "url": "/loadPlatformJSON",
     "title": "",
     "group": "admin",
-    "name": "loadPlatformJSON",
+    "name": "loadPlatformJSON_loadPlatformJSON",
     "description": "<p>TODO</p>",
     "success": {
       "examples": [
