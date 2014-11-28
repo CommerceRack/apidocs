@@ -6,7 +6,7 @@ define({
   "url": "/jsonapi",
   "generator": {
     "version": "0.8.2",
-    "time": "2014-11-27T21:15:24.630Z"
+    "time": "2014-11-28T21:56:42.986Z"
   },
   "apidoc": "0.2.0"
 });
