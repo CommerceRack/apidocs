@@ -1,4 +1,4 @@
-define({ api: [
+define({ "api": [
   {
     "type": "",
     "url": "{}",
