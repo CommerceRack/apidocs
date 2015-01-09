@@ -11323,7 +11323,7 @@
     "title": "cartAmazonPaymentURL",
     "name": "cartAmazonPaymentURL",
     "group": "cart",
-    "description": "<p>TODO</p> ",
+    "description": "<p>Returns parameters necessary for CBA interaction:</p> <ul> <li>merchantid: the checkout by amazon assigned merchantid (referred to as [merchantid] in the example below)</li> <li>b64xml: a base64 encoded xml order object based on the current cart geometry referred to as [b64xml], BUT passed to amazon following &quot;order:&quot;</li> <li>signature: a sha1, base64 encoded concatenation of the b64xml and the configured cba secret key refrerred to as [signature] in the example below, AND passed to amazon following &quot;signature:&quot;</li> <li>aws-access-key-id: a public string cba needs to identify this merchant refrred to as [aws-access-key-id] AND passed to amazon following the &quot;aws-access-key-id:&quot; parameter</li> </ul> <p>To generate/create a payment button, suggested parameters are: color: orange, size: small, background: white <a href=\"https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=[color]&amp;background=[background]&amp;size=[size\">https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=[color]&amp;background=[background]&amp;size=[size</a>] ex: <a href=\"https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=orange&amp;background=white&amp;size=small\">https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=orange&amp;background=white&amp;size=small</a> Use this as the <strong>your button image url</strong> in the example.</p> <p>The [formurl] is created by the developer using the merchant id, specify either sandbox or non-sandbox (live): <a href=\"https://payments.amazon.com/checkout/[merchantid\">https://payments.amazon.com/checkout/[merchantid</a>] <a href=\"https://payments-sandbox.amazon.com/checkout/[merchantid]?debug=true\">https://payments-sandbox.amazon.com/checkout/[merchantid]?debug=true</a></p> ",
     "parameter": {
       "fields": {
         "Request": [
@@ -11360,11 +11360,59 @@
             "type": "String",
             "optional": false,
             "field": "YourAccountUrl",
-            "description": "<p>URL where user can be directed to by amazon if they wish to lookup order status. (don&#39;t stree about this, rarely used)</p> <hint> &lt;![CDATA[ Returns parameters necessary for CBA interaction:  merchantid: the checkout by amazon assigned merchantid (referred to as [merchantid] in the example below) b64xml: a base64 encoded xml order object based on the current cart geometry referred to as [b64xml], BUT passed to amazon following &quot;order:&quot; signature: a sha1, base64 encoded concatenation of the b64xml and the configured cba secret key refrerred to as [signature] in the example below, AND passed to amazon following &quot;signature:&quot; aws-access-key-id: a public string cba needs to identify this merchant refrred to as [aws-access-key-id] AND passed to amazon following the &quot;aws-access-key-id:&quot; parameter  To generate/create a payment button, suggested parameters are: color: orange, size: small, background: white <a href=\"https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=[color]&amp;background=[background]&amp;size=[size\">https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=[color]&amp;background=[background]&amp;size=[size</a>] ex: <a href=\"https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=orange&amp;background=white&amp;size=small\">https://payments.amazon.com/gp/cba/button?ie=UTF8&amp;color=orange&amp;background=white&amp;size=small</a> Use this as the <strong>your button image url</strong> in the example.  The [formurl] is created by the developer using the merchant id, specify either sandbox or non-sandbox (live): <a href=\"https://payments.amazon.com/checkout/[merchantid\">https://payments.amazon.com/checkout/[merchantid</a>] <a href=\"https://payments-sandbox.amazon.com/checkout/[merchantid]?debug=true\">https://payments-sandbox.amazon.com/checkout/[merchantid]?debug=true</a> ]]&gt; </hint>  <example title=\"Example\">&lt;![CDATA[  &lt;!- NOTE: you do NOT need to include jquery if you already are using jquery -&gt; <script type=\"text/javascript\" src=\"https://images-na.ssl-images-amazon.com/images/G/01/cba/js/jquery.js\"></script>  <script type=\"text/javascript\" src=\"https://images-na.ssl-images-amazon.com/images/G/01/cba/js/widget/widget.js\"></script> <form method=POST action=\"https://payments.amazon.com/checkout/[merchantid]\"> <input type=\"hidden\" name=\"order-input\" value=\"type:merchant-signed-order/aws-accesskey/1;order:[b64xml];signature:[signature];aws-access-key-id:[aws-access-key-id]\"> <input type=\"image\" id=\"cbaImage\" name=\"cbaImage\" src=\"**your button image url**\" onClick=\"this.form.action='[formurl]'; checkoutByAmazon(this.form)\"> </form>  ]]&gt; </example>"
+            "description": "<p>URL where user can be directed to by amazon if they wish to lookup order status. (don&#39;t stress about this, rarely used)</p> "
           }
         ]
       }
     },
+    "success": {
+      "fields": {
+        "Response": [
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "merchantid",
+            "description": "<p>variable to be interpolated into amazon payments button html</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "b64xml",
+            "description": "<p>variable to be interpolated into amazon payments button html</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "signature",
+            "description": "<p>variable to be interpolated into amazon payments button html</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "aws-access-key-id",
+            "description": "<p>variable to be interpolated into amazon payments button html</p> "
+          },
+          {
+            "group": "Response",
+            "type": "String",
+            "optional": false,
+            "field": "referenceId",
+            "description": "<p>variable to be interpolated into amazon payments button html</p> "
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Amazon Payments button html",
+        "content": "&lt;!- NOTE: you do NOT need to include jquery if you already are using jquery -&gt;\n<script type=\"text/javascript\" src=\"https://images-na.ssl-images-amazon.com/images/G/01/cba/js/jquery.js\"></script>\n\n<script type=\"text/javascript\" src=\"https://images-na.ssl-images-amazon.com/images/G/01/cba/js/widget/widget.js\"></script>\n<form method=POST action=\"https://payments.amazon.com/checkout/[merchantid]\">\n<input type=\"hidden\" name=\"order-input\" value=\"type:merchant-signed-order/aws-accesskey/1;order:[b64xml];signature:[signature];aws-access-key-id:[aws-access-key-id]\">\n<input type=\"image\" id=\"cbaImage\" name=\"cbaImage\" src=\"**your button image url**\"\nonClick=\"this.form.action='[formurl]'; checkoutByAmazon(this.form)\">\n</form>",
+        "type": "json"
+      }
+    ],
     "version": "0.0.0",
     "filename": "lib/JSONAPI.pm",
     "groupTitle": "cart"
